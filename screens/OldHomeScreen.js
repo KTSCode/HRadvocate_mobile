@@ -33,12 +33,15 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.getStartedContainer}>
-            <Text style={styles.welcomeText}>
-              Welcome to the HR Advocate App!
-            </Text>
+            {this._maybeRenderDevelopmentModeWarning()}
+
             <Text style={styles.getStartedText}>
-              You can use this app to do things like:
+              Welcome to the HR Advocate App!
+              You can use this app to do all kinds of cool stuff like
             </Text>
+            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
+              <MonoText style={styles.codeHighlightText}></MonoText>
+            </View>
           </View>
           <View style={styles.listContainer}>
 
@@ -58,11 +61,18 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}></Text>
+              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
 
+        <View style={styles.tabBarInfoContainer}>
+          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
+
+          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
+          </View>
+        </View>
       </View>
     );
   }
@@ -135,7 +145,6 @@ const styles = StyleSheet.create({
   listContainer: {
     alignItems: 'flex-start',
     marginHorizontal: 100,
-    paddingTop:10,
   },
   homeScreenFilename: {
     marginVertical: 7,
@@ -151,12 +160,6 @@ const styles = StyleSheet.create({
   getStartedText: {
     fontSize: 17,
     color: 'rgba(196,200,209, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  welcomeText: {
-    fontSize: 20,
-    color: 'rgba(40,150,229, 1)',
     lineHeight: 24,
     textAlign: 'center',
   },

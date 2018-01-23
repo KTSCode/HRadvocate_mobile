@@ -50,6 +50,12 @@ export default TabNavigator(
         );
       },
     }),
+    tabBarOptions: {
+      activeBackgroundColor: '#111111',
+      style: {
+        backgroundColor: '#1b1f1f'
+      }
+    },
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
     animationEnabled: false,

@@ -1,3 +1,4 @@
+Jason Dong
 # HRavdocate Mobile App Prototype
 This code base will server as a prototype for the HRavdocate mobile apps
 

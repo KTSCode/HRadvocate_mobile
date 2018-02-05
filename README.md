@@ -8,3 +8,11 @@ Benjamin Alcala
   * [XDE for Windows](https://xde-updates.exponentjs.com/download/win32)
   * [XDE for macOS](https://xde-updates.exponentjs.com/download/mac)
   * [XDE for Linux](https://xde-updates.exponentjs.com/download/mac)
+
+## Developers
+  * 
+  *
+  *
+  *
+  *
+  * Kyle

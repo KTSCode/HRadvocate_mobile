@@ -8,4 +8,11 @@ This code base will server as a prototype for the HRavdocate mobile apps
   * [XDE for macOS](https://xde-updates.exponentjs.com/download/mac)
   * [XDE for Linux](https://xde-updates.exponentjs.com/download/mac)
 
-Polly
+## Developers
+  * 
+  *
+  *
+  *
+  * Polly
+  * Kyle
+

@@ -1,6 +1,7 @@
 # HRavdocate Mobile App Prototype
 This code base will server as a prototype for the HRavdocate mobile apps
 
+
 ## Installation and Setup
   * [Expo XDE Installation Guide](https://docs.expo.io/versions/latest/introduction/installation.html)
 ### Downloads:
@@ -14,4 +15,5 @@ This code base will server as a prototype for the HRavdocate mobile apps
   *
   *
   *
+  *Benjamin Alcala
   * Kyle

@@ -9,8 +9,8 @@ This code base will server as a prototype for the HRavdocate mobile apps
   * [XDE for Linux](https://xde-updates.exponentjs.com/download/mac)
 
 ## Developers
-  * 
   *
+  * Jason Dong
   *
   *
   *

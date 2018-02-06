@@ -1,3 +1,4 @@
+Jason Dong
 # HRavdocate Mobile App Prototype
 This code base will server as a prototype for the HRavdocate mobile apps
 
@@ -12,9 +13,8 @@ This code base will server as a prototype for the HRavdocate mobile apps
 
 ## Developers
   *
-  *
+  * Jason Dong
   * Polly
   * Jason Chen
   * Benjamin Alcala
   * Kyle
-

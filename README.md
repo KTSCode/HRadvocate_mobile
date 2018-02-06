@@ -16,7 +16,10 @@ This code base will server as a prototype for the HRavdocate mobile apps
   * $ `git push origin <your name>`
     * replace `<your name>` with the same `<your name>` you used earlier **!case sensitive!**
   * Go [this URL](https://github.com/KTSCode/HRadvocate_mobile/pulls) and click **New pull request**
-  * change the drop down that says "compare: **master**" to `<your name>` and hit c
+  * change the drop down that says "compare: **master**" to `<your name>` and click **Create pull request**
+  * Click **Create pull request** again 
+  * Wait for your PR to be reviewed
+  * Click **Merge pull request**
 
 ### Installing Expo
   * [Expo XDE Installation Guide](https://docs.expo.io/versions/latest/introduction/installation.html)

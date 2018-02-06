@@ -13,7 +13,8 @@ This code base will server as a prototype for the HRavdocate mobile apps
 ## Developers
   *
   *
-  *
+  * Polly
   * Jason Chen
   * Benjamin Alcala
   * Kyle
+

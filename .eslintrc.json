@@ -1,7 +1,8 @@
 {
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
     ],
     "plugins": [
       "react",
@@ -18,6 +19,10 @@
       }
     },
    "rules": {
-    "react-native/no-inline-styles": 2
+    "prettier/prettier": ["error", "fb"],
+    "react-native/no-inline-styles": "error",
+    "react-native/no-unused-styles": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
     }
 }

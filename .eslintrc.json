@@ -1,0 +1,19 @@
+{
+    "extends": "standard",
+    "plugins": [
+      "react",
+      "react-native"
+    ],
+    "env": {
+      "react-native/react-native": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+   "rules": {
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2
+    }
+}

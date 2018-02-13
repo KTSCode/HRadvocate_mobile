@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component } from 'react';
 var {
     StyleSheet,
@@ -14,7 +12,7 @@ import { connect } from 'react-redux';
 
 import * as Actions from './actions'; //Import your actions
 
-class businessSelector extends Component {
+class businessSelector extends React.Component {
     constructor(props) {
         super(props);
 
@@ -84,7 +82,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(businessSelector);
 
 var styles = StyleSheet.create({
     activityIndicatorContainer:{

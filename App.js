@@ -3,15 +3,13 @@ import { Provider } from 'react-redux';
 import { StyleSheet, Text, View } from 'react-native';
 
 import store from './store';
-//import BusinessSelector from '/businessSelector/businessSelector';
+import BusinessSelector from './businessSelector/businessSelector';
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <Text>Hi Ben!!</Text>
-        </View>
+        <BusinessSelector />
       </Provider>
     );
   }

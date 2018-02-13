@@ -1,19 +1,23 @@
 {
-    "extends": "standard",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "plugins": [
       "react",
-      "react-native"
+      "react-native",
+      "prettier"
     ],
     "env": {
       "react-native/react-native": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
       }
     },
    "rules": {
-    "react-native/no-inline-styles": 2,
-    "react-native/no-color-literals": 2
+    "react-native/no-inline-styles": 2
     }
 }

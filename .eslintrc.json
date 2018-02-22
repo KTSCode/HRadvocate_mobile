@@ -7,7 +7,8 @@
     "plugins": [
       "react",
       "react-native",
-      "prettier"
+      "prettier",
+      "immutable"
     ],
     "env": {
       "react-native/react-native": true
@@ -23,6 +24,9 @@
     "react-native/no-inline-styles": "error",
     "react-native/no-unused-styles": "error",
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "immutable/no-let": 2,
+    "immutable/no-this": 2,
+    "immutable/no-mutation": 2
     }
 }

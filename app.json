@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "HR Avdocate",
-    "description": "A very interesting project.",
-    "slug": "hr-avdocate",
-    "privacy": "public",
+    "name": "HRadvocate Mobile App",
+    "description": "A modern HCM Platform for your growing business",
+    "slug": "hradvocate-mobile",
+    "privacy": "private",
     "sdkVersion": "25.0.0",
     "platforms": ["ios", "android"],
     "version": "0.1.0",

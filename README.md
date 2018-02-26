@@ -42,7 +42,7 @@ This code base will server as a prototype for the HRadvocate mobile apps
 
 
 ## Developers
-  * Sarah
+  * Sarah Espinosa
   * Jason Dong
   * Polly
   * Jason Chen

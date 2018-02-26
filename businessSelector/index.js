@@ -39,7 +39,7 @@ class businessSelector extends React.Component {
       );
     } else {
       return (
-        <View style={{flex: 1, backgroundColor: '#F5F5F5', paddingTop: 20}}>
+        <View style={{}}>
           <ListView
             enableEmptySections={true}
             dataSource={this.state.ds.cloneWithRows(this.props.data)}
@@ -90,6 +90,12 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+  },
+
+  rowContainer: {
+    flex: 1, 
+    backgroundColor: '#F5F5F5', 
+    paddingTop: 20
   },
 
   row: {

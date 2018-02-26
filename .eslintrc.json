@@ -21,6 +21,7 @@
     },
    "rules": {
     "prettier/prettier": ["error", "fb"],
+    "react/prop-types": 1,
     "react-native/no-inline-styles": "error",
     "react-native/no-unused-styles": "error",
     "react/jsx-uses-react": "error",

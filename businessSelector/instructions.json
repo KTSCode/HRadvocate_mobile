@@ -2,10 +2,6 @@
 {
   "instructions": [
     {
-      "title": "Create React Native Project",
-      "description": "react-native init ReactReduxBoilerPlate"
-    },
-    {
       "title": "Install Dependencies",
       "description": "In your project root, run npm install --save react-redux \nnpm install —save redux \nnpm install —save redux-thunk"
     },

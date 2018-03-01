@@ -3,13 +3,13 @@ import {Provider} from 'react-redux';
 //import {StyleSheet} from 'react-native';
 
 import store from './store';
-import BusinessSelector from './businessSelector/index';
+import Intro from './Intro';
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <BusinessSelector />
+        <Intro />
       </Provider>
     );
   }

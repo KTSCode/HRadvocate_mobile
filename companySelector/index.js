@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 
 import * as Actions from './actions'; //Import your actions
 
-class businessSelector extends React.Component {
+class companySelector extends React.Component {
   constructor(props) {
     super(props);
 
@@ -82,7 +82,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(businessSelector);
+export default connect(mapStateToProps, mapDispatchToProps)(companySelector);
 
 var styles = StyleSheet.create({
   activityIndicatorContainer: {
@@ -93,8 +93,8 @@ var styles = StyleSheet.create({
   },
 
   rowContainer: {
-    flex: 1, 
-    backgroundColor: '#F5F5F5', 
+    flex: 1,
+    backgroundColor: '#F5F5F5',
     paddingTop: 20
   },
 

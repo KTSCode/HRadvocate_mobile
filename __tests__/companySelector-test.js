@@ -48,12 +48,12 @@ describe('reducer', () => {
     expect(reducer(undefined, {})).toEqual({
      dataReducer: {
         data: [],
-        loading: true
+        company: false
       }
     })
   })
 
-  it('should handle DATA_AVAILABLE', () => {
+  it('should handle DATA_AVAILABLE with data', () => {
     expect(
       reducer({}, {
         type: 'DATA_AVAILABLE',
@@ -68,7 +68,21 @@ describe('reducer', () => {
           "name": "ABC Company",
           "code": "abc"
         }],
-        loading: false
+        company: true
+      }
+    })
+  })
+
+  it('should handle DATA_AVAILABLE without data', () => {
+    expect(
+      reducer({}, {
+        type: 'DATA_AVAILABLE',
+        data: []
+      })
+    ).toEqual({
+      dataReducer: {
+        data: [],
+        company: false
       }
     })
   })

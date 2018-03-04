@@ -13,17 +13,17 @@ import {connect} from 'react-redux';
 import * as Actions from './actions'; //Import your actions
 
 class companySelector extends React.Component {
+  //XXX why use a constructor?
   constructor(props) {
     super(props);
-
+    
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       ds: ds,
     };
   }
-
   componentDidMount() {
-    this.props.getData(); //call our action
+    this.props.getCompanyData('abc'); //call our action
   }
 
   render() {

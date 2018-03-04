@@ -15,8 +15,7 @@ export const getCompanyData = (code) => {
     var data = Data.companies.filter((company) => {
       return company.code == code;
     });
-    return delay(2000).then(() => {
-      console.log(data)
+    return delay(20).then(() => {
       dispatch({type: DATA_AVAILABLE, data:data})
     });
   }

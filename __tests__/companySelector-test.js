@@ -8,6 +8,7 @@ import expect from 'expect'
 import * as actions  from '../companySelector/actions'
 import CompanySelector from '../companySelector/index'
 
+//XXX IDK what these are doing
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
 
@@ -25,7 +26,9 @@ describe('actions', () => {
         "code": "abc"
       }]
     }]
+    //XXX IDK what this is doing
     const store = mockStore({})
+    //XXX do I have to use then here?
     return store.dispatch(actions.getCompanyData('abc')).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions)

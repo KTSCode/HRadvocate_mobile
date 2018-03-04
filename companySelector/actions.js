@@ -1,18 +1,23 @@
+//XXX What is a promise and could I do this without using one?
+import thunk from 'redux-thunk'
 export const DATA_AVAILABLE = 'DATA_AVAILABLE';
 
 //Import the sample data
-import Data from './instructions.json';
+import Data from './companies.json';
 
-export function getData(){
-    return (dispatch) => {
+//FIXME Why do I have to do this??
+const delay = (ms) => new Promise(resolve =>
+  setTimeout(resolve, ms)
+);
 
-        //Make API Call
-        //For this example, I will be using the sample data in the json file
-        //delay the retrieval [Sample reasons only]
-        setTimeout(() => {
-            var data  = Data.instructions;
-            dispatch({type: DATA_AVAILABLE, data:data});
-        }, 2000);
-
-    };
+export const getCompanyData = (code) => {
+  return (dispatch) => {
+    var data = Data.companies.filter((company) => {
+      return company.code == code;
+    });
+    return delay(2000).then(() => {
+      console.log(data)
+      dispatch({type: DATA_AVAILABLE, data:data})
+    });
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "companies": [
+    {
+      "name": "ABC Company",
+      "code": "abc"
+    },
+    {
+      "name": "Riptide",
+      "code": "riptide"
+    },
+    {
+      "name": "Cool Company",
+      "code": "cool"
+    }
+  ]
+}

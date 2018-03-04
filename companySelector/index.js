@@ -91,13 +91,6 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
-
-  rowContainer: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
-    paddingTop: 20
-  },
-
   row: {
     borderBottomWidth: 1,
     borderColor: '#ccc',

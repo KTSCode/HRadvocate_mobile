@@ -9,7 +9,9 @@
     "react-native-vector-icons": "^4.5.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "simple-react-form": "^2.0.1",
+    "simple-react-form-material-ui": "^1.7.13"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

@@ -2,21 +2,11 @@
 import thunk from 'redux-thunk'
 export const DATA_AVAILABLE = 'DATA_AVAILABLE';
 
-//Import the sample data
-import Data from './companies.json';
 
-//FIXME Why do I have to do this??
-const delay = (ms) => new Promise(resolve =>
-  setTimeout(resolve, ms)
-);
+export const fetchCompanies = () => ({ type: 'FETCH_COMPANIES' });
+export const setActiveCompany = (code) => ({ type: 'SET_ACTIVE_COMPANY', code });
 
-export const getCompanyData = (code) => {
-  return (dispatch) => {
-    var data = Data.companies.filter((company) => {
-      return company.code == code;
-    });
-    return delay(20).then(() => {
-      dispatch({type: DATA_AVAILABLE, data:data})
-    });
-  }
-}
+export const fetchCompaniesSuccess = (data) => ({
+  type: 'FETCH_COMPANIES_SUCCESS',
+  data
+});

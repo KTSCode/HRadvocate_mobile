@@ -2,87 +2,63 @@ import React from 'react';
 var {
   StyleSheet,
   ListView,
+  Button,
   View,
   Text,
+  TextInput,
   ActivityIndicator,
 } = require('react-native');
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
+import * as reducers from './reducer';
 import * as Actions from './actions'; //Import your actions
+import Data from './companies.json';
 
 class companySelector extends React.Component {
-  //XXX why use a constructor?
-  constructor(props) {
-    super(props);
-    
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      ds: ds,
-    };
-  }
+  state = {};
+
   componentDidMount() {
-    this.props.getCompanyData('abc'); //call our action
+    const {dispatch} = this.props;
+    dispatch(Actions.fetchCompaniesSuccess(Data));
+  }
+
+  onPress = () => {
+    const {dispatch} = this.props;
+    dispatch(Actions.setActiveCompany(this.state.text));
+  }
+
+  onChangeText = (text) => {
+    this.setState({
+      text
+    })
   }
 
   render() {
-    if (this.props.loading) {
-      return (
-        <View style={styles.activityIndicatorContainer}>
-          <ActivityIndicator
-            animating={true}
-            style={[{height: 80}]}
-            size="small"
-          />
-        </View>
-      );
-    } else {
-      return (
-        <View style={{}}>
-          <ListView
-            enableEmptySections={true}
-            dataSource={this.state.ds.cloneWithRows(this.props.data)}
-            renderRow={this.renderRow.bind(this)}
-          />
-        </View>
-      );
-    }
-  }
-
-  renderRow(rowData, sectionID, rowID) {
+    const {company} = this.props
     return (
-      <View style={styles.row}>
-        <Text style={styles.title}>
-          {parseInt(rowID) + 1}
-          {'. '}
-          {rowData.title}
-        </Text>
-        <Text style={styles.description}>{rowData.description}</Text>
+      <View style={styles.activityIndicatorContainer}>
+        {company && <Text> {company.name}</Text>}
+        {!company && (
+          <View>
+            <TextInput onChangeText={this.onChangeText} />
+            <Button title='Submit' onPress={this.onPress}/>
+          </View>
+        )}
       </View>
     );
   }
-}
 
-// The function takes data from the app current state,
-// and insert/links it into the props of our component.
-// This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
+  let activeCompany = reducers.getActiveCompany(state)
   return {
-    loading: state.dataReducer.loading,
-    data: state.dataReducer.data,
+    company: reducers.getCompany(state, activeCompany),
   };
 }
 
-// Doing this merges our actions into the component’s props,
-// while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(Actions, dispatch);
-}
-
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(companySelector);
+export default connect(mapStateToProps)(companySelector);
 
 var styles = StyleSheet.create({
   activityIndicatorContainer: {

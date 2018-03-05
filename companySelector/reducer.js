@@ -1,25 +1,43 @@
 import { combineReducers } from 'redux';
 
-import { DATA_AVAILABLE } from "./actions" //Import the actions types constant we defined in our actions
+import { DATA_AVAILABLE } from "./actions"
 
-let dataState = { data: [], company:false };
+let dataState = { data: {}, company:false };
 
-const dataReducer = (state = dataState, action) => {
+const companies = (state = [], action) => {
   switch (action.type) {
     case DATA_AVAILABLE:
-      if (action.data.length > 0){
+      if (data){
         state = Object.assign({}, state, { data: action.data, company:true });
       }
       return state;
+    case 'FETCH_COMPANIES_SUCCESS':
+      return action.data.companies
     default:
       return state;
   }
 };
 
+const activeCompany = (state = null, action) => {
+  switch (action.type) {
+    case 'SET_ACTIVE_COMPANY':
+      return action.code
+    default:
+      return state;
+  }
+}
 // Combine all the reducers
 const rootReducer = combineReducers({
-  dataReducer
-  // ,[ANOTHER REDUCER], [ANOTHER REDUCER] ....
+  companies,
+  activeCompany
 })
+
+export const getCompany = (state, code) => {
+  return state.companies.find((company) => {
+    return company.code == code;
+  });
+}
+
+export const getActiveCompany = (state) => state.activeCompany
 
 export default rootReducer;

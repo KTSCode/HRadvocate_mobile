@@ -49,6 +49,7 @@ class companySelector extends React.Component {
       </View>
     );
   }
+}
 
 function mapStateToProps(state, props) {
   let activeCompany = reducers.getActiveCompany(state)

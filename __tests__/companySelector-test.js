@@ -30,4 +30,12 @@ describe('reducer', () => {
     expect(reducer(undefined, {})).toEqual({"activeCompany": null, "companies": []})
   })
 
+  it('should handle SET_ACTIVE_COMPANY', () => {
+    expect(reducer({"activeCompany": null, "companies": []}, {
+      type: 'FETCH_COMPANIES',
+      code: 'abc'
+    })).toEqual({"activeCompany": 'abc', "companies": []})
+  })
+
+
 })

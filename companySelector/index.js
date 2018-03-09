@@ -16,12 +16,12 @@ import {connect} from 'react-redux';
 import * as reducers from './reducer';
 import * as Actions from './actions'; //Import your actions
 import Data from './companies.json';
-import MyForm from './myForm';
+import CompanyCodeForm from './companyCodeForm';
 
-const CustomerCodeForm = () => {
+const CompanyCodePage = () => {
   return (
     <View style={styles.MyForm}>
-      <MyForm
+      <CompanyCodeForm
         onSubmit={values => {
           alert(values.code);
         }}
@@ -30,9 +30,10 @@ const CustomerCodeForm = () => {
   );
 };
 
-export default reduxForm({
-  form: 'immutableExample', // a unique identifier for this form
-})(CustomerCodeForm);
+export default CompanyCodePage;
+//export default reduxForm({
+//  form: 'immutableExample', // a unique identifier for this form
+//})(CompanyCodePage);
 
 var styles = StyleSheet.create({
   MyForm: {
@@ -40,7 +41,6 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-    marginTop: 90,
   },
 });
 //class companySelector extends React.Component {

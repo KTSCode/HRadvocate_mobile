@@ -22,7 +22,7 @@ describe('Reducer gets company data using company code', () => {
     expect(reducer(undefined, {})).toEqual({
       activeCompany: null,
       companies: [],
-      text: '',
+      companyCodeInput: '',
     });
   });
 
@@ -32,5 +32,4 @@ describe('Reducer gets company data using company code', () => {
   //    code: 'abc'
   //  })).toEqual({"activeCompany": 'abc', "companies": []})
   //})
-  
 });

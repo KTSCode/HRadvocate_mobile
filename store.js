@@ -1,7 +1,13 @@
-import {createStore, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
+import {createStore, combineReducers} from 'redux';
+import {reducer as formReducer} from 'redux-form';
 
-import reducers from './companySelector/reducer'; //Import the reducer
+// Reducers from different components
+import companySelectorReducers from './companySelector/reducer';
 
-// Connect our store to the reducers
-export default createStore(reducers, applyMiddleware(thunk));
+const reducers = {
+  companySelectorReducers,
+  form: formReducer,
+};
+
+const reducer = combineReducers(reducers);
+export default createStore(reducer);

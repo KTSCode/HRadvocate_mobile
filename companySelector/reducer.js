@@ -1,41 +1,30 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
+import CompaniesData from './companies.json';
 
-const companies = (state = [], action) => {
+const companySelector = (state = {code: '', found: false}, action) => {
   switch (action.type) {
-    case 'FETCH_COMPANIES_SUCCESS':
-      return action.data.companies
+    case 'SUBMIT_CODE':
+      const newState = {
+        ...state,
+        code: action.code,
+        found: checkCompany(action.code),
+      };
+      console.log(newState)
+      return newState
     default:
       return state;
   }
 };
 
-const activeCompany = (state = null, action) => {
-  switch (action.type) {
-    case 'SET_ACTIVE_COMPANY':
-      return action.code
-    default:
-      return state;
-  }
-}
+//// Combine all the reducers
+//const rootReducer = combineReducers({
+//  companySelector,
+//});
 
-const companyCodeInput = (state = "", action) => {
-  switch (action.type) {
-    case 'COMPANY_CODE_INPUT':
-      return action.text
-    default:
-      return state;
-  }
-}
-// Combine all the reducers
-const rootReducer = combineReducers({
-  companies,
-  activeCompany,
-  companyCodeInput
-})
+const checkCompany = code => {
+  return CompaniesData.companies.some(elem => {
+    return elem.code === code;
+  });
+};
 
-export const getCompany = (state, code) => {
-  return state.companies.find((company) => { return company.code == code});
-}
-export const getActiveCompany = (state) => state.activeCompany
-
-export default rootReducer;
+export default companySelector;

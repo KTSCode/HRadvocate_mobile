@@ -8,32 +8,39 @@ var {
   TextInput,
   ActivityIndicator,
 } = require('react-native');
-import {Field, reduxForm} from 'redux-form/immutable';
 
-import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import * as reducers from './reducer';
-import * as Actions from './actions'; //Import your actions
-import Data from './companies.json';
 import CompanyCodeForm from './companyCodeForm';
 
-const CompanyCodePage = () => {
-  return (
-    <View style={styles.MyForm}>
-      <CompanyCodeForm
-        onSubmit={values => {
-          alert(values.code);
-        }}
-      />
-    </View>
-  );
+class CompanyCodePage extends React.Component {
+  state = {};
+  render() {
+    const {found, code} = this.props;
+    return (
+      <View style={styles.MyForm}>
+        {!found && code != '' && <Text> Error code not found </Text>}
+        <CompanyCodeForm
+          onSubmit={values => {
+            this.props.dispatch({type: 'SUBMIT_CODE', code: values.code});
+          }}
+        />
+      </View>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    ...state,
+    code: state.companySelector.code,
+    found: state.companySelector.found
+  };
 };
 
-export default CompanyCodePage;
-//export default reduxForm({
-//  form: 'immutableExample', // a unique identifier for this form
-//})(CompanyCodePage);
+export default connect(mapStateToProps)(CompanyCodePage);
+
+
 
 var styles = StyleSheet.create({
   MyForm: {
@@ -43,7 +50,6 @@ var styles = StyleSheet.create({
     flex: 1,
   },
 });
-//class companySelector extends React.Component {
 //  state = {};
 
 //  componentDidMount() {

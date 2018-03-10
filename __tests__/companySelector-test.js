@@ -18,18 +18,22 @@ test('Company selector renders correctly', () => {
 });
 
 describe('Reducer gets company data using company code', () => {
+  var tState = reducer(undefined, {}); //TODO find a better way to do this
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({
-      activeCompany: null,
-      companies: [],
-      companyCodeInput: '',
+    expect(tState).toEqual({
+      code: '',
+      found: false,
     });
   });
 
-  //it('should handle SET_ACTIVE_COMPANY', () => {
-  //  expect(reducer({"activeCompany": null, "companies": []}, {
-  //    type: 'FETCH_COMPANIES',
-  //    code: 'abc'
-  //  })).toEqual({"activeCompany": 'abc', "companies": []})
-  //})
+  it('should handle SUBMIT_CODE', () => {
+    tState = reducer(tState, {
+      type: 'SUBMIT_CODE',
+      code: 'abc',
+    });
+    expect(tState).toEqual({
+      code: 'abc',
+      found: true,
+    });
+  });
 });

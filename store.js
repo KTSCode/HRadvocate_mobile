@@ -2,10 +2,10 @@ import {createStore, combineReducers} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 
 // Reducers from different components
-import companySelectorReducers from './companySelector/reducer';
+import companySelector from './companySelector/reducer';
 
 const reducers = {
-  companySelectorReducers,
+  companySelector,
   form: formReducer,
 };
 

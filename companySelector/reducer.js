@@ -10,7 +10,6 @@ const companySelector = (state = {code: '', found: false, name: ''}, action) => 
         found: checkCompany(action.code),
         name: companyName(action.code),
       };
-      console.log(newState)
       return newState
     case 'CHANGE_COMPANY':
       return {...state, found: false, code: ''};
@@ -31,9 +30,15 @@ const checkCompany = code => {
 };
 
 const companyName = code => {
-  return CompaniesData.companies.find(elem => {
+  var company = CompaniesData.companies.find(elem => {
     return elem.code === code;
-  }).name;
+  });
+  if (company) {
+    return company.name;
+  }
+  else {
+    return '';
+  }
 };
 
 export default companySelector;

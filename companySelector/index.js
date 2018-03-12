@@ -19,6 +19,7 @@ class CompanyCodePage extends React.Component {
   state = {};
   render() {
     const {found, code, name} = this.props;
+    //All images must be required at load time
     const logos = {
       abc: require('../images/abc.jpg'),
       riptide: require('../images/riptide.jpg'),
@@ -54,10 +55,10 @@ class CompanyCodePage extends React.Component {
     else {
       return (
         <View style={styles.MyForm}>
-          {!found && code != '' && <Text> Error code not found </Text>}
+          {!found && code != '' && <Text style={{color: 'red'}}>Error: code not found</Text>}
           <CompanyCodeForm
             onSubmit={values => {
-              this.props.dispatch({type: 'SUBMIT_CODE', code: values.code});
+              this.props.dispatch({type: 'SUBMIT_CODE', code: values.code.toLowerCase()});
             }}
           />
         </View>

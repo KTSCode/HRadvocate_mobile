@@ -2,7 +2,14 @@
   "companies": [
     {
       "name": "ABC Company",
-      "code": "abc"
+      "code": "abc",
+      "employees": [
+        {
+          "name": "bob smith",
+          "email": "bob@abc.com",
+          "password": "secret"
+        }
+      ]
     },
     {
       "name": "Riptide",

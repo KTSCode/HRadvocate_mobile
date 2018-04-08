@@ -8,10 +8,12 @@
       "react",
       "react-native",
       "prettier",
-      "immutable"
+      "immutable",
+      "jest"
     ],
     "env": {
-      "react-native/react-native": true
+      "react-native/react-native": true,
+      "jest/globals": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
@@ -21,13 +23,13 @@
     },
    "rules": {
     "prettier/prettier": ["error", "fb"],
-    "react/prop-types": 1,
+    "react/prop-types": 0,
     "react-native/no-inline-styles": "error",
     "react-native/no-unused-styles": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "immutable/no-let": 1,
-    "immutable/no-this": 1,
-    "immutable/no-mutation": 1
+    "immutable/no-let": 2,
+    "immutable/no-this": 2,
+    "immutable/no-mutation": 2
     }
 }

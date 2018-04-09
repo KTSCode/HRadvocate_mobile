@@ -1,13 +1,5 @@
 import React from 'react';
-var {
-  StyleSheet,
-  ListView,
-  Button,
-  View,
-  Text,
-  TextInput,
-  Image,
-} = require('react-native');
+var {StyleSheet, ListView, Button, View, Text, Image} = require('react-native');
 
 import {connect} from 'react-redux';
 
@@ -21,18 +13,19 @@ const LoginPage = props => {
   };
   return (
     <View style={styles.MyForm}>
-      <Image source={logos[props.logo]}
-        style={{height: 50, width: 100}}
-      />
+      <Image source={logos[props.logo]} style={{height: 50, width: 100}} />
       <Text> Logo for {props.data.name} </Text>
-      <Text> Username: </Text>
-      <TextInput style={styles.TextInput} />
-      <Text> Password: </Text>
-      <TextInput style={styles.TextInput} />
-      <Button
-        title="login"
-        onPress={() => {
-          alert('logged in');
+      {props.error && (
+        <Text style={{color: 'red'}}> {props.errorMessage} </Text>
+      )}
+      <LoginForm
+        onSubmit={values => {
+          props.dispatch({
+            type: 'LOGIN',
+            username: values.username.toLowerCase(),
+            password: values.password,
+            employees: props.data.employees,
+          });
         }}
       />
       <Button

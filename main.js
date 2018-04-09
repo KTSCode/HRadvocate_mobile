@@ -25,7 +25,8 @@ class Main extends React.Component {
       return (
         <Login
           dispatch={this.props.dispatch}
-          error={'none'}
+          error={this.props.loginError}
+          errorMessage={this.props.loginErrorMessage}
           logo={this.props.companyID}
           data={this.props.companyData}
         />
@@ -42,7 +43,7 @@ class Main extends React.Component {
 }
 
 const mapStateToProps = state => {
-  let companyNotFound =
+  const companyNotFound =
     !state.company.found && state.company.code != '';
   return {
     ...state,
@@ -50,7 +51,9 @@ const mapStateToProps = state => {
     companyFound: state.company.found,
     companyID: state.company.code,
     companyData: state.company.data,
-    loggedIn: state.root.login,
+    loggedIn: state.employee.loggedIn,
+    loginError: state.employee.failed,
+    loginErrorMessage: state.employee.message,
   };
 };
 

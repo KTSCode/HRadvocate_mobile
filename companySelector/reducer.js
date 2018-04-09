@@ -1,15 +1,16 @@
 import CompaniesData from './companies.json';
 
-const companySelector = (state = {code: '', found: false, name: ''}, action) => {
+const company = (state = {code: '', found: false, name: ''}, action) => {
   switch (action.type) {
-    case 'SUBMIT_CODE':
+    case 'SUBMIT_CODE': {
       const newState = {
         ...state,
         code: action.code,
         found: checkCompany(action.code),
-        name: companyName(action.code),
+        data: companyData(action.code),
       };
-      return newState
+      return newState;
+    }
     case 'CHANGE_COMPANY':
       return {...state, found: false, code: ''};
     default:
@@ -17,27 +18,21 @@ const companySelector = (state = {code: '', found: false, name: ''}, action) => 
   }
 };
 
-//// Combine all the reducers
-//const rootReducer = combineReducers({
-//  companySelector,
-//});
-
 const checkCompany = code => {
   return CompaniesData.companies.some(elem => {
     return elem.code === code;
   });
 };
 
-const companyName = code => {
+const companyData = code => {
   var company = CompaniesData.companies.find(elem => {
     return elem.code === code;
   });
   if (company) {
-    return company.name;
-  }
-  else {
+    return company;
+  } else {
     return '';
   }
 };
 
-export default companySelector;
+export default company;

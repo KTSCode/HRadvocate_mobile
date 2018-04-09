@@ -22,7 +22,14 @@ class Main extends React.Component {
     } else if (this.props.companyFound) {
       //FIXME find the correct place for this
       //this.props.dispatch({type: 'COMPANY_FOUND'});
-      return <Login dispatch={this.props.dispatch} error={'none'} />;
+      return (
+        <Login
+          dispatch={this.props.dispatch}
+          error={'none'}
+          logo={this.props.companyID}
+          data={this.props.companyData}
+        />
+      );
     } else {
       return (
         <CompanyCodePage
@@ -36,11 +43,13 @@ class Main extends React.Component {
 
 const mapStateToProps = state => {
   let companyNotFound =
-    !state.companySelector.found && state.companySelector.code != '';
+    !state.company.found && state.company.code != '';
   return {
     ...state,
     companyNotFound: companyNotFound,
-    companyFound: state.companySelector.found,
+    companyFound: state.company.found,
+    companyID: state.company.code,
+    companyData: state.company.data,
     loggedIn: state.root.login,
   };
 };

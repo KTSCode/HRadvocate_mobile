@@ -3,7 +3,7 @@ import {reducer as formReducer} from 'redux-form';
 import {createLogger} from 'redux-logger';
 
 // Reducers from different components
-import companySelector from './companySelector/reducer';
+import company from './companySelector/reducer';
 
 const root = (state = {found: false, login: false}, action) => {
   switch (action.type) {
@@ -18,7 +18,7 @@ const root = (state = {found: false, login: false}, action) => {
 
 const reducers = {
   root,
-  companySelector,
+  company,
   form: formReducer,
 };
 const reducer = combineReducers(reducers);

@@ -6,19 +6,7 @@ import {createLogger} from 'redux-logger';
 import company from './companySelector/reducer';
 import employee from './login/reducer';
 
-const root = (state = {found: false, login: false}, action) => {
-  switch (action.type) {
-    case 'COMPANY_FOUND':
-      return {...state, found: true};
-    case 'LOGGED_IN':
-      return {...state, login: true};
-    default:
-      return state;
-  }
-};
-
 const reducers = {
-  root,
   company,
   employee,
   form: formReducer,

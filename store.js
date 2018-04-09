@@ -3,10 +3,12 @@ import {reducer as formReducer} from 'redux-form';
 import {createLogger} from 'redux-logger';
 
 // Reducers from different components
-import companySelector from './companySelector/reducer';
+import company from './companySelector/reducer';
+import employee from './login/reducer';
 
 const reducers = {
-  companySelector,
+  company,
+  employee,
   form: formReducer,
 };
 const reducer = combineReducers(reducers);

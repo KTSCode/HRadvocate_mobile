@@ -5,11 +5,7 @@ const Navigation = () => {
   return (
     <Toolbar
       leftElement="menu"
-      centerElement="Searchable"
-      searchable={{
-        autoFocus: true,
-        placeholder: 'Search',
-      }}
+      onLeftElementPress={alert("test")}
     />
   );
 };

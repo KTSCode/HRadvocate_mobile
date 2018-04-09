@@ -2,7 +2,20 @@ import React from 'react';
 var {View, Text} = require('react-native');
 import CompanyCodePage from './companySelector/index';
 import Login from './login/index';
+import Navigation from './navigation/index';
+import {COLOR, ThemeProvider} from 'react-native-material-ui';
 import {connect} from 'react-redux';
+
+const uiTheme = {
+  palett: {
+    primaryColor: COLOR.green500,
+  },
+  toolbar: {
+    container: {
+      height: 50,
+    },
+  },
+};
 
 class Main extends React.Component {
   constructor(props) {
@@ -15,9 +28,9 @@ class Main extends React.Component {
       //FIXME find the correct place for this
       //this.props.dispatch({type: 'LOGGED_IN'});
       return (
-        <View>
-          <Text>main app</Text>
-        </View>
+        <ThemeProvider uiTheme={uiTheme}>
+          <Navigation />
+        </ThemeProvider>
       );
     } else if (this.props.companyFound) {
       //FIXME find the correct place for this
@@ -43,8 +56,7 @@ class Main extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const companyNotFound =
-    !state.company.found && state.company.code != '';
+  const companyNotFound = !state.company.found && state.company.code != '';
   return {
     ...state,
     companyNotFound: companyNotFound,

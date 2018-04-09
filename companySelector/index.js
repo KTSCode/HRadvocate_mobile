@@ -1,5 +1,5 @@
 import React from 'react';
-var {StyleSheet, View, Text} = require('react-native');
+var {StyleSheet, View, Text, Button} = require('react-native');
 import CompanyCodeForm from './companyCodeForm';
 
 const CompanyCodePage = props => {
@@ -11,6 +11,15 @@ const CompanyCodePage = props => {
           props.dispatch({
             type: 'SUBMIT_CODE',
             code: values.code.toLowerCase(),
+          });
+        }}
+      />
+      <Button
+        title="SKIP"
+        onPress={() => {
+          props.dispatch({
+            type: 'SUBMIT_CODE',
+            code: 'abc',
           });
         }}
       />

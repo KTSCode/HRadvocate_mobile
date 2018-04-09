@@ -1,7 +1,5 @@
 import React from 'react';
-var {StyleSheet, ListView, Button, View, Text, Image} = require('react-native');
-
-import {connect} from 'react-redux';
+var {StyleSheet, Button, View, Text, Image} = require('react-native');
 
 import LoginForm from './loginForm';
 
@@ -32,6 +30,17 @@ const LoginPage = props => {
         title="change company"
         onPress={() => {
           props.dispatch({type: 'CHANGE_COMPANY'});
+        }}
+      />
+      <Button
+        title="SKIP"
+        onPress={() => {
+          props.dispatch({
+            type: 'LOGIN',
+            username: 'bob@abc.com',
+            password: 'secret',
+            employees: props.data.employees,
+          });
         }}
       />
     </View>

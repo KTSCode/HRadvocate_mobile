@@ -28,8 +28,8 @@
     "react-native/no-unused-styles": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "immutable/no-let": 2,
-    "immutable/no-this": 2,
-    "immutable/no-mutation": 2
+    "immutable/no-let": 1,
+    "immutable/no-this": 1,
+    "immutable/no-mutation": 1
     }
 }

@@ -5,7 +5,19 @@ import {createLogger} from 'redux-logger';
 // Reducers from different components
 import companySelector from './companySelector/reducer';
 
+const root = (state = {found: false, login: false}, action) => {
+  switch (action.type) {
+    case 'COMPANY_FOUND':
+      return {...state, found: true};
+    case 'LOGGED_IN':
+      return {...state, login: true};
+    default:
+      return state;
+  }
+};
+
 const reducers = {
+  root,
   companySelector,
   form: formReducer,
 };

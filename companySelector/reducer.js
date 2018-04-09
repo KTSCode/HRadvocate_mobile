@@ -1,4 +1,3 @@
-import {combineReducers} from 'redux';
 import CompaniesData from './companies.json';
 
 const companySelector = (state = {code: '', found: false, name: ''}, action) => {

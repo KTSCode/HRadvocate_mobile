@@ -1,0 +1,35 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "react",
+      "react-native",
+      "prettier",
+      "immutable",
+      "jest"
+    ],
+    "env": {
+      "react-native/react-native": true,
+      "jest/globals": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+   "rules": {
+    "prettier/prettier": ["error", "fb"],
+    "react/prop-types": 0,
+    "react-native/no-inline-styles": "error",
+    "react-native/no-unused-styles": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "immutable/no-let": 1,
+    "immutable/no-this": 1,
+    "immutable/no-mutation": 1
+    }
+}

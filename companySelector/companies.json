@@ -1,0 +1,23 @@
+{
+  "companies": [
+    {
+      "name": "ABC Company",
+      "code": "abc",
+      "employees": [
+        {
+          "name": "bob smith",
+          "email": "bob@abc.com",
+          "password": "secret"
+        }
+      ]
+    },
+    {
+      "name": "Riptide",
+      "code": "riptide"
+    },
+    {
+      "name": "Cool Company",
+      "code": "cool"
+    }
+  ]
+}

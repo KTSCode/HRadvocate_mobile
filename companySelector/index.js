@@ -7,10 +7,22 @@ const CompanyCodePage = props => {
   const HRlogo = require('../images/hradvocate.png')
   return (
     <View style={styles.MyForm}>
-      {props.error && <Text style={styles.Error}>Error: code not found</Text>}
       <View style={{alignSelf: 'center', marginTop: 40}}>
         <Image source={HRlogo} style={{height: 120, width: 350}} />
       </View>
+      {props.error &&
+        <Card>
+          <View style={styles.Error}>
+            <View style={{padding: 5}}>
+              <Text style={{fontSize: 40}}>⚠</Text>
+            </View>
+            <View>
+              <Text style={styles.ErrorText}>Error: Company Code Not Found</Text>
+              <Text style={styles.ErrorCaption}>Please Try Again</Text>
+            </View>
+          </View>
+        </Card>
+      }
       <Card>
         <View style={{padding: 30,}}>
           <CompanyCodeForm
@@ -53,8 +65,22 @@ var styles = StyleSheet.create({
     padding: 20,
   },
   Error: {
-    color: 'red',
+    flexDirection: 'row',
+    padding: 15,
+    borderWidth: 0.5,
+    borderColor: '#EE3E4B',
   },
+  ErrorText: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    color: '#EE3E4B',
+  },
+  ErrorCaption: {
+    fontSize: 14,
+    textAlign: 'center',
+  },
+
+
   CardStyle: {
     backgroundColor: '#abc',
   },

@@ -20,21 +20,16 @@ const uiTheme = {
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    //this.companyNotFound = false;
   }
 
   render() {
     if (this.props.loggedIn) {
-      //FIXME find the correct place for this
-      //this.props.dispatch({type: 'LOGGED_IN'});
       return (
         <ThemeProvider uiTheme={uiTheme}>
           <Navigation />
         </ThemeProvider>
       );
     } else if (this.props.companyFound) {
-      //FIXME find the correct place for this
-      //this.props.dispatch({type: 'COMPANY_FOUND'});
       return (
         <Login
           dispatch={this.props.dispatch}
@@ -46,10 +41,12 @@ class Main extends React.Component {
       );
     } else {
       return (
-        <CompanyCodePage
-          dispatch={this.props.dispatch}
-          error={this.props.companyNotFound}
-        />
+        <ThemeProvider uiTheme={uiTheme}>
+          <CompanyCodePage
+            dispatch={this.props.dispatch}
+            error={this.props.companyNotFound}
+          />
+        </ThemeProvider>
       );
     }
   }

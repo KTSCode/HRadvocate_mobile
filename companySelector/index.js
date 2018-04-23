@@ -21,6 +21,14 @@ const CompanyCodePage = props => {
             icon="error"
           />
         )}
+        {props.invalid && (
+          <ToastBox
+            color="#EE3E4B"
+            title="Error!"
+            text="Invalid Input"
+            icon="error"
+          />
+        )}
         {(props.info || props.error) && (
           <ToastBox
             color="#1E98C7"
@@ -32,10 +40,16 @@ const CompanyCodePage = props => {
           <View style={{padding: 30}}>
             <CompanyCodeForm
               onSubmit={values => {
-                props.dispatch({
-                  type: 'SUBMIT_CODE',
-                  code: values.code.toLowerCase(),
-                });
+                if(values.code != "") {
+                  props.dispatch({
+                    type: 'SUBMIT_CODE',
+                    code: values.code.toLowerCase(),
+                  });
+                } else {
+                  props.dispatch({
+                    type: 'INVALID_INPUT',
+                  });
+                }
               }}
             />
           </View>

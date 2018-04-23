@@ -45,6 +45,7 @@ class Main extends React.Component {
           <CompanyCodePage
             dispatch={this.props.dispatch}
             error={this.props.companyNotFound}
+            invalid={this.props.companyCodeInvalid}
             info={this.props.companyCodeInfo}
           />
         </ThemeProvider>
@@ -60,6 +61,7 @@ const mapStateToProps = state => {
     companyNotFound: companyNotFound,
     companyFound: state.company.found,
     companyCodeInfo: state.company.info,
+    companyCodeInvalid: state.company.invalid,
     companyID: state.company.code,
     companyData: state.company.data,
     loggedIn: state.employee.loggedIn,

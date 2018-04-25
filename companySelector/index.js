@@ -8,7 +8,7 @@ const CompanyCodePage = props => {
   return (
     <View style={styles.MyForm}>
       {props.error && <Text style={styles.Error}>Error: code not found</Text>}
-      <View style={{alignSelf: 'center', marginTop: 40}}>
+      <View style={{alignSelf: 'center', marginTop: 60}}>
         <Image source={HRlogo} style={{height: 120, width: 350}} />
       </View>
       <Card>

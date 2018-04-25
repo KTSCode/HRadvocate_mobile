@@ -14,7 +14,15 @@
     },
     {
       "name": "Riptide",
-      "code": "riptide"
+      "code": "riptide",
+      "employees": [
+        {
+          "name": "Mary Jane",
+          "email": "maryjane@riptide.com",
+          "username": "mary_jane",
+          "password": "maryj"
+        }
+      ]
     },
     {
       "name": "Cool Company",

@@ -11,11 +11,12 @@ const company = (
         code: action.code,
         found: checkCompany(action.code),
         data: companyData(action.code),
+        invalid: false,
       };
       return newState;
     }
-    case 'INVALID_INPUT': 
-      return {...state, invalid: true};
+    case 'INVALID_INPUT':
+      return {...state, code: '', invalid: true, info: true};
     case 'REQUEST_COMPANY_INFO':
       return {...state, info: true};
     case 'CHANGE_COMPANY':

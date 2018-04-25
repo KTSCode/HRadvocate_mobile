@@ -32,7 +32,8 @@ const CompanyCodePage = props => {
         {(props.info || props.error) && (
           <ToastBox
             color="#1E98C7"
-            title="Contact HR for Company Code"
+            title="Contact HR"
+            text="for Company Code"
             icon="info"
           />
         )}
@@ -40,7 +41,7 @@ const CompanyCodePage = props => {
           <View style={{padding: 30}}>
             <CompanyCodeForm
               onSubmit={values => {
-                if(values.code != "") {
+                if (values.code) {
                   props.dispatch({
                     type: 'SUBMIT_CODE',
                     code: values.code.toLowerCase(),

@@ -31,13 +31,15 @@ class Main extends React.Component {
       );
     } else if (this.props.companyFound) {
       return (
-        <Login
-          dispatch={this.props.dispatch}
-          error={this.props.loginError}
-          errorMessage={this.props.loginErrorMessage}
-          logo={this.props.companyID}
-          data={this.props.companyData}
-        />
+        <ThemeProvider uiTheme={uiTheme}>
+          <Login
+            dispatch={this.props.dispatch}
+            error={this.props.loginError}
+            errorMessage={this.props.loginErrorMessage}
+            logo={this.props.companyID}
+            data={this.props.companyData}
+          />
+        </ThemeProvider>
       );
     } else {
       return (

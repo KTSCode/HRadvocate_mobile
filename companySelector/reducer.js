@@ -1,6 +1,9 @@
 import CompaniesData from './companies.json';
 
-const company = (state = {code: '', found: false, data: ''}, action) => {
+const company = (
+  state = {code: '', found: false, data: '', info: false},
+  action,
+) => {
   switch (action.type) {
     case 'SUBMIT_CODE': {
       const newState = {
@@ -11,6 +14,8 @@ const company = (state = {code: '', found: false, data: ''}, action) => {
       };
       return newState;
     }
+    case 'REQUEST_COMPANY_INFO':
+      return {...state, info: true};
     case 'CHANGE_COMPANY':
       return {...state, found: false, code: ''};
     default:

@@ -1,6 +1,7 @@
 import React from 'react';
-var {StyleSheet, Button, View, Text, Image} = require('react-native');
+var {StyleSheet, Button, View, Image} = require('react-native');
 
+import ToastBox from '../toastBox/index';
 import LoginForm from './loginForm';
 
 const LoginPage = props => {
@@ -17,7 +18,12 @@ const LoginPage = props => {
         <Image source={logos[props.logo]} style={styles.imageStyle} />
       </View>
       {props.error && (
-        <Text style={{color: 'red'}}> {props.errorMessage} </Text>
+        <ToastBox
+          color="#EE3E4B"
+          title="Invalid Login"
+          text="Please Try Again"
+          icon="error"
+        />
       )}
       <LoginForm
         onSubmit={values => {

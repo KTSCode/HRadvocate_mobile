@@ -31,13 +31,15 @@ class Main extends React.Component {
       );
     } else if (this.props.companyFound) {
       return (
-        <Login
-          dispatch={this.props.dispatch}
-          error={this.props.loginError}
-          errorMessage={this.props.loginErrorMessage}
-          logo={this.props.companyID}
-          data={this.props.companyData}
-        />
+        <ThemeProvider uiTheme={uiTheme}>
+          <Login
+            dispatch={this.props.dispatch}
+            error={this.props.loginError}
+            errorMessage={this.props.loginErrorMessage}
+            logo={this.props.companyID}
+            data={this.props.companyData}
+          />
+        </ThemeProvider>
       );
     } else {
       return (
@@ -45,6 +47,7 @@ class Main extends React.Component {
           <CompanyCodePage
             dispatch={this.props.dispatch}
             error={this.props.companyNotFound}
+            info={this.props.companyCodeInfo}
           />
         </ThemeProvider>
       );
@@ -58,6 +61,7 @@ const mapStateToProps = state => {
     ...state,
     companyNotFound: companyNotFound,
     companyFound: state.company.found,
+    companyCodeInfo: state.company.info,
     companyID: state.company.code,
     companyData: state.company.data,
     loggedIn: state.employee.loggedIn,

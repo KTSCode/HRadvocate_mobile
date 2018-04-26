@@ -5,6 +5,7 @@
     "expo": "^25.0.0",
     "react": "^16.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react-native-checkbox": "^2.0.0",
     "react-native-immutable": "^0.0.4",
     "react-native-material-ui": "^1.22.1",
     "react-native-vector-icons": "^4.5.0",

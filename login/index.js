@@ -26,11 +26,22 @@ const LoginPage = props => {
         />
       )}
       <LoginForm
+        initialValues={
+          props.remember.remember && {
+            username: props.remember.username,
+            password: props.remember.password,
+          }
+        }
+        username="kyle"
+        onFocus={() => {
+          props.dispatch({type: 'FORGET'});
+        }}
         onSubmit={values => {
           props.dispatch({
             type: 'LOGIN',
             username: values.username.toLowerCase(),
             password: values.password,
+            remember: values.remember,
             employees: props.data.employees,
           });
         }}
@@ -49,6 +60,7 @@ const LoginPage = props => {
               type: 'LOGIN',
               username: 'bob@abc.com',
               password: 'secret',
+              remember: true,
               employees: props.data.employees,
             });
           }}

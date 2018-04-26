@@ -7,6 +7,38 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
+import CheckBox from 'react-native-checkbox';
+
+const CheckBoxInput = props => {
+  const {input, meta, ...inputProps} = props;
+  const formStates = [
+    'active',
+    'autofilled',
+    'asyncValidating',
+    'dirty',
+    'invalid',
+    'pristine',
+    'submitting',
+    'touched',
+    'valid',
+    'visited',
+  ];
+  return (
+    <View style={props.style}>
+      <CheckBox
+        {...inputProps}
+        labelBefore={true}
+        label="Remember Me"
+        labelStyle={props.labelStyle}
+        onChange={input.onChange}
+        value={input.value}
+      />
+      {formStates.filter(state => meta[state]).map(state => {
+        <Text key={state}> - {state}</Text>;
+      })}
+    </View>
+  );
+};
 
 const FieldTextInput = props => {
   const {input, meta, ...inputProps} = props;
@@ -22,7 +54,6 @@ const FieldTextInput = props => {
     'valid',
     'visited',
   ];
-
   return (
     <View>
       <TextInput
@@ -44,9 +75,19 @@ const LoginForm = props => {
   return (
     <View style={styles.LoginContainer}>
       <Text style={styles.textStyle}>Username</Text>
-      <Field name={'username'} component={FieldTextInput} />
+      <Field
+        name={'username'}
+        component={FieldTextInput}
+        onFocus={props.onFocus}
+      />
       <Text style={styles.textStyle}>Password</Text>
       <Field name={'password'} component={FieldTextInput} />
+      <Field
+        name={'remember'}
+        component={CheckBoxInput}
+        style={styles.checkbox}
+        labelStyle={styles.checkboxLabel}
+      />
       <TouchableOpacity style={styles.buttonStyle} onPress={props.handleSubmit}>
         <Text style={styles.buttonTextStyle}>Login</Text>
       </TouchableOpacity>
@@ -99,6 +140,15 @@ var styles = StyleSheet.create({
     paddingRight: 20,
     paddingLeft: 20,
   },
+  checkbox: {
+    alignSelf: 'flex-end',
+    marginTop: 10,
+    marginRight: 20,
+  },
+  checkboxLabel: {
+    fontSize: 20,
+    color: 'black',
+  },
 });
 
-export default reduxForm({form: 'contact'})(LoginForm);
+export default reduxForm({form: 'login'})(LoginForm);

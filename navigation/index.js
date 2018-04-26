@@ -1,12 +1,19 @@
 import React from 'react';
-import {Toolbar} from 'react-native-material-ui';
+import {Button, View} from 'react-native';
+//import {Toolbar} from 'react-native-material-ui';
 
-const Navigation = () => {
+const Navigation = props => {
   return (
-    <Toolbar
-      leftElement="menu"
-      onLeftElementPress={alert("test")}
-    />
+    <View style={{flex: 1, justifyContent: 'center', alignSelf: 'center', width: 100}}>
+      <Button
+        title="Logout"
+        onPress={() => {
+          props.dispatch({
+            type: 'LOGOUT',
+          });
+        }}
+      />
+    </View>
   );
 };
 

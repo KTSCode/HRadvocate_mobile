@@ -32,10 +32,6 @@ const LoginPage = props => {
             password: props.remember.password,
           }
         }
-        username="kyle"
-        onFocus={() => {
-          props.dispatch({type: 'FORGET'});
-        }}
         onSubmit={values => {
           props.dispatch({
             type: 'LOGIN',

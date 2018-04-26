@@ -37,8 +37,6 @@ const employee = (
         username: state.username,
         password: state.password,
       };
-    case 'FORGET':
-      return {...state, remember: false};
     default:
       return state;
   }

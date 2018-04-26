@@ -75,11 +75,7 @@ const LoginForm = props => {
   return (
     <View style={styles.LoginContainer}>
       <Text style={styles.textStyle}>Username</Text>
-      <Field
-        name={'username'}
-        component={FieldTextInput}
-        onFocus={props.onFocus}
-      />
+      <Field name={'username'} component={FieldTextInput} />
       <Text style={styles.textStyle}>Password</Text>
       <Field name={'password'} component={FieldTextInput} />
       <Field

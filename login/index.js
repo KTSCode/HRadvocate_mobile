@@ -25,16 +25,35 @@ const LoginPage = props => {
           icon="error"
         />
       )}
-      <LoginForm
-        onSubmit={values => {
-          props.dispatch({
-            type: 'LOGIN',
-            username: values.username.toLowerCase(),
-            password: values.password,
-            employees: props.data.employees,
-          });
-        }}
-      />
+      {(props.remember.remember && (
+        <LoginForm
+          initialValues={{
+            username: props.remember.username,
+            password: props.remember.password,
+          }}
+          onSubmit={values => {
+            props.dispatch({
+              type: 'LOGIN',
+              username: values.username.toLowerCase(),
+              password: values.password,
+              remember: values.remember,
+              employees: props.data.employees,
+            });
+          }}
+        />
+      )) || (
+        <LoginForm
+          onSubmit={values => {
+            props.dispatch({
+              type: 'LOGIN',
+              username: values.username.toLowerCase(),
+              password: values.password,
+              remember: values.remember,
+              employees: props.data.employees,
+            });
+          }}
+        />
+      )}
       <View style={styles.buttonStyle}>
         <Button
           title="<- Change Company Code"
@@ -49,6 +68,7 @@ const LoginPage = props => {
               type: 'LOGIN',
               username: 'bob@abc.com',
               password: 'secret',
+              remember: true,
               employees: props.data.employees,
             });
           }}

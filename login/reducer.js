@@ -1,5 +1,12 @@
 const employee = (
-  state = {loggedIn: false, failed: false, message: ''},
+  state = {
+    loggedIn: false,
+    failed: false,
+    message: '',
+    remember: false,
+    username: '',
+    password: '',
+  },
   action,
 ) => {
   switch (action.type) {
@@ -14,12 +21,22 @@ const employee = (
         loggedIn: attempt.success,
         failed: !attempt.success,
         message: attempt.message,
+        remember: action.remember,
+        username: action.username,
+        password: action.password,
         data: attempt.data,
       };
       return newState;
     }
     case 'LOGOUT':
-      return {loggedIn: false, failed: false, message: 'Logged Out'};
+      return {
+        loggedIn: false,
+        failed: false,
+        message: 'Logged Out',
+        remember: state.remember,
+        username: state.username,
+        password: state.password,
+      };
     default:
       return state;
   }

@@ -24,11 +24,7 @@ class Main extends React.Component {
   render() {
     //console.log(this.props.loginRemember);
     if (this.props.loggedIn) {
-      return (
-        <ThemeProvider uiTheme={uiTheme}>
-          <Navigation dispatch={this.props.dispatch} />
-        </ThemeProvider>
-      );
+      return <Navigation dispatch={this.props.dispatch} />;
     } else if (this.props.companyFound) {
       return (
         <ThemeProvider uiTheme={uiTheme}>

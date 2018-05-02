@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 //import {Toolbar} from 'react-native-material-ui';
 
-const Downloads = () => {
+const Documents = () => {
   return (
     <View
       style={{
@@ -11,9 +11,15 @@ const Downloads = () => {
         alignSelf: 'center',
         width: 100,
       }}>
-      <Text> Downloads Page </Text>
+      <Text> Jasons Downloads Page </Text>
+      <Button
+        title="hi"
+        onPress={() => {
+          alert('hi');
+        }}
+      />
     </View>
   );
 };
 
-export default Downloads;
+export default Documents;

@@ -10,7 +10,7 @@ const Test = () => {
         justifyContent: 'center',
         alignSelf: 'center',
       }}>
-      <Text> Test1 </Text>
+      <Text> Test2 </Text>
     </View>
   );
 };

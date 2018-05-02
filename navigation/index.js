@@ -3,20 +3,22 @@ import {Text, View} from 'react-native';
 //import {Toolbar} from 'react-native-material-ui';
 import {DrawerNavigator} from 'react-navigation';
 import {Header} from 'react-native-elements';
+import Router from './sidemenu';
 
 const Navigation = props => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignSelf: 'center',
-      }}>
-      <Text> test </Text>
-    </View>
+    <Router />
   );
 };
 
+    //<View
+    //  style={{
+    //    flex: 1,
+    //    justifyContent: 'center',
+    //    alignSelf: 'center',
+    //  }}>
+    //  <Text> test </Text>
+    //</View>
 //const Navigation = props => {
 //  return (
 //    <View

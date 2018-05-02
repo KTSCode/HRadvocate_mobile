@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 //import {Toolbar} from 'react-native-material-ui';
 
-const Benefits = () => {
+const News = () => {
   return (
     <View
       style={{
@@ -11,7 +11,7 @@ const Benefits = () => {
         alignSelf: 'center',
         width: 100,
       }}>
-      <Text> Benefits Page </Text>
+      <Text> News Page </Text>
       <Button
         title="hi"
         onPress={() => {
@@ -22,4 +22,4 @@ const Benefits = () => {
   );
 };
 
-export default Benefits;
+export default News;

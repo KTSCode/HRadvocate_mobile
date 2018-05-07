@@ -54,6 +54,10 @@ const LoginPage = props => {
           />
         )) || (
           <LoginForm
+            initialValues={{
+              username: '',
+              password: '',
+            }}
             onSubmit={values => {
               props.dispatch({
                 type: 'LOGIN',

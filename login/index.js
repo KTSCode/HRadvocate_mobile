@@ -1,6 +1,5 @@
 import React from 'react';
 var {StyleSheet, Button, View, Image, Dimensions, Linking, TouchableOpacity, Text} = require('react-native');
-
 import ToastBox from '../toastBox/index';
 import LoginForm from './loginForm';
 
@@ -14,17 +13,19 @@ const LoginPage = props => {
   };
 
   return (
-     <View style={styles.MyForm}>
-      <View style={styles.imageContainerStyle}>
+  <View style={styles.MyForm}>
+     <View style={styles.imageContainerStyle}>
         <Image source={logos[props.logo]} style={styles.imageStyle} />
       </View>
       {props.error && (
+        <View style={styles.ErrorToastBox}>
         <ToastBox
           color="#EE3E4B"
           title="Invalid Login"
           text="Please Try Again"
           icon="error"
         />
+        </View>
       )}
       {(props.remember.remember && (
         <LoginForm
@@ -57,11 +58,14 @@ const LoginPage = props => {
       )}
       <View style={styles.buttonStyle}>
         <TouchableOpacity
+          style={styles.changeCompanyCodeLabel}
           title="<- Change Company Code"
           onPress={() => {
             props.dispatch({type: 'CHANGE_COMPANY'});
           }}>
-          <Text>Change Company Code</Text>
+          <Text style={styles.changeCompanyCodeText}>
+            {'<- Change Company Code'}
+          </Text>
         </TouchableOpacity>
         <Button
           title="SKIP"
@@ -105,4 +109,19 @@ var styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
 
+  changeCompanyCodeLabel: {
+    marginLeft: 20,
+  },
+
+  changeCompanyCodeText: {
+    color: '#1E98C7',
+  },
+
+  ErrorToastBox: {
+    alignSelf: 'stretch',
+    // paddingLeft: width * 0.08,
+    // paddingRight: width * 0.08,
+    marginLeft: width * 0.075,
+    marginRight: width * 0.075,
+  },
 });

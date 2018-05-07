@@ -29,7 +29,6 @@ const CheckBoxInput = props => {
     <View style={props.style}>
       <CheckBox
         {...inputProps}
-        labelBefore={true}
         label="Remember Me"
         labelStyle={props.labelStyle}
         onChange={input.onChange}
@@ -81,16 +80,16 @@ const LoginForm = props => {
       <Text style={styles.textStyle}>Password</Text>
       <Field name={'password'} component={FieldTextInput} />
       <View style={styles.rememberMeContainer}>
-        <TouchableOpacity
-          onPress={()=> Linking.openURL('https://www.google.com/')}>
-          <Text style={styles.forgotPasswordLabel}>Forgot password</Text>
-        </TouchableOpacity>
         <Field
           name={'remember'}
           component={CheckBoxInput}
           style={styles.checkbox}
           labelStyle={styles.checkboxLabel}
         />
+        <TouchableOpacity
+          onPress={()=> Linking.openURL('https://hra.neudesic.com/')}>
+          <Text style={styles.forgotPasswordLabel}>Forgot password?</Text>
+        </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.buttonStyle} onPress={props.handleSubmit}>
         <Text style={styles.buttonTextStyle}>Login</Text>
@@ -105,6 +104,7 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
     borderColor: 'black',
+    backgroundColor: 'white',
     marginLeft: width * 0.1,
     marginRight: width * 0.1,
     flex: 3,
@@ -125,18 +125,19 @@ var styles = StyleSheet.create({
     marginBottom: 10,
   },
   textStyle: {
-    fontSize: width * .045,
+    fontSize: width * 0.045,
     marginLeft: 20,
     marginRight: 20,
   },
   buttonStyle: {
     height: 35,
     borderRadius: 4,
+    marginLeft: 20,
     marginRight: 20,
     marginTop: height * 0.02,
     marginBottom: height * 0.02,
     backgroundColor: '#1E98C7',
-    alignSelf: 'flex-end',
+    alignSelf: 'stretch',
     justifyContent: 'center',
   },
   buttonTextStyle: {
@@ -147,7 +148,9 @@ var styles = StyleSheet.create({
     paddingLeft: 20,
   },
   checkbox: {
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    paddingTop: height * 0.01,
   },
   checkboxLabel: {
     fontSize: width * 0.035,
@@ -165,7 +168,7 @@ var styles = StyleSheet.create({
   forgotPasswordLabel: {
     fontSize: width * 0.035,
     color: '#1E98C7',
-  }
+  },
 });
 
 export default reduxForm({form: 'login'})(LoginForm);

@@ -81,16 +81,16 @@ const LoginForm = props => {
       <Text style={styles.textStyle}>Password</Text>
       <Field name={'password'} component={FieldTextInput} />
       <View style={styles.rememberMeContainer}>
+        <TouchableOpacity
+          onPress={() => Linking.openURL('https://hra.neudesic.com/')}>
+          <Text style={styles.forgotPasswordLabel}>Forgot password?</Text>
+        </TouchableOpacity>
         <Field
           name={'remember'}
           component={CheckBoxInput}
           style={styles.checkbox}
           labelStyle={styles.checkboxLabel}
         />
-        <TouchableOpacity
-          onPress={() => Linking.openURL('https://hra.neudesic.com/')}>
-          <Text style={styles.forgotPasswordLabel}>Forgot password?</Text>
-        </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.buttonStyle} onPress={props.handleSubmit}>
         <Text style={styles.buttonTextStyle}>Login</Text>

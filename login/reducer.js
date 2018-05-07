@@ -37,6 +37,11 @@ const employee = (
         username: state.username,
         password: state.password,
       };
+    case 'CLEAR_LOGIN_ERROR':
+      return {
+        ...state,
+        failed: false,
+      };
     default:
       return state;
   }

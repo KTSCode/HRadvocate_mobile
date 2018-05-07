@@ -1,5 +1,5 @@
 import React from 'react';
-var {StyleSheet, View, Text, Image} = require('react-native');
+var {StyleSheet, View, Text, Image, Dimensions, TouchableOpacity} = require('react-native');
 import {Card} from 'react-native-material-ui';
 
 const ToastBox = props => {
@@ -8,26 +8,10 @@ const ToastBox = props => {
     info: require('../images/info.png'),
   };
   // TODO rename styles to be generic
-  const styles = StyleSheet.create({
-    Error: {
-      flexDirection: 'row',
-      padding: 10,
-      margin: 0,
-      borderWidth: 2,
-    },
-    ErrorText: {
-      fontSize: 19,
-      fontWeight: 'bold',
-      color: '#EE3E4B',
-    },
-    ErrorCaption: {
-      fontSize: 14,
-      textAlign: 'center',
-    },
-  });
   // TODO remove inline styles
   return (
-    <Card>
+    <View style={{alignSelf:'stretch' }}>
+      <Card>
       <View style={[styles.Error, {borderColor: props.color}]}>
         <View style={{paddingRight: 15}}>
           <Image source={icons[props.icon]} style={{height: 40, width: 40}} />
@@ -39,8 +23,28 @@ const ToastBox = props => {
           {props.text && <Text style={styles.ErrorCaption}>{props.text}</Text>}
         </View>
       </View>
-    </Card>
+      </Card>
+    </View>
   );
 };
 
+var {height, width} = Dimensions.get('window');
+const styles = StyleSheet.create({
+  Error: {
+    flexDirection: 'row',
+    padding: 10,
+    alignSelf: 'stretch',
+    margin: 0,
+    borderWidth: 2,
+  },
+  ErrorText: {
+    fontSize: width * 0.045,
+    fontWeight: 'bold',
+    color: '#EE3E4B',
+  },
+  ErrorCaption: {
+    fontSize: 14,
+    textAlign: 'center',
+  },
+});
 export default ToastBox;

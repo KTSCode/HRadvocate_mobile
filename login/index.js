@@ -58,6 +58,7 @@ const LoginPage = props => {
         <Button
           title="<- Change Company Code"
           onPress={() => {
+            props.dispatch({type: 'CLEAR_LOGIN_ERROR'});
             props.dispatch({type: 'CHANGE_COMPANY'});
           }}
         />

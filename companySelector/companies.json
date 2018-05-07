@@ -23,6 +23,18 @@
           "password": "maryj"
         }
       ]
+    },
+    {
+      "name": "Cool Company",
+      "code": "cool"
+    },
+    {
+      "name": "PFA",
+      "code": "pfa"
+    },
+    {
+      "name": "Brainstem",
+      "code": "brainstem"
     }
   ]
 }

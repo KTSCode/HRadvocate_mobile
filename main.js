@@ -1,5 +1,4 @@
 import React from 'react';
-var {View, Text} = require('react-native');
 import CompanyCodePage from './companySelector/index';
 import Login from './login/index';
 import Navigation from './navigation/index';
@@ -23,21 +22,25 @@ class Main extends React.Component {
   }
 
   render() {
+    //console.log(this.props.loginRemember);
     if (this.props.loggedIn) {
       return (
         <ThemeProvider uiTheme={uiTheme}>
-          <Navigation />
+          <Navigation dispatch={this.props.dispatch} />
         </ThemeProvider>
       );
     } else if (this.props.companyFound) {
       return (
-        <Login
-          dispatch={this.props.dispatch}
-          error={this.props.loginError}
-          errorMessage={this.props.loginErrorMessage}
-          logo={this.props.companyID}
-          data={this.props.companyData}
-        />
+        <ThemeProvider uiTheme={uiTheme}>
+          <Login
+            dispatch={this.props.dispatch}
+            error={this.props.loginError}
+            errorMessage={this.props.loginErrorMessage}
+            logo={this.props.companyID}
+            remember={this.props.loginRemember}
+            data={this.props.companyData}
+          />
+        </ThemeProvider>
       );
     } else {
       return (
@@ -67,6 +70,11 @@ const mapStateToProps = state => {
     loggedIn: state.employee.loggedIn,
     loginError: state.employee.failed,
     loginErrorMessage: state.employee.message,
+    loginRemember: {
+      remember: state.employee.remember,
+      username: state.employee.username,
+      password: state.employee.password,
+    },
   };
 };
 

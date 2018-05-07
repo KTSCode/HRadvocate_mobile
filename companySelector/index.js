@@ -32,8 +32,7 @@ const CompanyCodePage = props => {
         {(props.info || props.error) && (
           <ToastBox
             color="#1E98C7"
-            title="Contact HR"
-            text="for Company Code"
+            title="Contact HR For Company Code"
             icon="info"
           />
         )}
@@ -86,13 +85,3 @@ var styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-// XXX  company info button
-//<Button
-//  title="I DON'T HAVE A CODE"
-//  onPress={() => {
-//    props.dispatch({
-//      type: 'REQUEST_COMPANY_INFO',
-//    });
-//  }}
-///>

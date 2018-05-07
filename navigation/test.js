@@ -1,16 +1,20 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-//import {Toolbar} from 'react-native-material-ui';
+import HeaderBar from '../headerBar/index';
 
-const Test = () => {
+const Test = props => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignSelf: 'center',
-      }}>
-      <Text> Test1 </Text>
+    <View>
+      <HeaderBar navigation={props.navigation} />
+      <View
+        style={{
+          flex: 1,
+          marginTop: 100,
+          justifyContent: 'center',
+          alignSelf: 'center',
+        }}>
+        <Text> Test </Text>
+      </View>
     </View>
   );
 };

@@ -1,55 +1,46 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-//import {Toolbar} from 'react-native-material-ui';
-import {DrawerNavigator} from 'react-navigation';
-import {Header} from 'react-native-elements';
-import Router from './sidemenu';
+import {ScrollView, StyleSheet, Button} from 'react-native';
+import Test from './test';
+import Test2 from './test2';
+import Test3 from './test3';
+import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 
-const Navigation = props => {
-  return (
-    <Router />
-  );
-};
+const CustomDrawerContentComponent = props => (
+  <ScrollView>
+    <SafeAreaView
+      style={styles.container}
+      forceInset={{top: 'always', horizontal: 'never'}}>
+      <DrawerItems {...props} />
+      <Button
+        title="logout"
+        onPress={() => {
+          props.screenProps.dispatch({type: 'LOGOUT'});
+        }}
+      />
+    </SafeAreaView>
+  </ScrollView>
+);
 
-    //<View
-    //  style={{
-    //    flex: 1,
-    //    justifyContent: 'center',
-    //    alignSelf: 'center',
-    //  }}>
-    //  <Text> test </Text>
-    //</View>
-//const Navigation = props => {
-//  return (
-//    <View
-//      style={{
-//        flex: 1,
-//      }}>
-//      <Header
-//        leftComponent={{icon: 'menu', color: '#fff'}}
-//        centerComponent={{text: 'MY TITLE', style: {color: '#fff'}}}
-//        rightComponent={{icon: 'home', color: '#fff'}}
-//      />
-//      <Router />
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
-//      <View
-//        style={{
-//          flex: 1,
-//          justifyContent: 'center',
-//          alignSelf: 'center',
-//          width: 100,
-//        }}>
-//        <Button
-//          title="Logout"
-//          onPress={() => {
-//            props.dispatch({
-//              type: 'LOGOUT',
-//            });
-//          }}
-//        />
-//      </View>
-//    </View>
-//  );
-//};
-
-export default Navigation;
+export default DrawerNavigator(
+  {
+    Test: {
+      screen: Test,
+    },
+    Test2: {
+      screen: Test2,
+    },
+    Test3: {
+      screen: Test3,
+    },
+  },
+  {
+    drawerWidth: 250,
+    contentComponent: CustomDrawerContentComponent,
+  },
+);

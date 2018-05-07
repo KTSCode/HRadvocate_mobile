@@ -1,9 +1,9 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Button} from 'react-native';
+import {View, ScrollView, StyleSheet, Button} from 'react-native';
+import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import Test from './test';
 import Test2 from './test2';
 import Test3 from './test3';
-import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -11,12 +11,15 @@ const CustomDrawerContentComponent = props => (
       style={styles.container}
       forceInset={{top: 'always', horizontal: 'never'}}>
       <DrawerItems {...props} />
-      <Button
-        title="logout"
-        onPress={() => {
-          props.screenProps.dispatch({type: 'LOGOUT'});
-        }}
-      />
+      <View style={styles.logoutButton}>
+        <Button
+          title="logout"
+
+          onPress={() => {
+            props.screenProps.dispatch({type: 'LOGOUT'});
+          }}
+        />
+    </View>
     </SafeAreaView>
   </ScrollView>
 );
@@ -24,6 +27,10 @@ const CustomDrawerContentComponent = props => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  logoutButton: {
+    margin: 20,
+    justifyContent: 'flex-end',
   },
 });
 

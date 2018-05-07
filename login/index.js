@@ -20,7 +20,6 @@ const LoginPage = props => {
     brainstem: require('../images/brainstem.png'),
     pfa: require('../images/pfa.png'),
   };
-
   return (
     <View style={styles.MyForm}>
       <View style={styles.imageForm}>
@@ -72,6 +71,7 @@ const LoginPage = props => {
           style={styles.changeCompanyCodeLabel}
           title="<- Change Company Code"
           onPress={() => {
+            props.dispatch({type: 'CLEAR_LOGIN_ERROR'});
             props.dispatch({type: 'CHANGE_COMPANY'});
           }}>
           <Text style={styles.changeCompanyCodeText}>

@@ -29,6 +29,7 @@ const CheckBoxInput = props => {
     <View style={props.style}>
       <CheckBox
         {...inputProps}
+        labelBefore={true}
         label="Remember Me"
         labelStyle={props.labelStyle}
         onChange={input.onChange}

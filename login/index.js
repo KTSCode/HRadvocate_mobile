@@ -1,5 +1,14 @@
 import React from 'react';
-var {StyleSheet, Button, View, Image, Dimensions, Linking, TouchableOpacity, Text} = require('react-native');
+var {
+  StyleSheet,
+  Button,
+  View,
+  Image,
+  Dimensions,
+  Linking,
+  TouchableOpacity,
+  Text,
+} = require('react-native');
 import ToastBox from '../toastBox/index';
 import LoginForm from './loginForm';
 
@@ -13,49 +22,51 @@ const LoginPage = props => {
   };
 
   return (
-  <View style={styles.MyForm}>
-     <View style={styles.imageContainerStyle}>
-        <Image source={logos[props.logo]} style={styles.imageStyle} />
-      </View>
-      {props.error && (
-        <View style={styles.ErrorToastBox}>
-        <ToastBox
-          color="#EE3E4B"
-          title="Invalid Login"
-          text="Please Try Again"
-          icon="error"
-        />
+    <View style={styles.MyForm}>
+      <View style={styles.imageForm}>
+        <View style={styles.imageContainerStyle}>
+          <Image source={logos[props.logo]} style={styles.imageStyle} />
         </View>
-      )}
-      {(props.remember.remember && (
-        <LoginForm
-          initialValues={{
-            username: props.remember.username,
-            password: props.remember.password,
-          }}
-          onSubmit={values => {
-            props.dispatch({
-              type: 'LOGIN',
-              username: values.username.toLowerCase(),
-              password: values.password,
-              remember: values.remember,
-              employees: props.data.employees,
-            });
-          }}
-        />
-      )) || (
-        <LoginForm
-          onSubmit={values => {
-            props.dispatch({
-              type: 'LOGIN',
-              username: values.username.toLowerCase(),
-              password: values.password,
-              remember: values.remember,
-              employees: props.data.employees,
-            });
-          }}
-        />
-      )}
+        {props.error && (
+          <View style={styles.ErrorToastBox}>
+            <ToastBox
+              color="#EE3E4B"
+              title="Invalid Login"
+              text="Please Try Again"
+              icon="error"
+            />
+          </View>
+        )}
+        {(props.remember.remember && (
+          <LoginForm
+            initialValues={{
+              username: props.remember.username,
+              password: props.remember.password,
+            }}
+            onSubmit={values => {
+              props.dispatch({
+                type: 'LOGIN',
+                username: values.username.toLowerCase(),
+                password: values.password,
+                remember: values.remember,
+                employees: props.data.employees,
+              });
+            }}
+          />
+        )) || (
+          <LoginForm
+            onSubmit={values => {
+              props.dispatch({
+                type: 'LOGIN',
+                username: values.username.toLowerCase(),
+                password: values.password,
+                remember: values.remember,
+                employees: props.data.employees,
+              });
+            }}
+          />
+        )}
+      </View>
       <View style={styles.buttonStyle}>
         <TouchableOpacity
           style={styles.changeCompanyCodeLabel}
@@ -93,19 +104,20 @@ var styles = StyleSheet.create({
     justifyContent: 'space-around',
     flex: 1,
   },
+  imageForm: {
+    justifyContent: 'center',
+  },
   imageContainerStyle: {
     marginLeft: width * 0.125,
     marginRight: width * 0.125,
-    flex: 3,
   },
   imageStyle: {
-    marginTop: 50,
     width: width * 0.75,
     height: height * 0.25,
     resizeMode: 'contain',
   },
   buttonStyle: {
-    flex: 2,
+    margin: height * 0.01,
     justifyContent: 'flex-end',
   },
 

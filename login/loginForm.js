@@ -87,7 +87,7 @@ const LoginForm = props => {
           labelStyle={styles.checkboxLabel}
         />
         <TouchableOpacity
-          onPress={()=> Linking.openURL('https://hra.neudesic.com/')}>
+          onPress={() => Linking.openURL('https://hra.neudesic.com/')}>
           <Text style={styles.forgotPasswordLabel}>Forgot password?</Text>
         </TouchableOpacity>
       </View>
@@ -101,13 +101,13 @@ const LoginForm = props => {
 var {height, width} = Dimensions.get('window');
 var styles = StyleSheet.create({
   LoginContainer: {
+    height: 280,
     borderWidth: 1,
     borderRadius: 4,
     borderColor: 'black',
     backgroundColor: 'white',
     marginLeft: width * 0.1,
     marginRight: width * 0.1,
-    flex: 3,
     alignSelf: 'stretch',
     paddingBottom: height * 0.125,
     paddingTop: height * 0.02,

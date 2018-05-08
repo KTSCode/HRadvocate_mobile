@@ -1,20 +1,52 @@
 import React from 'react';
-import {Button, View} from 'react-native';
-//import {Toolbar} from 'react-native-material-ui';
+import {View, ScrollView, StyleSheet, Button} from 'react-native';
+import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
+import Test from './test';
+import Test2 from './test2';
+import Test3 from './test3';
 
-const Navigation = props => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignSelf: 'center', width: 100}}>
-      <Button
-        title="Logout"
-        onPress={() => {
-          props.dispatch({
-            type: 'LOGOUT',
-          });
-        }}
-      />
-    </View>
-  );
-};
+const CustomDrawerContentComponent = props => (
+  <ScrollView>
+    <SafeAreaView
+      style={styles.container}
+      forceInset={{top: 'always', horizontal: 'never'}}>
+      <DrawerItems {...props} />
+      <View style={styles.logoutButton}>
+        <Button
+          title="logout"
+          onPress={() => {
+            props.screenProps.dispatch({type: 'LOGOUT'});
+          }}
+        />
+      </View>
+    </SafeAreaView>
+  </ScrollView>
+);
 
-export default Navigation;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  logoutButton: {
+    margin: 20,
+    justifyContent: 'flex-end',
+  },
+});
+
+export default DrawerNavigator(
+  {
+    Test: {
+      screen: Test,
+    },
+    Test2: {
+      screen: Test2,
+    },
+    Test3: {
+      screen: Test3,
+    },
+  },
+  {
+    drawerWidth: 250,
+    contentComponent: CustomDrawerContentComponent,
+  },
+);

@@ -51,13 +51,7 @@ This code base will server as a prototype for the HRadvocate mobile apps
 
 
 ## TODO:
- - [ ] Home Page
-  - [ ] Create and add title bar component
-  - [ ] Load News Articles
-  - [ ] Choose calendar component library
-  - [ ] Figure out how to store datetime objects
-  - [ ] Display Calendar
-  - [ ] Display Employees Event in Calendar
+ - [X] Home Page
  - [ ] Clock-in/out Page
  - [ ] Documents Page
  - [ ] Calendar Page

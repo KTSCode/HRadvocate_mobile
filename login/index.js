@@ -82,18 +82,20 @@ const LoginPage = props => {
             {'<- Change Company Code'}
           </Text>
         </TouchableOpacity>
-        <Button
-          title="SKIP"
-          onPress={() => {
-            props.dispatch({
-              type: 'LOGIN',
-              username: 'bob@abc.com',
-              password: 'secret',
-              remember: true,
-              employees: props.data.employees,
-            });
-          }}
-        />
+        {__DEV__ && (
+          <Button
+            title="SKIP"
+            onPress={() => {
+              props.dispatch({
+                type: 'LOGIN',
+                username: 'bob@abc.com',
+                password: 'secret',
+                remember: true,
+                employees: props.data.employees,
+              });
+            }}
+          />
+        )}
       </View>
     </View>
   );

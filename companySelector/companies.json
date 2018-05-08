@@ -49,7 +49,7 @@
         {
           "title": "Bring your dog to work day!",
           "description": "Bring your furry friend to work for special treats!",
-          "date": "February 18, 2018",
+          "date": "2018-02-18",
           "time": "9:00AM"
         },
         {
@@ -81,7 +81,7 @@
         {
           "title": "BIG NEWS",
           "description": "This is super important news about this company",
-          "image": "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/qEue9C6/listen-to-this-important-news-bullhorn-megaphone-3d-animation_hdep18sb__F0014.png"
+          "image": "https://openspaceyoga.com/wp-content/uploads/2017/06/announcement-banner.jpg"
         },
         {
           "title": "Improved Benefits",
@@ -144,7 +144,7 @@
         {
           "title": "Bring your dog to work day!",
           "description": "Bring your furry friend to work for special treats!",
-          "date": "February 18, 2018",
+          "date": "2018-02-18",
           "time": "9:00AM"
         },
         {
@@ -172,11 +172,11 @@
           "time": "11:00AM"
         }
       ],
-      "news and announcements": [
+      "articles": [
         {
           "title": "BIG NEWS",
           "description": "This is super important news about this company",
-          "image": "http://www.corporatecare.com.au/wp-content/uploads/important-announcement.jpg"
+          "image": "https://openspaceyoga.com/wp-content/uploads/2017/06/announcement-banner.jpg"
         },
         {
           "title": "Improved Benefits",

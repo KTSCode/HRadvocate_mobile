@@ -14,12 +14,11 @@ const CustomDrawerContentComponent = props => (
       <View style={styles.logoutButton}>
         <Button
           title="logout"
-
           onPress={() => {
             props.screenProps.dispatch({type: 'LOGOUT'});
           }}
         />
-    </View>
+      </View>
     </SafeAreaView>
   </ScrollView>
 );

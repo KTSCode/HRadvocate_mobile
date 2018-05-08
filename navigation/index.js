@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ScrollView, StyleSheet, Button} from 'react-native';
 import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
-import Test from './test';
+import Home from '../homePage/index';
 import Test2 from './test2';
 import Test3 from './test3';
 
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
 
 export default DrawerNavigator(
   {
-    Test: {
-      screen: Test,
+    Dashboard: {
+      screen: Home,
     },
     Test2: {
       screen: Test2,

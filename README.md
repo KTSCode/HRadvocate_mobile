@@ -51,9 +51,16 @@ This code base will server as a prototype for the HRadvocate mobile apps
 
 
 ## TODO:
-  [ ] create company code form
-  [ ] attach action to form submission
-  [ ] change loading boolean to company exists boolean
-  [ ] create toast action to dispatch when company code doesn't exist
-  [ ] style company code entry form
-  [ ] setup persistent company code
+ - [ ] Home Page
+  - [ ] Create and add title bar component
+  - [ ] Load News Articles
+  - [ ] Choose calendar component library
+  - [ ] Figure out how to store datetime objects
+  - [ ] Display Calendar
+  - [ ] Display Employees Event in Calendar
+ - [ ] Clock-in/out Page
+ - [ ] Documents Page
+ - [ ] Calendar Page
+ - [ ] Notifications Page
+ - [ ] Benefits Page
+ - [ ] Profile Page

@@ -11,71 +11,38 @@
           "password": "secret",
           "notifications": [
             {
-              "title": "hello",
-              "description": "world!"
+              "title": "Event reminder!",
+              "description": "Don't forget to bring your dog to work today!"
+            },
+            {
+              "title": "Task assigned by Scott Betts",
+              "description": "Update personal information"
+            },
+            {
+              "title": "Time off request reviewed",
+              "description": "Your time off request for BEACH DAY has been denied"
+            },
+            {
+              "title": "Time off request reviewed",
+              "description": "Your time off request for WEDDING has been approved"
+            },
+            {
+              "title": "Don't forget to clock-in!",
+              "description": "Your shift starts in 5 minutes. Clock-in now!"
+            },
+            {
+              "title": "Lunch time!",
+              "description": "You have one hour to take lunch"
+            },
+            {
+              "title": "Don't forget to clock-out!",
+              "description": "Your shift has ended. Clock-out now!"
+            },
+            {
+              "title": "PAYDAY",
+              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues"
             }
           ]
-        }
-      ],
-      "events":[
-        {
-          "title": "Bring your dog to work day!",
-          "description": "Bring your furry friend to work for special treats!",
-          "date": "2018-06-09",
-          "time": "9:00AM"
-        },
-        {
-          "title": "Potluck",
-          "description": "Don't forget to bring food for our end-of-the-month potluck!",
-          "date": "2018-06-07",
-          "time": "9:00AM"
-        },
-        {
-          "title": "Company Meeting",
-          "description": "Company meeting to discuss our plans and goals for the upcoming month",
-          "date": "2018-05-26",
-          "time": "12:30PM"
-        },
-        {
-          "title": "Annual BBQ Day",
-          "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
-          "date": "2018-06-26",
-          "time": "1:00PM"
-        },
-        {
-          "title": "Beach Day",
-          "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
-          "date": "2018-06-16",
-          "time": "11:00AM"
-        }
-      ],
-      "articles": [
-        {
-          "title": "BIG NEWS",
-          "description": "This is super important news about this company",
-          "image": "https://atulkhurana.com/wp-content/uploads/2017/04/important-0-Copy.gif"
-        },
-        {
-          "title": "Improved Benefits",
-          "description": "Don't forget to check your improved benefits in the app today! ",
-          "image": "https://hra.neudesic.com/wp-content/uploads/sites/12/2017/01/hero-module-corehcm.jpg"
-        },
-        {
-          "title": "Fundraiser Reservation",
-          "description": "Please RSVP for the company fundraiser no later than Friday",
-          "image": "https://www.framestr.com/wp-content/uploads/2017/08/Fundraiser-Order-Form-Template.gif"
-        }
-      ]
-    },
-    {
-      "name": "Riptide",
-      "code": "riptide",
-      "employees": [
-        {
-          "name": "Mary Jane",
-          "email": "maryjane@riptide.com",
-          "username": "mary_jane",
-          "password": "maryj"
         }
       ],
       "events":[
@@ -88,25 +55,120 @@
         {
           "title": "Potluck",
           "description": "Don't forget to bring food for our end-of-the-month potluck!",
-          "date": "February 28, 2018",
+          "date": "2018-02-28",
           "time": "9:00AM"
         },
         {
           "title": "Company Meeting",
           "description": "Company meeting to discuss our plans and goals for the upcoming month",
-          "date": "March 5, 2018",
+          "date": "2018-03-05",
           "time": "12:30PM"
         },
         {
           "title": "Annual BBQ Day",
           "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
-          "date": "March 31, 2018",
+          "date": "2018-03-31",
           "time": "1:00PM"
         },
         {
           "title": "Beach Day",
           "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
-          "date": "April 21, 2018",
+          "date": "2018-04-21",
+          "time": "11:00AM"
+        }
+      ],
+      "articles": [
+        {
+          "title": "BIG NEWS",
+          "description": "This is super important news about this company",
+          "image": "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/qEue9C6/listen-to-this-important-news-bullhorn-megaphone-3d-animation_hdep18sb__F0014.png"
+        },
+        {
+          "title": "Improved Benefits",
+          "description": "Don't forget to check your improved benefits in the app today! ",
+          "image": "http://philipbarron.net/wp-content/uploads/2016/06/benefits.jpg"
+        },
+        {
+          "title": "Fundraiser Reservation",
+          "description": "Please RSVP for the company fundraiser no later than Friday",
+          "image": "http://www.harrisonbands.org/wp-content/uploads/2017/07/Fundraising-Tree.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Riptide",
+      "code": "riptide",
+      "employees": [
+        {
+          "name": "Mary Jane",
+          "email": "maryjane@riptide.com",
+          "username": "mary_jane",
+          "password": "maryj",
+          "notifications": [
+            {
+              "title": "Event reminder!",
+              "description": "Don't forget to bring your dog to work today!"
+            },
+            {
+              "title": "Task assigned by Scott Betts",
+              "description": "Update personal information"
+            },
+            {
+              "title": "Time off request reviewed",
+              "description": "Your time off request for BEACH DAY has been denied"
+            },
+            {
+              "title": "Time off request reviewed",
+              "description": "Your time off request for WEDDING has been approved"
+            },
+            {
+              "title": "Don't forget to clock-in!",
+              "description": "Your shift starts in 5 minutes. Clock-in now!"
+            },
+            {
+              "title": "Lunch time!",
+              "description": "You have one hour to take lunch"
+            },
+            {
+              "title": "Don't forget to clock-out!",
+              "description": "Your shift has ended. Clock-out now!"
+            },
+            {
+              "title": "PAYDAY",
+              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues"
+            }
+          ]
+        }
+      ],
+      "events":[
+        {
+          "title": "Bring your dog to work day!",
+          "description": "Bring your furry friend to work for special treats!",
+          "date": "February 18, 2018",
+          "time": "9:00AM"
+        },
+        {
+          "title": "Potluck",
+          "description": "Don't forget to bring food for our end-of-the-month potluck!",
+          "date": "2018-02-28",
+          "time": "9:00AM"
+        },
+        {
+          "title": "Company Meeting",
+          "description": "Company meeting to discuss our plans and goals for the upcoming month",
+          "date": "2018-03-05",
+          "time": "12:30PM"
+        },
+        {
+          "title": "Annual BBQ Day",
+          "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
+          "date": "2018-03-31",
+          "time": "1:00PM"
+        },
+        {
+          "title": "Beach Day",
+          "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
+          "date": "2018-04-21",
           "time": "11:00AM"
         }
       ],
@@ -114,17 +176,17 @@
         {
           "title": "BIG NEWS",
           "description": "This is super important news about this company",
-          "image": "https://goo.gl/images/EqxwW8"
+          "image": "http://www.corporatecare.com.au/wp-content/uploads/important-announcement.jpg"
         },
         {
           "title": "Improved Benefits",
           "description": "Don't forget to check your improved benefits in the app today! ",
-          "image": "https://goo.gl/images/CSvKd2"
+          "image": "http://philipbarron.net/wp-content/uploads/2016/06/health-benefits1.jpg"
         },
         {
           "title": "Fundraiser Reservation",
           "description": "Please RSVP for the company fundraiser no later than Friday",
-          "image": "https://goo.gl/images/MMFnQf"
+          "image": "https://www.drivencoffee.com/wp-content/uploads/2013/08/easy-fundraising-ideas.jpg"
         }
       ]
     },

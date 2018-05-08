@@ -23,7 +23,15 @@ class Main extends React.Component {
 
   render() {
     if (this.props.loggedIn) {
-      return <Navigation screenProps={{dispatch: this.props.dispatch}} />;
+      return (
+        <Navigation
+          screenProps={{
+            dispatch: this.props.dispatch,
+            company: this.props.company,
+            employee: this.props.employee,
+          }}
+        />
+      );
     } else if (this.props.companyFound) {
       return (
         <ThemeProvider uiTheme={uiTheme}>

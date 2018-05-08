@@ -8,7 +8,62 @@
           "name": "bob smith",
           "email": "bob@abc.com",
           "username": "bob_smith",
-          "password": "secret"
+          "password": "secret",
+          "notifications": [
+            {
+              "title": "hello",
+              "description": "world!"
+            }
+          ]
+        }
+      ],
+      "events":[
+        {
+          "title": "Bring your dog to work day!",
+          "description": "Bring your furry friend to work for special treats!",
+          "date": "2018-06-09",
+          "time": "9:00AM"
+        },
+        {
+          "title": "Potluck",
+          "description": "Don't forget to bring food for our end-of-the-month potluck!",
+          "date": "2018-06-07",
+          "time": "9:00AM"
+        },
+        {
+          "title": "Company Meeting",
+          "description": "Company meeting to discuss our plans and goals for the upcoming month",
+          "date": "2018-05-26",
+          "time": "12:30PM"
+        },
+        {
+          "title": "Annual BBQ Day",
+          "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
+          "date": "2018-06-26",
+          "time": "1:00PM"
+        },
+        {
+          "title": "Beach Day",
+          "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
+          "date": "2018-06-16",
+          "time": "11:00AM"
+        }
+      ],
+      "articles": [
+        {
+          "title": "BIG NEWS",
+          "description": "This is super important news about this company",
+          "image": "https://atulkhurana.com/wp-content/uploads/2017/04/important-0-Copy.gif"
+        },
+        {
+          "title": "Improved Benefits",
+          "description": "Don't forget to check your improved benefits in the app today! ",
+          "image": "https://hra.neudesic.com/wp-content/uploads/sites/12/2017/01/hero-module-corehcm.jpg"
+        },
+        {
+          "title": "Fundraiser Reservation",
+          "description": "Please RSVP for the company fundraiser no later than Friday",
+          "image": "https://www.framestr.com/wp-content/uploads/2017/08/Fundraiser-Order-Form-Template.gif"
         }
       ]
     },
@@ -22,12 +77,60 @@
           "username": "mary_jane",
           "password": "maryj"
         }
+      ],
+      "events":[
+        {
+          "title": "Bring your dog to work day!",
+          "description": "Bring your furry friend to work for special treats!",
+          "date": "February 18, 2018",
+          "time": "9:00AM"
+        },
+        {
+          "title": "Potluck",
+          "description": "Don't forget to bring food for our end-of-the-month potluck!",
+          "date": "February 28, 2018",
+          "time": "9:00AM"
+        },
+        {
+          "title": "Company Meeting",
+          "description": "Company meeting to discuss our plans and goals for the upcoming month",
+          "date": "March 5, 2018",
+          "time": "12:30PM"
+        },
+        {
+          "title": "Annual BBQ Day",
+          "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
+          "date": "March 31, 2018",
+          "time": "1:00PM"
+        },
+        {
+          "title": "Beach Day",
+          "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
+          "date": "April 21, 2018",
+          "time": "11:00AM"
+        }
+      ],
+      "news and announcements": [
+        {
+          "title": "BIG NEWS",
+          "description": "This is super important news about this company",
+          "image": "https://goo.gl/images/EqxwW8"
+        },
+        {
+          "title": "Improved Benefits",
+          "description": "Don't forget to check your improved benefits in the app today! ",
+          "image": "https://goo.gl/images/CSvKd2"
+        },
+        {
+          "title": "Fundraiser Reservation",
+          "description": "Please RSVP for the company fundraiser no later than Friday",
+          "image": "https://goo.gl/images/MMFnQf"
+        }
       ]
     },
     {
       "name": "Cool Company",
-      "code": "cool",
-      "color": "#0000FF",
+      "code": "cool"
     },
     {
       "name": "PFA",

@@ -44,14 +44,12 @@ const headerBar = props => {
 // TODO Make container width a percentage of screen width
 const styles = StyleSheet.create({
   rightIcons: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     width: 80,
   },
   leftIcons: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',

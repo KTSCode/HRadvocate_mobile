@@ -54,17 +54,19 @@ const CompanyCodePage = props => {
             />
           </View>
         </Card>
-        <View style={{width: 80, marginTop: 100}}>
-          <Button
-            title="SKIP"
-            onPress={() => {
-              props.dispatch({
-                type: 'SUBMIT_CODE',
-                code: 'abc',
-              });
-            }}
-          />
-        </View>
+        {__DEV__ && (
+          <View style={{width: 80, marginTop: 100}}>
+            <Button
+              title="SKIP"
+              onPress={() => {
+                props.dispatch({
+                  type: 'SUBMIT_CODE',
+                  code: 'abc',
+                });
+              }}
+            />
+          </View>
+        )}
       </View>
     </View>
   );

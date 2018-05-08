@@ -6,6 +6,9 @@
     "privacy": "unlisted",
     "sdkVersion": "25.0.0",
     "platforms": ["ios", "android"],
+    "android": {
+      "package": "com.neudesic.hramobile"
+    },
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

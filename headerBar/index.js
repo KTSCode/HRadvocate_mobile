@@ -1,22 +1,24 @@
 import React from 'react';
 import {Header, Icon} from 'react-native-elements';
-import {View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 
 const headerBar = props => {
   return (
     <Header
       leftComponent={
-        <Icon
-          name="menu"
-          color="#FFF"
-          onPress={() => {
-            props.navigation.navigate('DrawerOpen');
-          }}
-        />
+        <View style={styles.leftIcons}>
+          <Icon
+            name="menu"
+            color="#FFF"
+            onPress={() => {
+              props.navigation.navigate('DrawerOpen');
+            }}
+          />
+          <Text style={styles.companyText}> Company Name </Text>
+        </View>
       }
       rightComponent={
-        <View
-          style={styles.rightIcons}>
+        <View style={styles.rightIcons}>
           <Icon
             name="date-range"
             color="#FFF"
@@ -34,6 +36,7 @@ const headerBar = props => {
           />
         </View>
       }
+      outerContainerStyles={styles.outerContainerStyles}
     />
   );
 };
@@ -46,6 +49,22 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     width: 80,
+  },
+  leftIcons: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+  },
+  companyText: {
+    color: '#EEE',
+    paddingBottom: 2,
+    marginLeft: 5,
+    fontSize: 20,
+  },
+  outerContainerStyles: {
+    backgroundColor: '#1D1D20',
+    borderBottomWidth: 0,
   },
 });
 

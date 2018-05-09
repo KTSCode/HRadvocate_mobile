@@ -26,8 +26,27 @@ const Home = props => {
   return (
     <View style={StyleSheet.absoluteFill}>
       <HeaderBar navigation={props.navigation} />
-      <SectionHeader title="News" top="true" />
       <ScrollView style={styles.articleContainer}>
+        <SectionHeader title="My Calendar" top="true"/>
+        <View style={styles.calendarContainer}>
+          <CalendarList
+            markedDates={markedDates}
+            horizontal={true}
+            pagingEnabled={true}
+            pastScrollRange={5}
+            futureScrollRange={7}
+            showScrollIndicator={true}
+            current={'2018-06-01'}
+            onDayPress={day => {
+              const event = getEvent(day.dateString, events);
+              Alert.alert(event[0], event[1]);
+            }}
+            hideExtraDays={true}
+            firstDay={1}
+            showWeekNumbers={false}
+          />
+        </View>
+        <SectionHeader title="News & Announcements" />
         {articles.map((a, i) => {
           return (
             <View key={i}>
@@ -42,25 +61,6 @@ const Home = props => {
         })}
         <View style={{height: 10}} />
       </ScrollView>
-      <SectionHeader title="Calendar" />
-      <View style={styles.calendarContainer}>
-        <CalendarList
-          markedDates={markedDates}
-          horizontal={true}
-          pagingEnabled={true}
-          pastScrollRange={5}
-          futureScrollRange={7}
-          showScrollIndicator={true}
-          current={'2018-06-01'}
-          onDayPress={day => {
-            const event = getEvent(day.dateString, events);
-            Alert.alert(event[0], event[1]);
-          }}
-          hideExtraDays={true}
-          firstDay={1}
-          showWeekNumbers={false}
-        />
-      </View>
     </View>
   );
 };

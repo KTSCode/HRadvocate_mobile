@@ -27,7 +27,7 @@ const Home = props => {
     <View style={StyleSheet.absoluteFill}>
       <HeaderBar navigation={props.navigation} />
       <ScrollView style={styles.articleContainer}>
-        <SectionHeader title="My Calendar" top="true"/>
+        <SectionHeader title="My Calendar" top="true" />
         <View style={styles.calendarContainer}>
           <CalendarList
             markedDates={markedDates}
@@ -50,16 +50,13 @@ const Home = props => {
         {articles.map((a, i) => {
           return (
             <View key={i}>
-              <Card
-                title={a.title}
-                image={{uri: a.image}}
-                imageStyle={styles.cardImage}>
+              <Card title={a.title} image={{uri: a.image}}>
                 <Text>{a.description}</Text>
               </Card>
             </View>
           );
         })}
-        <View style={{height: 10}} />
+        <View style={{height: 20}} />
       </ScrollView>
     </View>
   );
@@ -82,9 +79,6 @@ const styles = StyleSheet.create({
   },
   calendarContainer: {
     flexDirection: 'column',
-  },
-  cardImage: {
-    height: 100,
   },
 });
 

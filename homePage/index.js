@@ -25,7 +25,10 @@ const Home = props => {
 
   return (
     <View style={StyleSheet.absoluteFill}>
-      <HeaderBar navigation={props.navigation} />
+      <HeaderBar
+        navigation={props.navigation}
+        company={props.screenProps.company.data.name}
+      />
       <ScrollView style={styles.articleContainer}>
         <SectionHeader title="My Calendar" top="true" />
         <View style={styles.calendarContainer}>

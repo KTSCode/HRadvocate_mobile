@@ -14,7 +14,7 @@ const headerBar = props => {
               props.navigation.navigate('DrawerOpen');
             }}
           />
-          <Text style={styles.companyText}> Company Name </Text>
+          <Text style={styles.companyText}> {props.company} </Text>
         </View>
       }
       rightComponent={

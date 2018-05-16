@@ -10,7 +10,10 @@ const Notifications = props => {
 
   return (
     <View style={StyleSheet.absoluteFill}>
-      <HeaderBar navigation={props.navigation} />
+      <HeaderBar
+        navigation={props.navigation}
+        company={props.screenProps.company.data.name}
+      />
       <SectionHeader title="Notifications" top="true" />
       <ScrollView style={styles.notificationsContainer}>
         {notifications.map((n, i) => {

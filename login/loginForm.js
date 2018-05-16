@@ -102,7 +102,7 @@ const LoginForm = props => {
 var {height, width} = Dimensions.get('window');
 var styles = StyleSheet.create({
   LoginContainer: {
-    height: 280,
+    height: height * 0.45,
     borderWidth: 1,
     borderRadius: 4,
     borderColor: 'black',

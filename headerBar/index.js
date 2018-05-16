@@ -14,7 +14,7 @@ const headerBar = props => {
               props.navigation.navigate('DrawerOpen');
             }}
           />
-          <Text style={styles.companyText}> Company Name </Text>
+          <Text style={styles.companyText}> {props.company} </Text>
         </View>
       }
       rightComponent={
@@ -27,12 +27,7 @@ const headerBar = props => {
           <Icon
             name="notifications"
             color="#FFF"
-            onPress={() => alert('show notifications')}
-          />
-          <Icon
-            name="person"
-            color="#FFF"
-            onPress={() => alert('open profile')}
+            onPress={() => props.navigation.navigate('Notifications')}
           />
         </View>
       }
@@ -47,7 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
-    width: 80,
+    width: 60,
   },
   leftIcons: {
     flexDirection: 'row',

@@ -3,8 +3,7 @@ import {View, ScrollView, StyleSheet, Button} from 'react-native';
 import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import Home from '../homePage/index';
 import Notifications from '../notifications/index';
-import Test2 from './test2';
-import Test3 from './test3';
+import ClockInOut from '../clockInOut/index';
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -39,11 +38,11 @@ export default DrawerNavigator(
     Dashboard: {
       screen: Home,
     },
+    ClockInOut: {
+      screen: ClockInOut,
+    },
     Notifications: {
       screen: Notifications,
-    },
-    Test3: {
-      screen: Test3,
     },
   },
   {

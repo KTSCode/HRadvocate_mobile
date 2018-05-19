@@ -44,22 +44,71 @@ const Notifications = props => {
       day: 'Thurs',
       date: '24',
     },
+    {
+      location: 'office',
+      startTime: '9:00 AM',
+      endTime: '5:00 PM',
+      day: 'Fri',
+      date: '18',
+    },
+    {
+      location: 'office',
+      startTime: '9:00 AM',
+      endTime: '5:00 PM',
+      day: 'Mon',
+      date: '21',
+    },
+    {
+      location: 'office',
+      startTime: '9:00 AM',
+      endTime: '5:00 PM',
+      day: 'Tues',
+      date: '22',
+    },
+    {
+      location: 'office',
+      startTime: '9:00 AM',
+      endTime: '5:00 PM',
+      day: 'Wed',
+      date: '23',
+    },
+    {
+      location: 'office',
+      startTime: '9:00 AM',
+      endTime: '5:00 PM',
+      day: 'Thurs',
+      date: '24',
+    },
   ];
+  const rightDate = (day, date) => {
+    return(
+      <View style={{width: 45 }}>
+        <Text style={styles.upcomingDateDay}> {day} </Text>
+        <Text style={styles.upcomingDateDate}> {date} </Text>
+      </View>
+    )
+  }
   //FIXME put me back in the HeaderBar
   //company={props.screenProps.company.data.name}
   return (
     <View style={StyleSheet.absoluteFill}>
       <HeaderBar navigation={props.navigation} company="company" />
       <View />
-      <SectionHeader title="Clock In/Out" top="true" />
-      <Button
-        onPress={() => {
-          alert('hi');
-        }}
-        text="Clock In"
-        buttonStyle={{height: 60, backgroundColor: '#339933'}}
-        textStyle={{fontSize: 25}}
-      />
+      <SectionHeader title="Upcoming Shifts" />
+      <ScrollView style={styles.notificationsContainer}>
+        {shifts.map((s, i) => {
+          return (
+            <ListItem
+              key={i}
+              leftIcon={{name: 'schedule'}}
+              title={s.location.toUpperCase()}
+              subtitle={s.startTime + ' - ' + s.endTime}
+              rightIcon={rightDate(s.day, s.date)}
+              rightTitle={i == 0 ? 'Next Shift' : ' '}
+            />
+          );
+        })}
+      </ScrollView>
       <SectionHeader title="Your Next Shift Starts In:" />
       <View style={styles.countdownContainer}>
         <TimerCountdown
@@ -68,18 +117,15 @@ const Notifications = props => {
           style={styles.countdownText}
         />
       </View>
-      <SectionHeader title="Upcoming Shifts" />
-      <ScrollView style={styles.notificationsContainer}>
-        {shifts.map((s, i) => {
-          return (
-            <ListItem
-              key={i}
-              title={s.location.toUpperCase()}
-              subtitle={s.startTime + ' - ' + s.endTime}
-            />
-          );
-        })}
-      </ScrollView>
+      <SectionHeader title="Clock In/Out" top="true" />
+      <Button
+        onPress={() => {
+          alert('Clocked In');
+        }}
+        text="Clock In"
+        buttonStyle={{height: 60, backgroundColor: '#339933'}}
+        textStyle={{fontSize: 25}}
+      />
     </View>
   );
 };
@@ -97,6 +143,15 @@ const styles = StyleSheet.create({
     color: '#3F4952',
     fontSize: 95,
     fontWeight: 'bold',
+  },
+  upcomingDateDay: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  upcomingDateDate: {
+    color: '#3F4952',
+    textAlign: 'center',
   },
 });
 

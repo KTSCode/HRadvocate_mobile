@@ -4,6 +4,8 @@ import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import Home from '../homePage/index';
 import Test2 from './test2';
 import Test3 from './test3';
+import Calendar from '../calendar/index';
+import Agenda from '../agenda/index'
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -38,11 +40,11 @@ export default DrawerNavigator(
     Dashboard: {
       screen: Home,
     },
-    Test2: {
-      screen: Test2,
+    Calendar: {
+      screen: Calendar,
     },
-    Test3: {
-      screen: Test3,
+    Agenda: {
+      screen: Agenda,
     },
   },
   {

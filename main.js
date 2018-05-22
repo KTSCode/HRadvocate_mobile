@@ -29,6 +29,7 @@ class Main extends React.Component {
             dispatch: this.props.dispatch,
             company: this.props.company,
             employee: this.props.employee,
+            calendar:this.props.calendar,
           }}
         />
       );
@@ -78,6 +79,7 @@ const mapStateToProps = state => {
       username: state.employee.username,
       password: state.employee.password,
     },
+    calendar: state.calendar,
   };
 };
 

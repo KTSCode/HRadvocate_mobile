@@ -92,8 +92,26 @@ const Notifications = props => {
   //company={props.screenProps.company.data.name}
   return (
     <View style={StyleSheet.absoluteFill}>
-      <HeaderBar navigation={props.navigation} company="company" />
-      <View />
+      <HeaderBar navigation={props.navigation} company="ABC Company" />
+      <SectionHeader title="Your Next Shift Starts In:" top="true"/>
+      <View style={styles.countdownContainer}>
+        <TimerCountdown
+          initialSecondsRemaining={360000}
+          allowFontScaling={true}
+          style={styles.countdownText}
+        />
+      </View>
+      <SectionHeader title="Clock In/Out" />
+      <View style={{padding: 20}}>
+        <Button
+          onPress={() => {
+            alert('Clocked In');
+          }}
+          text="Clock In"
+          buttonStyle={{height: 60,}}
+          textStyle={{fontSize: 25}}
+        />
+      </View>
       <SectionHeader title="Upcoming Shifts" />
       <ScrollView style={styles.notificationsContainer}>
         {shifts.map((s, i) => {
@@ -109,23 +127,6 @@ const Notifications = props => {
           );
         })}
       </ScrollView>
-      <SectionHeader title="Your Next Shift Starts In:" />
-      <View style={styles.countdownContainer}>
-        <TimerCountdown
-          initialSecondsRemaining={36000000}
-          allowFontScaling={true}
-          style={styles.countdownText}
-        />
-      </View>
-      <SectionHeader title="Clock In/Out" top="true" />
-      <Button
-        onPress={() => {
-          alert('Clocked In');
-        }}
-        text="Clock In"
-        buttonStyle={{height: 60, backgroundColor: '#339933'}}
-        textStyle={{fontSize: 25}}
-      />
     </View>
   );
 };
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
   },
   countdownText: {
     color: '#3F4952',
-    fontSize: 95,
+    fontSize: 80,
     fontWeight: 'bold',
   },
   upcomingDateDay: {

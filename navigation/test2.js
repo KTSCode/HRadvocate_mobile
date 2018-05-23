@@ -1,19 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Button, View, Text, ScrollView} from 'react-native';
+import PersonalForm from '../personalInformation/PersonalForm';
 import HeaderBar from '../headerBar/index';
+import SectionHeader from '../sectionHeader/index';
 
 const Test = props => {
   return (
-    <View>
+    <View style={{flex:1}}>
       <HeaderBar navigation={props.navigation} />
-      <View
-        style={{
-          marginTop: 100,
-          flex: 1,
-          justifyContent: 'center',
-          alignSelf: 'center',
-        }}>
-        <Text> Test2 </Text>
+      <SectionHeader title="My Info" top="true" />
+      <View style={{marginTop:10,flex:1}}>
+        <PersonalForm />
       </View>
     </View>
   );

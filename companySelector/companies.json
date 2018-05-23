@@ -3,12 +3,127 @@
     {
       "name": "ABC Company",
       "code": "abc",
+      "viewableFields":{
+          "salutation": true,
+          "firstName": true,
+          "middleName": true,
+          "lastName": true,
+          "suffix": true,
+          "nickname": true,
+          "previousName": true,
+          "phone": true,
+          "street1": true,
+          "street2": true,
+          "city": true,
+          "state": true,
+          "postalCode": true,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": true,
+      },
+      "modifiableFields":{
+          "salutation": true,
+          "firstName": true,
+          "middleName": true,
+          "lastName": true,
+          "suffix": true,
+          "nickname": true,
+          "previousName": true,
+          "phone": true,
+          "street1": true,
+          "street2": true,
+          "city": true,
+          "state": true,
+          "postalCode": true,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": true,
+      },
+      "requiredFields":{
+          "salutation": false,
+          "firstName": true,
+          "middleName": false,
+          "lastName": true,
+          "suffix": false,
+          "nickname": false,
+          "previousName": false,
+          "phone": true,
+          "street1": false,
+          "street2": false,
+          "city": false,
+          "state": false,
+          "postalCode": false,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": false,
+      },
       "employees": [
         {
-          "name": "bob smith",
+          "salutation": "Mr.",
+          "firstName": "Robert",
+          "middleName": "John",
+          "lastName": "Smith",
+          "suffix": "",
+          "nickname": "Bob",
+          "previousName":"",
+          "phone":"949-333-333",
+          "street1": "213 Candy Ln",
+          "street2":"",
+          "city":"Irvine",
+          "state":"CA",
+          "postalCode":"92656",
+          "country":"",
+          "ssn":"555-55-5555",
+          "dateOfBirth":"",
+          "maritalStatus":"",
           "email": "bob@abc.com",
           "username": "bob_smith",
           "password": "secret",
+          "timecard": [
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-04-30"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-04-30"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-01"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-01"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-02"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-02"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-03"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-03"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-04"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-04"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-07"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-07"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-08"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-08"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-09"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-09"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-10"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-10"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-11"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-11"}},
+          ],
           "notifications": [
             {
               "title": "Event reminder!",
@@ -104,6 +219,48 @@
           "email": "maryjane@riptide.com",
           "username": "mary_jane",
           "password": "maryj",
+          "timecard": [
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-04-30"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-04-30"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-01"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-01"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-02"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-02"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-03"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-03"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-04"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-04"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-07"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-07"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-08"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-08"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-09"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-09"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-10"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-10"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-11"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-11"}},
+          ],
           "notifications": [
             {
               "title": "Event reminder!",

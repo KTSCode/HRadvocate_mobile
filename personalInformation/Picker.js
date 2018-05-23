@@ -1,0 +1,26 @@
+// style={{
+//   inputIOS: {
+//     height: 35,
+//     width: width * 0.6,
+//     borderColor: 'black',
+//     borderWidth: 1,
+//     borderRadius: 2,
+//     fontSize: 16,
+//     marginLeft: 10,
+//     paddingLeft: 10,
+//   },
+//   icon: {
+// position: 'absolute',
+// backgroundColor: 'transparent',
+// borderTopWidth: 10,
+// borderTopColor: 'black',
+// borderRightWidth: 10,
+// borderRightColor: 'transparent',
+// borderLeftWidth: 10,
+// borderLeftColor: 'transparent',
+// width: 0,
+// height: 0,
+// top: 12.5,
+// right: 10,
+// },
+// }}

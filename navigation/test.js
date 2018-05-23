@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import HeaderBar from '../headerBar/index';
 
+
 const Test = props => {
   return (
     <View>
@@ -14,6 +15,7 @@ const Test = props => {
           alignSelf: 'center',
         }}>
         <Text> Test </Text>
+
       </View>
     </View>
   );

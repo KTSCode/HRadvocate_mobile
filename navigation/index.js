@@ -33,14 +33,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
 });
-
 export default DrawerNavigator(
   {
-    Dashboard: {
-      screen: Home,
-    },
     ClockInOut: {
       screen: ClockInOut,
+    },
+    Dashboard: {
+      screen: Home,
     },
     Calendar: {
       screen: Calendar,

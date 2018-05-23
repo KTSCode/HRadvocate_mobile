@@ -5,10 +5,12 @@ import {createLogger} from 'redux-logger';
 // Reducers from different components
 import company from './companySelector/reducer';
 import employee from './login/reducer';
+import timeclock from './clockInOut/reducer';
 
 const reducers = {
   company,
   employee,
+  timeclock,
   form: formReducer,
 };
 const reducer = combineReducers(reducers);

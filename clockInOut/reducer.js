@@ -4,6 +4,7 @@
 const timeclock = (
   state = {
     clocked: false,
+    clock_in_button: true,
     failed: false,
     message: '',
     countdown: 0,
@@ -13,20 +14,36 @@ const timeclock = (
   switch (action.type) {
     case 'SET_COUNTDOWN': {
       //XXX this is only for demo purposes
+      //console.log(action.time);
       return {
         ...state,
-        coundown: action.time,
+        countdown: action.time,
       };
     }
+    case 'CLOCK_IN_ENABLED':
+      return {
+        ...state,
+        clock_in_button: true,
+        countdown: action.time,
+      };
+    case 'CLOCK_IN_DISABLED':
+      return {
+        ...state,
+        clock_in_button: false,
+        countdown: action.time,
+      };
     case 'CLOCK_IN':
       return {
         ...state,
         clocked: true,
+        countdown: 0,
       };
     case 'CLOCK_OUT':
       return {
         ...state,
         clocked: false,
+        clock_in_button: true,
+        countdown: 0,
       };
     default:
       return state;

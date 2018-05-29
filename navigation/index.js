@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
 });
 export default DrawerNavigator(
   {
-    Dashboard: {
-      screen: Home,
-    },
     ClockInOut: {
       screen: ClockInOut,
       navigationOptions: () => ({
         title: 'Clock In/Out',
       }),
+    },
+    Dashboard: {
+      screen: Home,
     },
     Calendar: {
       screen: Calendar,

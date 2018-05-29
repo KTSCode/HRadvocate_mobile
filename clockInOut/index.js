@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, Text, ScrollView, Alert} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import {Card, ListItem} from 'react-native-elements';
 import TimerCountdown from 'react-native-timer-countdown';
 
@@ -10,23 +16,35 @@ import Button from '../button/index';
 
 const Notifications = props => {
   //TODO add errors
-  const {clocked, failed, message} = props.screenProps.timeclock;
+  const {
+    clocked,
+    clock_in_button,
+    countdown,
+    failed,
+    message,
+  } = props.screenProps.timeclock;
   const dispatch = props.screenProps.dispatch;
   const {schedule} = props.screenProps.employee.data;
+  const {clockRangeMins} = props.screenProps.company.data;
   const all_shifts = props.screenProps.employee.data.shifts;
   const shifts = shiftOrganizer(schedule, all_shifts);
-  const countdown_time = clocked
-    ? timeFromNow(shifts[0].date, shifts[0].end)
-    : timeFromNow(shifts[0].date, shifts[0].start);
+  const countdown_time = getCountdownTime(
+    shifts[0].date,
+    shifts[0].end,
+    shifts[0].start,
+    countdown,
+    clocked,
+  );
   const rightDate = (day, date) => {
     return (
-      <View style={{width: 45}}>
+      <View style={{width: 55}}>
         <Text style={styles.upcomingDateDay}> {day} </Text>
         <Text style={styles.upcomingDateDate}> {date.match(/\d+$/)[0]} </Text>
       </View>
     );
   };
 
+  //TODO use this for geo-fencing and any clock in/out errors that could occur
   //<ToastBox
   //  color="#EE3E4B"
   //  title="You Can't Clock In Yet"
@@ -46,11 +64,25 @@ const Notifications = props => {
         <SectionHeader title="Your Next Shift Starts In:" top="true" />
       )}
       <View style={styles.countdownContainer}>
-        <TimerCountdown
-          initialSecondsRemaining={countdown_time >= 0 ? countdown_time : 0}
-          allowFontScaling={true}
-          style={styles.countdownText}
-        />
+        <TouchableOpacity
+          onPress={() => dispatch({type: 'SET_COUNTDOWN', time: 10000})}
+          onLongPress={() =>
+            dispatch({type: 'SET_COUNTDOWN', time: clockRangeMins * 61000})
+          }>
+          <TimerCountdown
+            initialSecondsRemaining={countdown_time >= 0 ? countdown_time : 0}
+            onTick={secs => {
+              if (secs < clockRangeMins * 60000 && !clock_in_button) {
+                dispatch({type: 'CLOCK_IN_ENABLED', time: secs});
+              }
+              if (secs >= clockRangeMins * 60000 && clock_in_button) {
+                dispatch({type: 'CLOCK_IN_DISABLED', time: secs});
+              }
+            }}
+            allowFontScaling={true}
+            style={styles.countdownText}
+          />
+        </TouchableOpacity>
       </View>
       <SectionHeader title="Clock In/Out" />
       <View style={{padding: 20}}>
@@ -60,7 +92,7 @@ const Notifications = props => {
               onPress={() => {
                 dispatch({type: 'CLOCK_IN'});
               }}
-              disabled={false}
+              disabled={!clock_in_button}
               text="Clock In"
               buttonStyle={{height: 60}}
               textStyle={{fontSize: 25}}
@@ -88,7 +120,13 @@ const Notifications = props => {
               title={s.location.toUpperCase()}
               subtitle={s.start + ' - ' + s.end}
               rightIcon={rightDate(s.day, s.date)}
-              rightTitle={i == 0 ? 'Next Shift' : ' '}
+              rightTitle={
+                // I'm sorry about this nested terneries are bad, but I don't exactly have a lot of time
+                i == 0
+                  ? countdown_time < 0 ? 'Current Shift' : 'Next Shift'
+                  : ' '
+              }
+              rightTitleStyle={styles.NextShiftText}
             />
           );
         })}
@@ -120,7 +158,7 @@ const timeFromNow = (date, time) => {
 };
 
 const shiftOrganizer = (schedule, all_shifts) => {
-  const DotW = ['Sun', 'Mon', 'Wed', 'Tues', 'Thurs', 'Fri', 'Sat'];
+  const DotW = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
   var return_shifts = [];
   const cur_date = new Date();
   // add the next weeks worth of scheduled shifts to return_shifts
@@ -141,6 +179,12 @@ const shiftOrganizer = (schedule, all_shifts) => {
     }
   });
   return return_shifts;
+};
+
+const getCountdownTime = (date, end, start, cd, clkd) => {
+  if (cd > 0) return cd;
+  else if (clkd) return timeFromNow(date, end);
+  else return timeFromNow(date, start);
 };
 
 const styles = StyleSheet.create({
@@ -165,6 +209,10 @@ const styles = StyleSheet.create({
   upcomingDateDate: {
     color: '#3F4952',
     textAlign: 'center',
+  },
+  NextShiftText: {
+    color: '#339933',
+    fontWeight: 'bold',
   },
 });
 

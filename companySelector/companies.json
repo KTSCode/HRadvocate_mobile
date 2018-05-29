@@ -60,6 +60,7 @@
           "dateOfBirth": true,
           "maritalStatus": false
       },
+      "clockRangeMins": 5, 
       "employees": [
         {
           "salutation": "",
@@ -272,6 +273,7 @@
     {
       "name": "Riptide",
       "code": "riptide",
+      "clockRangeMins": 5, 
       "employees": [
         {
           "name": "Mary Jane",

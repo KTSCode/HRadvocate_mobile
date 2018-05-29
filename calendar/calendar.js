@@ -92,13 +92,13 @@ export default class AgendaScreen extends Component {
   renderItem(item) {
     return (
       <View style={[styles.item, {height: item.height}]}>
-        <Text>{item.name}</Text>
-        <Text>{item.description ? item.description : ''}</Text>
+        <Text style={{fontWeight: 'bold'}}>{item.name}</Text>
         <Text>
           {item.startTime ? item.startTime : ''}
           {item.endTime ? ' - ' + item.endTime : ''}
         </Text>
-        <Text>{item.location ? item.location : ''}</Text>
+        <Text>{item.description ? item.description : ''}</Text>
+        <Text>{item.location ? 'location: ' + item.location : ''}</Text>
       </View>
     );
   }
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginRight: 10,
     marginTop: 17,
-    backgroundColor: '#9B9B9B',
+    backgroundColor: '#ECF0F1',
   },
   emptyDate: {
     height: 15,

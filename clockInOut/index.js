@@ -4,32 +4,10 @@ import {Card, ListItem} from 'react-native-elements';
 import TimerCountdown from 'react-native-timer-countdown';
 
 import HeaderBar from '../headerBar/index';
+import ToastBox from '../toastBox/index';
 import SectionHeader from '../sectionHeader/index';
 import Button from '../button/index';
 
-const shiftOrganizer = (schedule, all_shifts) => {
-  const DotW = ['Sun', 'Mon', 'Wed', 'Tues', 'Thurs', 'Fri', 'Sat'];
-  var return_shifts = [];
-  const cur_date = new Date();
-  // add the next weeks worth of scheduled shifts to return_shifts
-  for (var i = 0; i < 7; i++) {
-    var temp_date = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
-    if (schedule[temp_date.getDay()].work) {
-      var temp_shift = schedule[temp_date.getDay()];
-      temp_shift.date = temp_date.toISOString().split('T')[0];
-      temp_shift.day = DotW[temp_date.getDay()];
-      return_shifts.push(schedule[temp_date.getDay()]);
-    }
-  }
-  // Adds all upcoming scheduled shifts
-  all_shifts.forEach(s => {
-    if(timeFromNow(s.date, s.end) > 0) {
-      s.day = DotW[new Date(s.date + 'T' + convertTime(s.start)).getDay()];
-      return_shifts.push(s);
-    }
-  })
-  return return_shifts;
-};
 const Notifications = props => {
   //TODO add errors
   const {clocked, failed, message} = props.screenProps.timeclock;
@@ -48,6 +26,14 @@ const Notifications = props => {
       </View>
     );
   };
+
+  //<ToastBox
+  //  color="#EE3E4B"
+  //  title="You Can't Clock In Yet"
+  //  text="Please Try Again Later"
+  //  icon="error"
+  //  style={{padding: 15}}
+  ///>
   return (
     <View style={StyleSheet.absoluteFill}>
       <HeaderBar
@@ -55,13 +41,13 @@ const Notifications = props => {
         company={props.screenProps.company.data.name}
       />
       {clocked ? (
-        <SectionHeader title="Your Next Shift Ends In:" top="true" />
+        <SectionHeader title="Your Shift Ends In:" top="true" />
       ) : (
         <SectionHeader title="Your Next Shift Starts In:" top="true" />
       )}
       <View style={styles.countdownContainer}>
         <TimerCountdown
-          initialSecondsRemaining={countdown_time}
+          initialSecondsRemaining={countdown_time >= 0 ? countdown_time : 0}
           allowFontScaling={true}
           style={styles.countdownText}
         />
@@ -69,14 +55,17 @@ const Notifications = props => {
       <SectionHeader title="Clock In/Out" />
       <View style={{padding: 20}}>
         {!clocked && (
-          <Button
-            onPress={() => {
-              dispatch({type: 'CLOCK_IN'});
-            }}
-            text="Clock In"
-            buttonStyle={{height: 60}}
-            textStyle={{fontSize: 25}}
-          />
+          <View>
+            <Button
+              onPress={() => {
+                dispatch({type: 'CLOCK_IN'});
+              }}
+              disabled={false}
+              text="Clock In"
+              buttonStyle={{height: 60}}
+              textStyle={{fontSize: 25}}
+            />
+          </View>
         )}
         {clocked && (
           <Button
@@ -125,8 +114,33 @@ const convertTime = time_str => {
 
 const timeFromNow = (date, time) => {
   const temp_date = new Date(date + 'T' + convertTime(time));
-  const adjusted_time = temp_date.getTime() + (60000 * temp_date.getTimezoneOffset());
+  const adjusted_time =
+    temp_date.getTime() + 60000 * temp_date.getTimezoneOffset();
   return adjusted_time - Date.now();
+};
+
+const shiftOrganizer = (schedule, all_shifts) => {
+  const DotW = ['Sun', 'Mon', 'Wed', 'Tues', 'Thurs', 'Fri', 'Sat'];
+  var return_shifts = [];
+  const cur_date = new Date();
+  // add the next weeks worth of scheduled shifts to return_shifts
+  for (var i = 0; i < 7; i++) {
+    var temp_date = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
+    if (schedule[temp_date.getDay()].work) {
+      var temp_shift = schedule[temp_date.getDay()];
+      temp_shift.date = temp_date.toISOString().split('T')[0];
+      temp_shift.day = DotW[temp_date.getDay()];
+      return_shifts.push(schedule[temp_date.getDay()]);
+    }
+  }
+  // Adds all upcoming scheduled shifts
+  all_shifts.forEach(s => {
+    if (timeFromNow(s.date, s.end) > 0) {
+      s.day = DotW[new Date(s.date + 'T' + convertTime(s.start)).getDay()];
+      return_shifts.push(s);
+    }
+  });
+  return return_shifts;
 };
 
 const styles = StyleSheet.create({

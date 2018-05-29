@@ -10,12 +10,13 @@ var {
 const Button = props => {
   const bStyle = props.buttonStyle ? props.buttonStyle : {};
   const tStyle = props.textStyle ? props.textStyle : {};
-
+  const button_color = props.disabled ? {backgroundColor: '#9B9B9B'} : {};
   return (
     <View style={{alignSelf: 'stretch'}}>
       <TouchableOpacity
-        style={[styles.buttonStyle, bStyle]}
-        onPress={props.onPress}>
+        style={[styles.buttonStyle, bStyle, button_color]}
+        onPress={props.onPress}
+        disabled={props.disabled ? true : false}>
         <Text style={[styles.buttonTextStyle, tStyle]}>{props.text}</Text>
       </TouchableOpacity>
     </View>

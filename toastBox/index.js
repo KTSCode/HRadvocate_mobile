@@ -10,7 +10,7 @@ const ToastBox = props => {
   // TODO rename styles to be generic
   // TODO remove inline styles
   return (
-    <View style={{alignSelf: 'stretch'}}>
+    <View style={[{alignSelf: 'stretch'}, props.style]}>
       <Card>
         <View style={[styles.Error, {borderColor: props.color}]}>
           <View style={{paddingRight: 15}}>

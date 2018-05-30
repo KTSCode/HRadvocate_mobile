@@ -90,7 +90,7 @@ const Notifications = props => {
           <View>
             <Button
               onPress={() => {
-                dispatch({type: 'CLOCK_IN'});
+                dispatch({type: 'CLOCK_IN', time: Date.now()});
               }}
               disabled={!clock_in_button}
               text="Clock In"
@@ -123,7 +123,9 @@ const Notifications = props => {
               rightTitle={
                 // I'm sorry about this nested terneries are bad, but I don't exactly have a lot of time
                 i == 0
-                  ? countdown_time < 0 ? 'Current Shift' : 'Next Shift'
+                  ? countdown_time > 1000 && clocked
+                    ? 'Current Shift'
+                    : 'Next Shift'
                   : ' '
               }
               rightTitleStyle={styles.NextShiftText}

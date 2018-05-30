@@ -5,6 +5,7 @@ import Home from '../homePage/index';
 import ClockInOut from '../clockInOut/index';
 import Notifications from '../notifications/index';
 import Calendar from '../calendar/index';
+import Profile from '../personalInformation/index';
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -46,6 +47,9 @@ export default DrawerNavigator(
     },
     Notifications: {
       screen: Notifications,
+    },
+    Profile: {
+      screen: Profile,
     },
   },
   {

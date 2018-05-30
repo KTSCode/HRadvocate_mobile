@@ -8,6 +8,7 @@ const timeclock = (
     failed: false,
     message: '',
     countdown: 0,
+    punches: [],
   },
   action,
 ) => {
@@ -32,19 +33,23 @@ const timeclock = (
         clock_in_button: false,
         countdown: action.time,
       };
-    case 'CLOCK_IN':
+    case 'CLOCK_IN': {
+      console.log(action.time);
       return {
         ...state,
         clocked: true,
         countdown: 0,
       };
-    case 'CLOCK_OUT':
+    }
+    case 'CLOCK_OUT': {
+      console.log(action.date);
       return {
         ...state,
         clocked: false,
         clock_in_button: true,
         countdown: 0,
       };
+    }
     default:
       return state;
   }

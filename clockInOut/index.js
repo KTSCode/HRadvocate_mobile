@@ -102,7 +102,12 @@ const Notifications = props => {
         {clocked && (
           <Button
             onPress={() => {
-              dispatch({type: 'CLOCK_OUT'});
+              const time = Date.now();
+              dispatch({
+                type: 'CLOCK_OUT',
+                time: time,
+                date: new Date(time).toISOString().split('T')[0],
+              });
             }}
             text="Clock Out"
             buttonStyle={{height: 60, backgroundColor: 'red'}}
@@ -121,12 +126,8 @@ const Notifications = props => {
               subtitle={s.start + ' - ' + s.end}
               rightIcon={rightDate(s.day, s.date)}
               rightTitle={
-                // I'm sorry about this nested terneries are bad, but I don't exactly have a lot of time
-                i == 0
-                  ? countdown_time > 1000 && clocked
-                    ? 'Current Shift'
-                    : 'Next Shift'
-                  : ' '
+                // I'm sorry about this
+                i == 0 ? (clocked ? 'Current Shift' : 'Next Shift') : ' '
               }
               rightTitleStyle={styles.NextShiftText}
             />

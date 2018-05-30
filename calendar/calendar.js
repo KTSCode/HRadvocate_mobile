@@ -55,7 +55,9 @@ export default class AgendaScreen extends Component {
     this.props.events.forEach(event => {
       // calculates height based on description
       //TODO make this more accurate
-      var set_height = event.description.length;
+      var set_height = 45 + (event.description.length /45) * 25;
+      console.log(event.date);
+      console.log(set_height);
       marked_dates[event.date].dots.push(work_event);
       // TODO have sarah add locations to the events, and maybe end times
       all_events[event.date].push({
@@ -90,16 +92,17 @@ export default class AgendaScreen extends Component {
 
   //TODO Style these and make them pretty
   renderItem(item) {
-    return (
-      <View style={[styles.item, {height: item.height}]}>
-        <Text>{item.name}</Text>
-        <Text>{item.description ? item.description : ''}</Text>
-        <Text>
-          {item.startTime ? item.startTime : ''}
-          {item.endTime ? ' - ' + item.endTime : ''}
-        </Text>
-        <Text>{item.location ? item.location : ''}</Text>
-      </View>
+    return(
+        <View style={[styles.item, {height: item.height}]}>
+          <Text style ={[styles.itemName]}>{item.name}</Text>
+          <Text style={[styles.itemDate]}>
+            {item.startTime ? item.startTime : ''}
+            {item.endTime ? ' - ' + item.endTime : ''}
+          </Text>
+          {item.location && <Text style = {[styles.itemLoc]}>{item.location }</Text>}
+          <Text style = {[styles.itemDesc]}>{item.description ? item.description : ''}</Text>
+        </View>
+
     );
   }
 
@@ -128,12 +131,28 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
-    marginTop: 17,
-    backgroundColor: '#9B9B9B',
+    marginTop: 10,
+    backgroundColor: '#FFFFFF',
   },
   emptyDate: {
     height: 15,
     flex: 1,
     margin: 15,
   },
+  itemDate:{
+    opacity:0.6,
+  },
+  itemName:{
+    fontWeight:'500',
+    fontSize: 14,
+  },
+  itemLoc:{
+    opacity:0.5,
+    fontSize: 12,
+  },
+  itemDesc:{
+    fontStyle:'italic',
+    fontSize: 13,
+    opacity:0.5,
+  }
 });

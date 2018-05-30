@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
+import {Icon} from 'react-native-elements';
 import {Agenda} from 'react-native-calendars';
 
 export default class AgendaScreen extends Component {
@@ -14,8 +15,8 @@ export default class AgendaScreen extends Component {
     var marked_dates = {};
     // pull schedule and shifts out of props
     const {schedule, shifts} = this.props;
-    const shift = {key: 'shift', color: 'red', selectedDotColor: 'red'};
-    const work_event = {key: 'work_event', color: 'blue'};
+    const shift = {key: 'shift', color: '#EE3E4B', selectedDotColor: '#EE3E4B'};
+    const work_event = {key: 'work_event', color: '#1E98C7'};
     // initializes 50 dates on either side of the current date
     for (let i = -50; i < 50; i++) {
       const time = Date.now() + i * 24 * 60 * 60 * 1000;
@@ -34,6 +35,7 @@ export default class AgendaScreen extends Component {
           startTime: schedule[numDay].start,
           endTime: schedule[numDay].end,
           location: schedule[numDay].location,
+          icon: 'shift',
         });
       }
     }
@@ -55,9 +57,7 @@ export default class AgendaScreen extends Component {
     this.props.events.forEach(event => {
       // calculates height based on description
       //TODO make this more accurate
-      var set_height =  50 + (event.description.length /45) * 25;
-      console.log(event.date);
-      console.log(set_height);
+      var set_height = 50 + event.description.length / 45 * 25;
       marked_dates[event.date].dots.push(work_event);
       // TODO have sarah add locations to the events, and maybe end times
       all_events[event.date].push({
@@ -92,18 +92,51 @@ export default class AgendaScreen extends Component {
 
   //TODO Style these and make them pretty
   renderItem(item) {
-    return(
-        <View style={[styles.item, {height: item.height}]}>
-          <Text style ={[styles.itemName]}>{item.name}</Text>
+    return (
+      <View style={styles.item}>
+        <View style={[styles.itemText]}>
+          <Text style={[styles.itemName]}>{item.name}</Text>
           <Text style={[styles.itemDate]}>
             {item.startTime ? item.startTime : ''}
             {item.endTime ? ' - ' + item.endTime : ''}
           </Text>
-          {item.location && <Text style = {[styles.itemLoc]}>{item.location }</Text>}
-          <Text style = {[styles.itemDesc]}>{item.description ? item.description : ''}</Text>
+          {item.location && (
+            <Text style={[styles.itemLoc]}>{item.location}</Text>
+          )}
+          <Text style={[styles.itemDesc]}>
+            {item.description ? item.description : ''}
+          </Text>
         </View>
-
+        {this.itemIcon(item.icon)}
+      </View>
     );
+  }
+
+  itemIcon(icon) {
+    switch (icon) {
+      case 'shift':
+        return (
+          <Icon
+            name="schedule"
+            color="#EE3E4B"
+            onPress={() => {
+              alert('hi');
+            }}
+          />
+        );
+      case 'event':
+        return (
+          <Icon
+            name="date-range"
+            color="#1E98C7"
+            onPress={() => {
+              alert('hi');
+            }}
+          />
+        );
+      default:
+        return null;
+    }
   }
 
   renderEmptyDate() {
@@ -128,31 +161,36 @@ export default class AgendaScreen extends Component {
 const styles = StyleSheet.create({
   item: {
     flex: 1,
+    flexDirection: 'row',
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
     marginTop: 10,
     backgroundColor: '#FFFFFF',
+    justifyContent: 'space-between',
   },
   emptyDate: {
     height: 15,
     flex: 1,
     margin: 15,
   },
-  itemDate:{
-    opacity:0.6,
+  itemText: {
+    flex: 0.85,
   },
-  itemName:{
-    fontWeight:'500',
+  itemDate: {
+    opacity: 0.6,
+  },
+  itemName: {
+    fontWeight: '500',
     fontSize: 14,
   },
-  itemLoc:{
-    opacity:0.5,
+  itemLoc: {
+    opacity: 0.5,
     fontSize: 12,
   },
-  itemDesc:{
-    fontStyle:'italic',
+  itemDesc: {
+    fontStyle: 'italic',
     fontSize: 13,
-    opacity:0.5,
-  }
+    opacity: 0.5,
+  },
 });

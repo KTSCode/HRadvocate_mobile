@@ -55,7 +55,7 @@ export default class AgendaScreen extends Component {
     this.props.events.forEach(event => {
       // calculates height based on description
       //TODO make this more accurate
-      var set_height = 45 + (event.description.length /45) * 25;
+      var set_height =  50 + (event.description.length /45) * 25;
       console.log(event.date);
       console.log(set_height);
       marked_dates[event.date].dots.push(work_event);

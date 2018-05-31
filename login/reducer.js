@@ -6,6 +6,7 @@ const employee = (
     remember: false,
     username: '',
     password: '',
+    data: {},
   },
   action,
 ) => {
@@ -41,6 +42,11 @@ const employee = (
       return {
         ...state,
         failed: false,
+      };
+    case 'EMPLOYEE_UPDATE':
+      return {
+        ...state,
+        data: {...state.data, [action.payload.prop]: action.payload.value},
       };
     default:
       return state;

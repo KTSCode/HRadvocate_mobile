@@ -22,7 +22,9 @@ const headerBar = props => {
           <Icon
             name="date-range"
             color="#FFF"
-            onPress={() => alert('open calendar')}
+            onPress={() => {
+              props.navigation.navigate('Calendar');
+            }}
           />
           <Icon
             name="notifications"

@@ -3,44 +3,213 @@
     {
       "name": "ABC Company",
       "code": "abc",
+      "viewableFields":{
+          "salutation": true,
+          "firstName": true,
+          "middleName": true,
+          "lastName": true,
+          "suffix": true,
+          "nickname": true,
+          "previousName": true,
+          "phone": true,
+          "street1": true,
+          "street2": true,
+          "city": true,
+          "state": true,
+          "postalCode": true,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": true
+      },
+      "modifiableFields":{
+          "salutation": true,
+          "firstName": true,
+          "middleName": true,
+          "lastName": true,
+          "suffix": true,
+          "nickname": true,
+          "previousName": true,
+          "phone": true,
+          "street1": true,
+          "street2": true,
+          "city": true,
+          "state": true,
+          "postalCode": true,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": true
+      },
+      "requiredFields":{
+          "salutation": false,
+          "firstName": true,
+          "middleName": false,
+          "lastName": true,
+          "suffix": false,
+          "nickname": false,
+          "previousName": false,
+          "phone": true,
+          "street1": false,
+          "street2": false,
+          "city": false,
+          "state": false,
+          "postalCode": false,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": false
+      },
       "employees": [
         {
-          "name": "bob smith",
+          "salutation": "",
+          "firstName": "Robert",
+          "middleName": "John",
+          "lastName": "Smith",
+          "suffix": "",
+          "nickname": "Bob",
+          "previousName":"",
+          "phone":"949-333-333",
+          "street1": "213 Candy Ln",
+          "street2":"",
+          "city":"Irvine",
+          "state":"CA",
+          "postalCode":"92656",
+          "country":"",
+          "ssn":"667-67-6677",
+          "dateOfBirth":"05-29-1989",
+          "maritalStatus":"",
           "email": "bob@abc.com",
           "username": "bob_smith",
           "password": "secret",
+          "schedule": [
+              {"work": false},
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {"work": false}
+          ],
+          "shifts": [
+              {"date": "2018-05-20",
+                "start": "9:45AM",
+                "end": "2:00PM",
+                "location": "Offsite Location"
+              },
+              {"date": "2018-06-11",
+                "start": "4:00PM",
+                "end": "7:00PM",
+                "location": "CalIT2 Building"
+              }
+            ],
+          "timecard": [
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-04-30"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-04-30"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-01"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-01"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-02"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-02"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-03"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-03"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-04"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-04"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-07"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-07"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-08"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-08"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-09"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-09"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-10"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-10"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-11"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-11"}}
+          ],
           "notifications": [
             {
               "title": "Event reminder!",
-              "description": "Don't forget to bring your dog to work today!"
+              "description": "Don't forget to bring your dog to work today!",
+              "link": "Calendar"
             },
             {
               "title": "Task assigned by Scott Betts",
-              "description": "Update personal information"
+              "description": "Update personal information",
+              "link": "Tasks and Requests"
             },
             {
               "title": "Time off request reviewed",
-              "description": "Your time off request for BEACH DAY has been denied"
+              "description": "Your time off request for BEACH DAY has been denied",
+              "link": "Time Off Request"
             },
             {
               "title": "Time off request reviewed",
-              "description": "Your time off request for WEDDING has been approved"
+              "description": "Your time off request for WEDDING has been approved",
+              "link": "Time Off Request"
             },
             {
               "title": "Don't forget to clock-in!",
-              "description": "Your shift starts in 5 minutes. Clock-in now!"
+              "description": "Your shift starts in 5 minutes. Clock-in now!",
+              "link": "Clock In/Clock Out"
             },
             {
               "title": "Lunch time!",
-              "description": "You have one hour to take lunch"
+              "description": "You have one hour to take lunch",
+              "link": "Clock In/Clock Out"
             },
             {
               "title": "Don't forget to clock-out!",
-              "description": "Your shift has ended. Clock-out now!"
+              "description": "Your shift has ended. Clock-out now!",
+              "link": "Clock In/Clock Out"
             },
             {
               "title": "PAYDAY",
-              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues"
+              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues",
+              "link": "Pay"
             }
           ]
         }
@@ -49,32 +218,37 @@
         {
           "title": "Bring your dog to work day!",
           "description": "Bring your furry friend to work for special treats!",
-          "date": "2018-02-18",
-          "time": "9:00AM"
+          "date": "2018-05-18",
+          "startTime": "9:00AM",
+          "endTime": "5:00PM"
         },
         {
           "title": "Potluck",
           "description": "Don't forget to bring food for our end-of-the-month potluck!",
-          "date": "2018-02-28",
-          "time": "9:00AM"
+          "date": "2018-05-28",
+          "time": "9:00AM",
+          "endTime": "12:30PM"
         },
         {
           "title": "Company Meeting",
           "description": "Company meeting to discuss our plans and goals for the upcoming month",
-          "date": "2018-03-05",
-          "time": "12:30PM"
+          "date": "2018-06-05",
+          "startTime": "12:30PM",
+          "endTime": "1:30PM"
         },
         {
           "title": "Annual BBQ Day",
           "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
-          "date": "2018-03-31",
-          "time": "1:00PM"
+          "date": "2018-05-31",
+          "startTime": "1:00PM",
+          "endTime": "5:00PM"
         },
         {
           "title": "Beach Day",
           "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
-          "date": "2018-04-21",
-          "time": "11:00AM"
+          "date": "2018-06-21",
+          "startTime": "11:00AM",
+          "endTime": "3:30PM"
         }
       ],
       "articles": [
@@ -104,38 +278,119 @@
           "email": "maryjane@riptide.com",
           "username": "mary_jane",
           "password": "maryj",
+          "schedule": [
+              {"work": false},
+              {"work": false},
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {"work": false},
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "7:45AM",
+                "end": "4:00PM",
+                "location": "Office"
+              },
+              {"work": false}
+          ],
+          "shifts": [
+              {"date": "2018-06-11",
+                "start": "4:00PM",
+                "end": "7:00PM",
+                "location": "CalIT2 Building"
+              }
+            ],
+          "timecard": [
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-04-30"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-04-30"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-01"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-01"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-02"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-02"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-03"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-03"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-04"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-04"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-07"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-07"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-08"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-08"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-09"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-09"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-10"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-10"}},
+            {"clockIn":
+              {"time": "10:00AM", "date": "2018-05-11"}},
+            {"clockOut":
+              {"time": "6:00PM", "date": "2018-05-11"}},
+          ],
           "notifications": [
             {
               "title": "Event reminder!",
-              "description": "Don't forget to bring your dog to work today!"
+              "description": "Don't forget to bring your dog to work today!",
+              "link": "Calendar"
             },
             {
               "title": "Task assigned by Scott Betts",
-              "description": "Update personal information"
+              "description": "Update personal information",
+              "link": "Tasks and Requests"
             },
             {
               "title": "Time off request reviewed",
-              "description": "Your time off request for BEACH DAY has been denied"
+              "description": "Your time off request for BEACH DAY has been denied",
+              "link": "Time Off Request"
             },
             {
               "title": "Time off request reviewed",
-              "description": "Your time off request for WEDDING has been approved"
+              "description": "Your time off request for WEDDING has been approved",
+              "link": "Time Off Request"
             },
             {
               "title": "Don't forget to clock-in!",
-              "description": "Your shift starts in 5 minutes. Clock-in now!"
+              "description": "Your shift starts in 5 minutes. Clock-in now!",
+              "link": "Clock In/Clock Out"
             },
             {
               "title": "Lunch time!",
-              "description": "You have one hour to take lunch"
+              "description": "You have one hour to take lunch",
+              "link": "Clock In/Clock Out"
             },
             {
               "title": "Don't forget to clock-out!",
-              "description": "Your shift has ended. Clock-out now!"
+              "description": "Your shift has ended. Clock-out now!",
+              "link": "Clock In/Clock Out"
             },
             {
               "title": "PAYDAY",
-              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues"
+              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues",
+              "link": "Pay"
             }
           ]
         }
@@ -144,32 +399,37 @@
         {
           "title": "Bring your dog to work day!",
           "description": "Bring your furry friend to work for special treats!",
-          "date": "2018-02-18",
-          "time": "9:00AM"
+          "date": "2018-05-18",
+          "startTime": "9:00AM",
+          "endTime": "5:00PM"
         },
         {
           "title": "Potluck",
           "description": "Don't forget to bring food for our end-of-the-month potluck!",
-          "date": "2018-02-28",
-          "time": "9:00AM"
+          "date": "2018-05-28",
+          "startTime": "11:00AM",
+          "endTime": "12:30PM"
         },
         {
           "title": "Company Meeting",
           "description": "Company meeting to discuss our plans and goals for the upcoming month",
-          "date": "2018-03-05",
-          "time": "12:30PM"
+          "date": "2018-06-05",
+          "startTime": "12:30PM",
+          "endTime": "1:30PM"
         },
         {
           "title": "Annual BBQ Day",
           "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
-          "date": "2018-03-31",
-          "time": "1:00PM"
+          "date": "2018-06-31",
+          "startTime": "1:00PM",
+          "endTime": "5:00PM"
         },
         {
           "title": "Beach Day",
           "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
-          "date": "2018-04-21",
-          "time": "11:00AM"
+          "date": "2018-07-21",
+          "startTime": "11:00AM",
+          "endTime": "3:30PM"
         }
       ],
       "articles": [

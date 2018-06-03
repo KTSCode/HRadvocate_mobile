@@ -8,7 +8,7 @@ const timeclock = (
     failed: false,
     message: '',
     countdown: 0,
-    punches: [],
+    punches: {},
   },
   action,
 ) => {
@@ -34,7 +34,12 @@ const timeclock = (
         countdown: action.time,
       };
     case 'CLOCK_IN': {
-      console.log(action.time);
+      const dateTime = new Date(action.time).toString();
+      if (!state.punches[action.date]) {
+        state.punches[action.date] = [];
+      }
+      state.punches[action.date].unshift({clockIn: dateTime});
+      console.log(state);
       return {
         ...state,
         clocked: true,
@@ -42,7 +47,9 @@ const timeclock = (
       };
     }
     case 'CLOCK_OUT': {
-      console.log(action.date);
+      const dateTime = new Date(action.time).toString();
+      state.punches[action.date][0].clockOut = dateTime;
+      console.log(state);
       return {
         ...state,
         clocked: false,

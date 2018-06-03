@@ -90,7 +90,12 @@ const Notifications = props => {
           <View>
             <Button
               onPress={() => {
-                dispatch({type: 'CLOCK_IN', time: Date.now()});
+                const time = Date.now();
+                dispatch({
+                  type: 'CLOCK_IN',
+                  time: Date.now(),
+                  date: new Date(time).toISOString().split('T')[0],
+                });
               }}
               disabled={!clock_in_button}
               text="Clock In"

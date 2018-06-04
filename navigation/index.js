@@ -2,6 +2,8 @@ import React from 'react';
 import {View, ScrollView, StyleSheet, Button} from 'react-native';
 import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import Home from '../homePage/index';
+import ClockInOut from '../clockInOut/index';
+import TimeCard from '../timeCard/index';
 import Notifications from '../notifications/index';
 import Calendar from '../calendar/index';
 
@@ -32,11 +34,22 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
 });
-
 export default DrawerNavigator(
   {
     Dashboard: {
       screen: Home,
+    },
+    ClockInOut: {
+      screen: ClockInOut,
+      navigationOptions: () => ({
+        title: 'Clock In/Out',
+      }),
+    },
+    TimeCard: {
+      screen: TimeCard,
+      navigationOptions: () => ({
+        title: 'Time Card',
+      }),
     },
     Calendar: {
       screen: Calendar,

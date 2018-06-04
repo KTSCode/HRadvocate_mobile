@@ -1,5 +1,5 @@
 import React from 'react';
-var {StyleSheet, View, Text, Image, Dimensions, TouchableOpacity} = require('react-native');
+var {StyleSheet, View, Text, Image, Dimensions} = require('react-native');
 import {Card} from 'react-native-material-ui';
 
 const ToastBox = props => {
@@ -10,19 +10,21 @@ const ToastBox = props => {
   // TODO rename styles to be generic
   // TODO remove inline styles
   return (
-    <View style={{alignSelf:'stretch' }}>
+    <View style={[{alignSelf: 'stretch'}, props.style]}>
       <Card>
-      <View style={[styles.Error, {borderColor: props.color}]}>
-        <View style={{paddingRight: 15}}>
-          <Image source={icons[props.icon]} style={{height: 40, width: 40}} />
+        <View style={[styles.Error, {borderColor: props.color}]}>
+          <View style={{paddingRight: 15}}>
+            <Image source={icons[props.icon]} style={{height: 40, width: 40}} />
+          </View>
+          <View style={{justifyContent: 'center'}}>
+            <Text style={[styles.ErrorText, {color: props.color}]}>
+              {props.title}
+            </Text>
+            {props.text && (
+              <Text style={styles.ErrorCaption}>{props.text}</Text>
+            )}
+          </View>
         </View>
-        <View style={{justifyContent: 'center'}}>
-          <Text style={[styles.ErrorText, {color: props.color}]}>
-            {props.title}
-          </Text>
-          {props.text && <Text style={styles.ErrorCaption}>{props.text}</Text>}
-        </View>
-      </View>
       </Card>
     </View>
   );

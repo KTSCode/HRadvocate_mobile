@@ -6,6 +6,7 @@ const employee = (
     remember: false,
     username: '',
     password: '',
+    data: {},
   },
   action,
 ) => {

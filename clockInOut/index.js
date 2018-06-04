@@ -90,11 +90,9 @@ const Notifications = props => {
           <View>
             <Button
               onPress={() => {
-                const time = Date.now();
                 dispatch({
                   type: 'CLOCK_IN',
                   time: Date.now(),
-                  date: new Date(time).toISOString().split('T')[0],
                 });
               }}
               disabled={!clock_in_button}
@@ -107,11 +105,9 @@ const Notifications = props => {
         {clocked && (
           <Button
             onPress={() => {
-              const time = Date.now();
               dispatch({
                 type: 'CLOCK_OUT',
-                time: time,
-                date: new Date(time).toISOString().split('T')[0],
+                time: Date.now(),
               });
             }}
             text="Clock Out"
@@ -168,7 +164,7 @@ const timeFromNow = (date, time) => {
 const shiftOrganizer = (schedule, all_shifts) => {
   const DotW = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
   var return_shifts = [];
-  const cur_date = new Date();
+  //const cur_date = new Date();
   // add the next weeks worth of scheduled shifts to return_shifts
   for (var i = 0; i < 7; i++) {
     var temp_date = new Date(Date.now() + i * 24 * 60 * 60 * 1000);

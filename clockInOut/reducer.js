@@ -38,7 +38,6 @@ const timeclock = (
   switch (action.type) {
     case 'SET_COUNTDOWN': {
       //XXX this is only for demo purposes
-      //console.log(action.time);
       return {
         ...state,
         countdown: action.time,
@@ -60,7 +59,6 @@ const timeclock = (
       const dateTime = new Date(action.time).toString();
       const d = dateTime.split(' ');
       const dateString = d[0] + ' ' + d[1] + ' ' + d[2] + ', ' + d[3];
-      console.log(dateString);
       if (!state.punches[dateString]) {
         state.punches[dateString] = [];
       }
@@ -75,7 +73,6 @@ const timeclock = (
       const dateTime = new Date(action.time).toString();
       const d = dateTime.split(' ');
       const dateString = d[0] + ' ' + d[1] + ' ' + d[2] + ', ' + d[3];
-      console.log(dateString);
       state.punches[dateString][0].clockOut = dateTime;
       return {
         ...state,

@@ -13,6 +13,14 @@ import ToastBox from '../toastBox/index';
 import LoginForm from './loginForm';
 
 const LoginPage = props => {
+  //XXX DELETE THIS
+  //props.dispatch({
+  //  type: 'LOGIN',
+  //  username: 'bob@abc.com',
+  //  password: 'secret',
+  //  remember: true,
+  //  employees: props.data.employees,
+  //});
   const logos = {
     abc: require('../images/abc.jpg'),
     riptide: require('../images/riptide.jpg'),

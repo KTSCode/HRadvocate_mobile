@@ -30,7 +30,7 @@ const Home = props => {
         company={props.screenProps.company.data.name}
       />
       <ScrollView style={styles.articleContainer}>
-        <SectionHeader title="My Calendar" top="true" />
+        <SectionHeader title="Company Calendar" top="true" />
         <View style={styles.calendarContainer}>
           <CalendarList
             markedDates={markedDates}

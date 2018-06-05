@@ -9,7 +9,11 @@ const CalendarPage = props => {
   const {events} = props.screenProps.company.data;
   return (
     <View style={StyleSheet.absoluteFill}>
-      <HeaderBar navigation={props.navigation} />
+      <HeaderBar
+        navigation={props.navigation}
+        company={props.screenProps.company.data.name}
+      />
+
       <SectionHeader title="Calendar" top="true" />
       <Calendar schedule={schedule} shifts={shifts} events={events} />
     </View>

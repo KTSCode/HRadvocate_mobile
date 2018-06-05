@@ -65,7 +65,7 @@ const createTimeCard = p => {
       </View>,
     );
   }
-  return return_punches;
+  return return_punches.reverse();
 };
 
 const mil2AMPM = time => {

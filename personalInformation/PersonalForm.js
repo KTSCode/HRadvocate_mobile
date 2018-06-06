@@ -10,11 +10,7 @@ import {
   Image,
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
-import {connect} from 'react-redux';
-import updatePersonalInformation from './actions';
 import RNPickerSelect from 'react-native-picker-select';
-//import PhotoUpload from 'react-native-photo-upload';
-//import AddressInput from './AddressInput';
 
 const renderTextInput = ({
   input,
@@ -321,18 +317,9 @@ var styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
-  return {
-    initialValues: state.employee.data,
-    modifiableField: state.company.data.modifiableFields,
-    requiredField: state.company.data.requiredFields,
-  };
-};
-
 const PersonalFormForm = reduxForm({
   form: 'personalForm', // a unique identifier for this form
-  //onSubmit: update,
   enableReinitialize: true,
 })(PersonalForm);
 
-export default connect(mapStateToProps)(PersonalFormForm);
+export default PersonalFormForm;

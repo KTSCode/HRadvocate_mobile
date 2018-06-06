@@ -5,14 +5,17 @@ import HeaderBar from '../headerBar/index';
 import SectionHeader from '../sectionHeader/index';
 
 const PersonalInfo = props => {
+  //console.log(props.screenProps.company.data.modifiableFields);
   return (
     <View style={{flex: 1}}>
       <HeaderBar navigation={props.navigation} />
       <SectionHeader title="My Info" top="true" />
       <View style={{marginTop: 10, flex: 1}}>
         <PersonalForm
-          handleSubmit={value => {
-            //console.log(value);
+          modifiableField={props.screenProps.company.data.modifiableFields}
+          requiredField={props.screenProps.company.data.requiredFields}
+          initialValues={props.screenProps.employee.data}
+          onSubmit={value => {
             props.screenProps.dispatch({
               type: 'UPDATE_INFO',
               payload: value,

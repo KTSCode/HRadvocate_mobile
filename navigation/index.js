@@ -6,6 +6,7 @@ import ClockInOut from '../clockInOut/index';
 import TimeCard from '../timeCard/index';
 import Notifications from '../notifications/index';
 import Calendar from '../calendar/index';
+import PersonalInfo from '../personalInformation/index';
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -49,6 +50,12 @@ export default DrawerNavigator(
       screen: TimeCard,
       navigationOptions: () => ({
         title: 'Time Card',
+      }),
+    },
+    Personal: {
+      screen: PersonalInfo,
+      navigationOptions: () => ({
+        title: 'Personal Info',
       }),
     },
     Calendar: {

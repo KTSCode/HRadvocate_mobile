@@ -15,9 +15,9 @@ const reducers = {
 };
 const reducer = combineReducers(reducers);
 
-const logger = createLogger({
-  predicate: (getState, action) => !RegExp('@@redux-form*').test(action.type),
-});
+//const logger = createLogger({
+//  predicate: (getState, action) => !RegExp('@@redux-form*').test(action.type),
+//});
 
 export default createStore(reducer);
 //export default createStore(reducer, applyMiddleware(logger));

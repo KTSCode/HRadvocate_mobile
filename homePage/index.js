@@ -25,42 +25,42 @@ const Home = props => {
 
   return (
     <View style={StyleSheet.absoluteFill}>
-      <HeaderBar navigation={props.navigation} />
-      <SectionHeader title="News" top="true" />
+      <HeaderBar
+        navigation={props.navigation}
+        company={props.screenProps.company.data.name}
+      />
       <ScrollView style={styles.articleContainer}>
+        <SectionHeader title="Company Calendar" top="true" />
+        <View style={styles.calendarContainer}>
+          <CalendarList
+            markedDates={markedDates}
+            horizontal={true}
+            pagingEnabled={true}
+            pastScrollRange={5}
+            futureScrollRange={7}
+            showScrollIndicator={true}
+            current={'2018-06-01'}
+            onDayPress={day => {
+              const event = getEvent(day.dateString, events);
+              Alert.alert(event[0], event[1]);
+            }}
+            hideExtraDays={true}
+            firstDay={1}
+            showWeekNumbers={false}
+          />
+        </View>
+        <SectionHeader title="News & Announcements" />
         {articles.map((a, i) => {
           return (
             <View key={i}>
-              <Card
-                title={a.title}
-                image={{uri: a.image}}
-                imageStyle={styles.cardImage}>
+              <Card title={a.title} image={{uri: a.image}}>
                 <Text>{a.description}</Text>
               </Card>
             </View>
           );
         })}
-        <View style={{height: 10}} />
+        <View style={{height: 20}} />
       </ScrollView>
-      <SectionHeader title="Calendar" />
-      <View style={styles.calendarContainer}>
-        <CalendarList
-          markedDates={markedDates}
-          horizontal={true}
-          pagingEnabled={true}
-          pastScrollRange={5}
-          futureScrollRange={7}
-          showScrollIndicator={true}
-          current={'2018-06-01'}
-          onDayPress={day => {
-            const event = getEvent(day.dateString, events);
-            Alert.alert(event[0], event[1]);
-          }}
-          hideExtraDays={true}
-          firstDay={1}
-          showWeekNumbers={false}
-        />
-      </View>
     </View>
   );
 };
@@ -82,9 +82,6 @@ const styles = StyleSheet.create({
   },
   calendarContainer: {
     flexDirection: 'column',
-  },
-  cardImage: {
-    height: 100,
   },
 });
 

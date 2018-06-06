@@ -55,6 +55,6 @@ This code base will server as a prototype for the HRadvocate mobile apps
  - [ ] Clock-in/out Page
  - [ ] Documents Page
  - [ ] Calendar Page
- - [ ] Notifications Page
+ - [X] Notifications Page
  - [ ] Benefits Page
  - [ ] Profile Page

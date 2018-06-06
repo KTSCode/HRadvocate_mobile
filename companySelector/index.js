@@ -5,6 +5,11 @@ import ToastBox from '../toastBox/index';
 import {Card} from 'react-native-material-ui';
 
 const CompanyCodePage = props => {
+  //XXX DELETE THIS
+  //props.dispatch({
+  //  type: 'SUBMIT_CODE',
+  //  code: 'abc',
+  //});
   const HRlogo = require('../images/hradvocate.png');
   // TODO make button uniform across iOS and Android
   return (

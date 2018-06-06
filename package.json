@@ -16,6 +16,7 @@
     "react-native-photo-upload": "^1.2.0",
     "react-native-picker-select": "^3.0.1",
     "react-native-sidebar": "^0.3.0",
+    "react-native-timer-countdown": "^1.1.0",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.5.11",
     "react-navigation-redux-helpers": "^1.0.3",

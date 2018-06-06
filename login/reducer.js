@@ -24,6 +24,7 @@ const employee = (
     dateOfBirth: '',
     maritalStatus: '',
     email: '',
+    data: {},
   },
   action,
 ) => {

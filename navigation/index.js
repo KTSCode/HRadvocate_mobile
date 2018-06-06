@@ -2,10 +2,10 @@ import React from 'react';
 import {View, ScrollView, StyleSheet, Button} from 'react-native';
 import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import Home from '../homePage/index';
-//import ClockInOut from '../clockInOut/index';
-//import TimeCard from '../timeCard/index';
-//import Notifications from '../notifications/index';
-//import Calendar from '../calendar/index';
+import ClockInOut from '../clockInOut/index';
+import TimeCard from '../timeCard/index';
+import Notifications from '../notifications/index';
+import Calendar from '../calendar/index';
 import PersonalInfo from '../personalInformation/index';
 
 const CustomDrawerContentComponent = props => (
@@ -41,13 +41,13 @@ export default DrawerNavigator(
       screen: Home,
     },
     ClockInOut: {
-      screen: Home,
+      screen: ClockInOut,
       navigationOptions: () => ({
         title: 'Clock In/Out',
       }),
     },
     TimeCard: {
-      screen: Home,
+      screen: TimeCard,
       navigationOptions: () => ({
         title: 'Time Card',
       }),
@@ -59,10 +59,10 @@ export default DrawerNavigator(
       }),
     },
     Calendar: {
-      screen: Home,
+      screen: Calendar,
     },
     Notifications: {
-      screen: Home,
+      screen: Notifications,
     },
   },
   {

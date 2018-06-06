@@ -2,8 +2,7 @@ import React from 'react';
 import {View, ScrollView, StyleSheet, Button} from 'react-native';
 import {DrawerNavigator, DrawerItems, SafeAreaView} from 'react-navigation';
 import Home from '../homePage/index';
-import Test2 from './test2';
-import Test3 from './test3';
+import PersonalInfo from '../personalInformation/index.js';
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -38,11 +37,8 @@ export default DrawerNavigator(
     Dashboard: {
       screen: Home,
     },
-    Test2: {
-      screen: Test2,
-    },
-    Test3: {
-      screen: Test3,
+    Personal: {
+      screen: PersonalInfo,
     },
   },
   {

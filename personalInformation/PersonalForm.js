@@ -7,13 +7,13 @@ import {
   Dimensions,
   TouchableOpacity,
   ScrollView,
-  Image
+  Image,
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react-redux';
 import updatePersonalInformation from './actions';
 import RNPickerSelect from 'react-native-picker-select';
-import PhotoUpload from 'react-native-photo-upload'
+//import PhotoUpload from 'react-native-photo-upload';
 //import AddressInput from './AddressInput';
 
 const renderTextInput = ({
@@ -49,7 +49,7 @@ const renderPickerInput = ({
   required,
   options,
   placeholder,
-  items
+  items,
 }) => {
   return (
     <View style={styles.section}>
@@ -63,8 +63,6 @@ const renderPickerInput = ({
         items={items}
         onValueChange={input.onChange}
         value={input.value}>
-
-
         <TextInput
           value={input.value}
           editable={modifiable}
@@ -89,7 +87,7 @@ const PersonalForm = props => {
   return (
     <View style={{flex: 1}}>
       <ScrollView>
-      <Field
+        <Field
           name="salutation"
           component={renderPickerInput}
           label="Salutation"
@@ -97,7 +95,8 @@ const PersonalForm = props => {
           required={props.requiredField.salutation}
           placeholder={{
             label: 'Select a salutation...',
-            value: ''}}
+            value: '',
+          }}
           items={[
             {
               label: '',
@@ -124,7 +123,7 @@ const PersonalForm = props => {
               value: 'Dr.',
             },
           ]}
-      />
+        />
         <Field
           name="firstName"
           component={renderTextInput}
@@ -139,145 +138,125 @@ const PersonalForm = props => {
           modifiable={props.modifiableField.middleName}
           required={props.requiredField.middleName}
         />
-          <Field
-            name="lastName"
-            component={renderTextInput}
-            label="Last Name"
-            modifiable={props.modifiableField.lastName}
-            required={props.requiredField.lastName}
-          />
-          <Field
-            name="suffix"
-            component={renderTextInput}
-            label="Suffix"
-            modifiable={props.modifiableField.suffix}
-            required={props.requiredField.suffix}
-          />
-          <Field
-            name="nickname"
-            component={renderTextInput}
-            label="Nickname"
-            modifiable={props.modifiableField.nickname}
-            required={props.requiredField.nickname}
-          />
-          <Field
-            name="previousName"
-            component={renderTextInput}
-            label="Maiden Name"
-            modifiable={props.modifiableField.previousName}
-            required={props.requiredField.previousName}
-          />
-          <Field
-            name="phone"
-            component={renderTextInput}
-            label="Phone"
-            modifiable={props.modifiableField.phone}
-            required={props.requiredField.phone}
-          />
-          <Field
-            name="street1"
-            component={renderTextInput}
-            label="Street 1"
-            modifiable={props.modifiableField.street1}
-            required={props.requiredField.street1}
-          />
-          <Field
-            name="street2"
-            component={renderTextInput}
-            label="Street 2"
-            modifiable={props.modifiableField.street2}
-            required={props.requiredField.street2}
-          />
-          <Field
-            name="city"
-            component={renderTextInput}
-            label="City"
-            modifiable={props.modifiableField.city}
-            required={props.requiredField.city}
-          />
-          <Field
-            name="postalCode"
-            component={renderTextInput}
-            label="Postal Code"
-            modifiable={props.modifiableField.postalCode}
-            required={props.requiredField.postalCode}
-          />
-          <Field
-            name="ssn"
-            component={renderTextInput}
-            label="SSN"
-            modifiable={props.modifiableField.ssn}
-            required={props.requiredField.ssn}
-          />
-          <Field
-              name="maritalStatus"
-              component={renderPickerInput}
-              label="Marital Status"
-              modifiable={props.modifiableField.maritalStatus}
-              required={props.requiredField.maritalStatus}
-              placeholder={{
-                label: 'Select a marital status...',
-                value: ''}}
-              items={[
-                {
-                  label: '',
-                  value: '',
-                },
-                {
-                  label: 'Single',
-                  value: 'Single',
-                },
-                {
-                  label: 'Married',
-                  value: 'Married',
-                },
-                {
-                  label: 'Divorced',
-                  value: 'Divorced',
-                },
-                {
-                  label: 'Separated',
-                  value: 'Separated',
-                },
-                {
-                  label: 'Widowed',
-                  value: 'Widowed',
-                },
-              ]}
-          />
-
-
-        // <PhotoUpload
-        //   onPhotoSelect={avatar => {
-        //     if (avatar) {
-        //       console.log('Image base64 string: ', avatar)
-        //     }
-        //   }}
-        // >
-        //   <Image
-        //     style={{
-        //       paddingVertical: 30,
-        //       width: 150,
-        //       height: 150,
-        //       borderRadius: 75
-        //     }}
-        //     resizeMode='cover'
-        //     source={{
-        //       uri: 'https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg'
-        //     }}
-        //   />
-        // </PhotoUpload>
-
-        </ScrollView>
-        <View style={styles.buttonsView}>
-          <TouchableOpacity style={styles.button} onPress={reset}>
-            <Text style={styles.buttonText}> Cancel </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button,{backgroundColor: '#339933'}]} onPress={handleSubmit}>
-            <Text style={styles.buttonText}> Save </Text>
-          </TouchableOpacity>
-        </View>
+        <Field
+          name="lastName"
+          component={renderTextInput}
+          label="Last Name"
+          modifiable={props.modifiableField.lastName}
+          required={props.requiredField.lastName}
+        />
+        <Field
+          name="suffix"
+          component={renderTextInput}
+          label="Suffix"
+          modifiable={props.modifiableField.suffix}
+          required={props.requiredField.suffix}
+        />
+        <Field
+          name="nickname"
+          component={renderTextInput}
+          label="Nickname"
+          modifiable={props.modifiableField.nickname}
+          required={props.requiredField.nickname}
+        />
+        <Field
+          name="previousName"
+          component={renderTextInput}
+          label="Maiden Name"
+          modifiable={props.modifiableField.previousName}
+          required={props.requiredField.previousName}
+        />
+        <Field
+          name="phone"
+          component={renderTextInput}
+          label="Phone"
+          modifiable={props.modifiableField.phone}
+          required={props.requiredField.phone}
+        />
+        <Field
+          name="street1"
+          component={renderTextInput}
+          label="Street 1"
+          modifiable={props.modifiableField.street1}
+          required={props.requiredField.street1}
+        />
+        <Field
+          name="street2"
+          component={renderTextInput}
+          label="Street 2"
+          modifiable={props.modifiableField.street2}
+          required={props.requiredField.street2}
+        />
+        <Field
+          name="city"
+          component={renderTextInput}
+          label="City"
+          modifiable={props.modifiableField.city}
+          required={props.requiredField.city}
+        />
+        <Field
+          name="postalCode"
+          component={renderTextInput}
+          label="Postal Code"
+          modifiable={props.modifiableField.postalCode}
+          required={props.requiredField.postalCode}
+        />
+        <Field
+          name="ssn"
+          component={renderTextInput}
+          label="SSN"
+          modifiable={props.modifiableField.ssn}
+          required={props.requiredField.ssn}
+        />
+        <Field
+          name="maritalStatus"
+          component={renderPickerInput}
+          label="Marital Status"
+          modifiable={props.modifiableField.maritalStatus}
+          required={props.requiredField.maritalStatus}
+          placeholder={{
+            label: 'Select a marital status...',
+            value: '',
+          }}
+          items={[
+            {
+              label: '',
+              value: '',
+            },
+            {
+              label: 'Single',
+              value: 'Single',
+            },
+            {
+              label: 'Married',
+              value: 'Married',
+            },
+            {
+              label: 'Divorced',
+              value: 'Divorced',
+            },
+            {
+              label: 'Separated',
+              value: 'Separated',
+            },
+            {
+              label: 'Widowed',
+              value: 'Widowed',
+            },
+          ]}
+        />
+      </ScrollView>
+      <View style={styles.buttonsView}>
+        <TouchableOpacity style={styles.button} onPress={reset}>
+          <Text style={styles.buttonText}> Cancel </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: '#339933'}]}
+          onPress={handleSubmit}>
+          <Text style={styles.buttonText}> Save </Text>
+        </TouchableOpacity>
       </View>
+    </View>
   );
 };
 
@@ -315,7 +294,7 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 5
+    margin: 5,
   },
   button: {
     width: width * 0.3,
@@ -350,10 +329,10 @@ const mapStateToProps = state => {
   };
 };
 
-PersonalForm = reduxForm({
+const PersonalFormForm = reduxForm({
   form: 'personalForm', // a unique identifier for this form
   //onSubmit: update,
   enableReinitialize: true,
 })(PersonalForm);
 
-export default connect(mapStateToProps, {updatePersonalInformation})(PersonalForm);
+export default connect(mapStateToProps)(PersonalFormForm);

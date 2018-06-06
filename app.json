@@ -19,7 +19,11 @@
     },
     "primaryColor": "#1e98c7",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan barcodes on event tickets.",
+        "NSPhotoLibraryUsageDescription": "photo"
+      },
     }
   }
 }

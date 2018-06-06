@@ -20,7 +20,7 @@
           "country": true,
           "ssn": true,
           "dateOfBirth": true,
-          "maritalStatus": true
+          "maritalStatus": true,
       },
       "modifiableFields":{
           "salutation": true,
@@ -39,7 +39,7 @@
           "country": true,
           "ssn": true,
           "dateOfBirth": true,
-          "maritalStatus": true
+          "maritalStatus": true,
       },
       "requiredFields":{
           "salutation": false,
@@ -58,12 +58,12 @@
           "country": true,
           "ssn": true,
           "dateOfBirth": true,
-          "maritalStatus": false
+          "maritalStatus": false,
       },
       "clockRangeMins": 5, 
       "employees": [
         {
-          "salutation": "",
+          "salutation": "Mr.",
           "firstName": "Robert",
           "middleName": "John",
           "lastName": "Smith",
@@ -77,7 +77,7 @@
           "state":"CA",
           "postalCode":"92656",
           "country":"",
-          "ssn":"666-6666-66",
+          "ssn":"555-55-5555",
           "dateOfBirth":"",
           "maritalStatus":"",
           "email": "bob@abc.com",
@@ -169,7 +169,7 @@
             {"clockIn":
               {"time": "10:00AM", "date": "2018-05-11"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-11"}}
+              {"time": "6:00PM", "date": "2018-05-11"}},
           ],
           "notifications": [
             {

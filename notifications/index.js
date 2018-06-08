@@ -23,8 +23,7 @@ const Notifications = props => {
               title={n.title}
               subtitle={n.description}
               onPress={() => {
-                //FIXME make this go to the page associated with the type of notification
-                props.navigation.navigate('Dashboard');
+                props.navigation.navigate(n.link);
               }}
             />
           );

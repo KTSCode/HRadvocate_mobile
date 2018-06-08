@@ -180,37 +180,37 @@
             {
               "title": "Task assigned by Scott Betts",
               "description": "Update personal information",
-              "link": "Tasks and Requests"
+              "link": "Dashboard"
             },
             {
               "title": "Time off request reviewed",
               "description": "Your time off request for BEACH DAY has been denied",
-              "link": "Time Off Request"
+              "link": "Time Off"
             },
             {
               "title": "Time off request reviewed",
               "description": "Your time off request for WEDDING has been approved",
-              "link": "Time Off Request"
+              "link": "Time Off"
             },
             {
               "title": "Don't forget to clock-in!",
               "description": "Your shift starts in 5 minutes. Clock-in now!",
-              "link": "Clock In/Clock Out"
+              "link": "ClockInOut"
             },
             {
               "title": "Lunch time!",
               "description": "You have one hour to take lunch",
-              "link": "Clock In/Clock Out"
+              "link": "ClockInOut"
             },
             {
               "title": "Don't forget to clock-out!",
               "description": "Your shift has ended. Clock-out now!",
-              "link": "Clock In/Clock Out"
+              "link": "ClockInOut"
             },
             {
               "title": "PAYDAY",
               "description": "You should have received your paycheck through direct deposit. Contact HR for any issues",
-              "link": "Pay"
+              "link": "Home"
             }
           ]
         }

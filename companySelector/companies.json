@@ -82,6 +82,46 @@
           "email": "bob@abc.com",
           "username": "bob_smith",
           "password": "secret",
+          "timeOffBalances": {
+            "floatingHoliday": {
+              "available": 24,
+              "pending": 10,
+              "approved":4,
+              "used": 15
+            },
+            "PTO": {
+              "available": 80,
+              "pending": 10,
+              "approved":0,
+              "used": 15
+            },
+            "sickDay": {
+              "available": 8,
+              "pending": 10,
+              "approved":5,
+              "used": 15
+            },
+          },
+          "timeOffRequests": [
+            {
+              "status": "approved",
+              "note": "Planning a vaction with the family.",
+              "requestedOn": "05-29-2019",
+              "startDate": "06-20-2019",
+              "endDate": "06-21-2019",
+              "type": "PTO",
+              "hours": 16
+            },
+            {
+              "status": "pending",
+              "note": "Planning a vaction with the family.",
+              "requestedOn": "05-29-2019",
+              "startDate": "06-16-2019",
+              "endDate": "06-18-2019",
+              "type": "PTO",
+              "hours": 8
+            }
+          ],
           "schedule": [
               {"work": false},
               {

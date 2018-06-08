@@ -6,6 +6,9 @@ import ClockInOut from '../clockInOut/index';
 import Notifications from '../notifications/index';
 import Calendar from '../calendar/index';
 import Profile from '../personalInformation/index';
+import TimeOffRequests from '../timeOffRequests';
+import RequestPage from '../RequestPage';
+
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -51,6 +54,12 @@ export default DrawerNavigator(
     Profile: {
       screen: Profile,
     },
+    'Time Off': {
+      screen: TimeOffRequests,
+    },
+    'Request Page': {
+      screen: RequestPage,
+    }
   },
   {
     drawerWidth: 250,

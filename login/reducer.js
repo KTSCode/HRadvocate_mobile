@@ -48,6 +48,19 @@ const employee = (
         ...state,
         data: {...state.data, [action.payload.prop]: action.payload.value},
       };
+    case 'REQUEST_ADDITION':
+      return {
+        ...state,
+        data: {...state.data,
+          timeOffRequests: [...state.data.timeOffRequests, action.payload]},
+      };
+    case 'NEW_BALANCES':
+      return {
+        ...state,
+        data: {...state.data,
+          timeOffBalances: {...state.data.timeOffBalances, [action.payload.prop]: action.payload.value}},
+      };
+
     default:
       return state;
   }

@@ -8,12 +8,14 @@ const Buttons = () => {
       <TouchableOpacity style={button}>
         <Text style={buttonText}> Cancel </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[button,{backgroundColor: '#339933'}]}>
+      <TouchableOpacity style={[button,{backgroundColor: '#339933'}]} >
         <Text style={buttonText}> Save </Text>
       </TouchableOpacity>
     </View>
   );
 };
+
+
 
 var {height, width} = Dimensions.get('window');
 var styles = StyleSheet.create({

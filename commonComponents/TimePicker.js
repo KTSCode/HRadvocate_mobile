@@ -25,19 +25,14 @@ const TimePicker = ({value, label, required, onChangeText, minTime, maxTime, onC
           dateTouchBody: {
             height: 35,
           },
-          // dateIcon: {
-          //   width: 25,
-          //   height: 25,
-          //   marginRight: 6,
-          // },
           dateInput: {
             height: 35,
             borderWidth: 0,
-            alignItems: 'flex-start',
           },
           dateText: {
             color: 'black',
             fontSize: 16,
+            textAlign: 'center',
           },
         }}
         onDateChange={onChangeText}
@@ -55,21 +50,20 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 35,
-    width: 100,
+    width: width * 0.24,
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 2,
     marginLeft: 10,
-    paddingLeft: 10,
-    alignSelf: 'center',
+    justifyContent: 'center'
   },
   section: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    //justifyContent: 'flex-end',
     alignItems: 'center',
     height: 50,
     paddingRight: width * 0.05,
-    paddingLeft: width * 0.05,
+    //paddingLeft: width * 0.05,
   },
 });
 

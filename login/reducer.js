@@ -24,7 +24,10 @@ const employee = (
     dateOfBirth: '',
     maritalStatus: '',
     email: '',
-    data: {},
+    data: {
+      newNotifications: [],
+      Notifications: [],
+    },
   },
   action,
 ) => {
@@ -98,6 +101,19 @@ const employee = (
         ...state,
         data: action.payload,
       };
+    case 'CLEAR_NEW_NOTIFICATIONS': {
+      const notifications = state.data.newNotifications.concat(
+        state.data.notifications,
+      );
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          notifications: notifications,
+          newNotifications: [],
+        },
+      };
+    }
 
     default:
       return state;

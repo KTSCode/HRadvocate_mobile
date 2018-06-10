@@ -10,6 +10,9 @@ const PersonalInfo = props => {
       <HeaderBar
         navigation={props.navigation}
         company={props.screenProps.company.data.name}
+        newNotificationCount={
+          props.screenProps.employee.data.newNotifications.length
+        }
       />
       <SectionHeader title="My Info" top="true" />
       <View style={{marginTop: 10, flex: 1}}>

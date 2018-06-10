@@ -20,7 +20,7 @@
           "country": true,
           "ssn": true,
           "dateOfBirth": true,
-          "maritalStatus": true,
+          "maritalStatus": true
       },
       "modifiableFields":{
           "salutation": true,
@@ -39,7 +39,7 @@
           "country": true,
           "ssn": true,
           "dateOfBirth": true,
-          "maritalStatus": true,
+          "maritalStatus": true
       },
       "requiredFields":{
           "salutation": false,
@@ -58,9 +58,9 @@
           "country": true,
           "ssn": true,
           "dateOfBirth": true,
-          "maritalStatus": false,
+          "maritalStatus": false
       },
-      "clockRangeMins": 5, 
+      "clockRangeMins": 5,
       "employees": [
         {
           "salutation": "Mr.",
@@ -169,7 +169,14 @@
             {"clockIn":
               {"time": "10:00AM", "date": "2018-05-11"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-11"}},
+              {"time": "6:00PM", "date": "2018-05-11"}}
+          ],
+          "newNotifications":[
+            {
+              "title": "New Company Announcement",
+              "description": "BIG NEWS",
+              "link": "Dashboard"
+            }
           ],
           "notifications": [
             {
@@ -256,7 +263,7 @@
         {
           "title": "BIG NEWS",
           "description": "This is super important news about this company",
-          "image": "https://openspaceyoga.com/wp-content/uploads/2017/06/announcement-banner.jpg"
+          "image": "https://www.ulehssustainability.com/blog/wp-content/uploads/2014/11/485117993-800x627.jpg"
         },
         {
           "title": "Improved Benefits",
@@ -273,7 +280,7 @@
     {
       "name": "Riptide",
       "code": "riptide",
-      "clockRangeMins": 5, 
+      "clockRangeMins": 5,
       "employees": [
         {
           "name": "Mary Jane",

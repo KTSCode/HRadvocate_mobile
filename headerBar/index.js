@@ -25,7 +25,9 @@ const headerBar = props => {
               iconStyle={styles.iconStyle}
               color="#FFF"
               onPress={() => {
-                props.navigation.navigate('Calendar');
+                const date = new Date();
+                const string = date.toISOString().split('T')[0];
+                props.navigation.navigate('Calendar', {date: string});
               }}
             />
             <Badge

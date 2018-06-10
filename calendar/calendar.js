@@ -55,13 +55,8 @@ export default class AgendaScreen extends Component {
 
     // goes through all company events and adds them
     this.props.events.forEach(event => {
-      // calculates height based on description
-      //TODO make this more accurate
-      var set_height = 50 + event.description.length / 45 * 25;
       marked_dates[event.date].dots.push(work_event);
-      // TODO have sarah add locations to the events, and maybe end times
       all_events[event.date].push({
-        height: set_height,
         name: event.title,
         description: event.description,
         startTime: event.time,
@@ -69,17 +64,23 @@ export default class AgendaScreen extends Component {
       });
     });
 
+    const selected_date = this.props.navigation.state.params;
     // adds marked dates and events to component state
     this.state = {
       marked: marked_dates,
       items: all_events,
+      selected: selected_date,
     };
   }
 
   render() {
     return (
       <Agenda
-        selected={this.timeToString(Date.now())}
+        selected={
+          this.state.selected
+            ? this.state.selected.date
+            : this.timeToString(Date.now())
+        }
         items={this.state.items}
         markedDates={this.state.marked}
         markingType={'multi-dot'}
@@ -90,7 +91,6 @@ export default class AgendaScreen extends Component {
     );
   }
 
-  //TODO Style these and make them pretty
   renderItem(item) {
     return (
       <View style={styles.item}>

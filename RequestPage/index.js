@@ -32,6 +32,7 @@ class RequestPage extends Component {
     endDate: '',
     hours: 0,
     type: '',
+
     //these components are used to dynamically update minimum and maximum dates
     //this is used so that user can not input a start date that is past the end date
     //and vice versa
@@ -83,6 +84,7 @@ class RequestPage extends Component {
     var {typeName, objectName, typeObject} = this.getTypeInfo(type);
 
     //if there are enough available hours for this request
+
     if (typeObject.available >= this.state.hours) {
 
       //get the request info from the component level state
@@ -165,6 +167,7 @@ class RequestPage extends Component {
     //returns Date object with shift info
     //original time is used to distinguish from
     //the custom hours set by the user
+
     return {
       date,
       hours,
@@ -175,10 +178,12 @@ class RequestPage extends Component {
     };
   }
 
+
   //every time there is a change in the date range (date picker was updated)
   //or time range for a work day (time picker was updated)
   //this function is called
   //it updates the dateArray from the component level state
+
   updateDateArray() {
     if (this.state.startDate !== '' && this.state.endDate !== '') {
       var dateArray = [];
@@ -188,6 +193,7 @@ class RequestPage extends Component {
 
       //iterates through current range
       while (currentDate <= stopDate) {
+
         //checks to see if date is already in current date array
         //if there is, it retrieves it
         var dateObject = this.state.dateArray.find(function(element) {
@@ -205,20 +211,25 @@ class RequestPage extends Component {
         currentDate = moment(currentDate, 'MM-DD-YYYY')
           .add(1, 'days').format('MM-DD-YYYY');
       }
+
       //updates dateArray and hours from component level state
+
       this.setState({dateArray, hours});
     }
   }
 
   //passed to children components so that if the hours
   //of a specific day change, this component can update
+
   updateParentState(dateObject, newDateObject) {
     var index = this.state.dateArray.indexOf(dateObject);
     this.state.dateArray[index] = newDateObject;
     this.updateDateArray();
   }
 
+
   //translates days of the week to indeces
+
   getDayOfTheWeekIndeces(dayOfTheWeek) {
     const dayofTheWeekIndeces = {
       Sunday: 0,
@@ -232,7 +243,9 @@ class RequestPage extends Component {
     return dayofTheWeekIndeces[dayOfTheWeek];
   }
 
+
   //uses shift start time and end time to retreive hours
+
   getShiftHours(shiftDay) {
     var startAMPM = shiftDay.start.slice(-2, -1).toLowerCase();
     var endAMPM = shiftDay.end.slice(-2, -1).toLowerCase();
@@ -247,6 +260,7 @@ class RequestPage extends Component {
   }
 
   //maps through date array and creates DayOffItem component for each
+
   renderDateItems() {
     return this.state.dateArray.map(dateObject => {
       return (
@@ -288,6 +302,7 @@ class RequestPage extends Component {
             //updates its own values, as well as entire date Array
             //also updates endDateMin so that end Date value can be no
             //less than value of the current Start date
+
             onChangeText={startDate => {
               this.setState({startDate}, () => this.updateDateArray());
               this.setState({endDateMin: startDate});
@@ -300,9 +315,11 @@ class RequestPage extends Component {
             value={this.state.endDate}
             required={true}
             modifiable={true}
+
             //updates its own values, as well as entire date Array
             //also updates startDateMax so that start Date value can be no
             //more than value of the current End date
+
             onChangeText={endDate => {
               this.setState({endDate}, () => this.updateDateArray());
               this.setState({startDateMax: endDate});
@@ -318,6 +335,7 @@ class RequestPage extends Component {
               label: 'Select a time off type...',
               value: ''}}
             //options, display the available hours for each type to the user
+
             items={[
               {
                 label: 'PTO (' + this.props.PTO.available + ' hours available)',
@@ -331,7 +349,6 @@ class RequestPage extends Component {
                 label: 'Floating Holiday (' + this.props.floatingHoliday.available + ' hours available)',
                 value: 'Floating Holiday (' + this.props.floatingHoliday.available + ' hours)',
               },
-
             ]}
             onChangeText={type => this.setState({type})}
           />
@@ -347,7 +364,6 @@ class RequestPage extends Component {
         {
           //shows user total amount of hours in date range dynamically
         }
-
         <SubHeader
           title="Amount"
           rightText={'Total: ' + this.state.hours + ' hours'}

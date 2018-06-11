@@ -5,10 +5,15 @@ import HeaderBar from '../headerBar/index';
 import SectionHeader from '../sectionHeader/index';
 
 const PersonalInfo = props => {
-  //console.log(props.screenProps.company.data.modifiableFields);
   return (
     <View style={{flex: 1}}>
-      <HeaderBar navigation={props.navigation} />
+      <HeaderBar
+        navigation={props.navigation}
+        company={props.screenProps.company.data.name}
+        newNotificationCount={
+          props.screenProps.employee.data.newNotifications.length
+        }
+      />
       <SectionHeader title="My Info" top="true" />
       <View style={{marginTop: 10, flex: 1}}>
         <PersonalForm

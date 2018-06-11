@@ -12,6 +12,7 @@ import DropdownAlert from 'react-native-dropdownalert';
 import HeaderBar from '../headerBar/index';
 import ToastBox from '../toastBox/index';
 import SectionHeader from '../sectionHeader/index';
+import SubHeader from '../commonComponents/SubHeader'
 import Button from '../button/index';
 
 const Notifications = props => {
@@ -61,11 +62,16 @@ const Notifications = props => {
           props.screenProps.employee.data.newNotifications.length
         }
       />
+
+      <SectionHeader title="Clock In/Out" top="true" />
+      <View style={{alignItems: 'center', paddingTop: 40}}>
       {clocked ? (
-        <SectionHeader title="Your Shift Ends In:" top="true" />
+        <Text style={{fontSize: 18}}> Your Next Shift Ends In:  </Text>
       ) : (
-        <SectionHeader title="Your Next Shift Starts In:" top="true" />
+        <Text style={{fontSize: 18}}> Your Next Shift Starts In:  </Text>
       )}
+
+      </View>
       <View style={styles.countdownContainer}>
         <TouchableOpacity
           onPress={() => dispatch({type: 'SET_COUNTDOWN', time: 10000})}
@@ -87,7 +93,6 @@ const Notifications = props => {
           />
         </TouchableOpacity>
       </View>
-      <SectionHeader title="Clock In/Out" />
       <View style={{padding: 20}}>
         {!clocked && (
           <View>
@@ -102,7 +107,7 @@ const Notifications = props => {
               disabled={!clock_in_button}
               text="Clock In"
               buttonStyle={{height: 60}}
-              textStyle={{fontSize: 25}}
+              textStyle={{fontSize: 16}}
             />
           </View>
         )}
@@ -117,11 +122,11 @@ const Notifications = props => {
             }}
             text="Clock Out"
             buttonStyle={{height: 60, backgroundColor: 'red'}}
-            textStyle={{fontSize: 25}}
+            textStyle={{fontSize: 16}}
           />
         )}
       </View>
-      <SectionHeader title="Upcoming Shifts" />
+      <SubHeader title="Upcoming Shifts" />
       <ScrollView style={styles.notificationsContainer}>
         {shifts.map((s, i) => {
           return (
@@ -202,13 +207,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   countdownContainer: {
+    paddingTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: '#DFDFDF',
+    color: 'white',
   },
   countdownText: {
-    color: '#3F4952',
-    fontSize: 80,
+    color: 'blue',
+    fontSize: 60,
     fontWeight: 'bold',
   },
   upcomingDateDay: {
@@ -217,7 +223,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   upcomingDateDate: {
-    color: '#3F4952',
+    color: 'white',
     textAlign: 'center',
   },
   NextShiftText: {

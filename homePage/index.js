@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, ScrollView, Alert} from 'react-native';
+import {View, StyleSheet, Text, ScrollView} from 'react-native';
 import {Card} from 'react-native-elements';
 import {CalendarList} from 'react-native-calendars';
 

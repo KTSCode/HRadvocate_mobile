@@ -12,6 +12,9 @@ const TimeCard = props => {
       <HeaderBar
         navigation={props.navigation}
         company={props.screenProps.company.data.name}
+        newNotificationCount={
+          props.screenProps.employee.data.newNotifications.length
+        }
       />
       <SectionHeader title="Time Card" top="true" />
       <ScrollView style={styles.notificationsContainer}>

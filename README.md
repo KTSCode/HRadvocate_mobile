@@ -52,9 +52,9 @@ This code base will server as a prototype for the HRadvocate mobile apps
 
 ## TODO:
  - [X] Home Page
- - [ ] Clock-in/out Page
+ - [X] Clock-in/out Page
  - [ ] Documents Page
- - [ ] Calendar Page
+ - [X] Calendar Page
  - [X] Notifications Page
  - [ ] Benefits Page
- - [ ] Profile Page
+ - [X] Profile Page

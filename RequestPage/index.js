@@ -196,6 +196,9 @@ class RequestPage extends Component {
         <HeaderBar
           navigation={this.props.navigation}
           company={this.props.screenProps.company.data.name}
+          newNotificationCount={
+            this.props.screenProps.employee.data.newNotifications.length
+          }
         />
         <SectionHeader title="Time Off" top="true" />
         <SubHeader title="Create Request" />

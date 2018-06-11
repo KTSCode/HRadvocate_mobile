@@ -53,7 +53,7 @@ class DayOffItem extends Component {
       date: moment(this.state.date, 'MM-DD-YYYY').format('MM-DD-YYYY'),
       startTime: this.state.startTime,
       endTime: this.state.endTime,
-      hours: this.getHours(),
+      hours: Math.round(this.getHours() * 100) / 100,
       originalStartTime: this.state.originalStartTime,
       originalEndTime: this.state.originalEndTime,
     };

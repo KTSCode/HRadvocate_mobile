@@ -213,7 +213,7 @@ class RequestPage extends Component {
       }
 
       //updates dateArray and hours from component level state
-
+      hours = Math.round(hours * 100) / 100
       this.setState({dateArray, hours});
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Text, ScrollView, Alert} from 'react-native';
-import {Card, ListItem} from 'react-native-elements';
+import {View, StyleSheet, ScrollView} from 'react-native';
+import {ListItem} from 'react-native-elements';
 
 import HeaderBar from '../headerBar/index';
 import SectionHeader from '../sectionHeader/index';

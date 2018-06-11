@@ -9,27 +9,26 @@ import Button from './Button';
 import SubHeader from '../commonComponents/SubHeader';
 
 class TimeOffRequests extends Component {
+
   render() {
-    console.log(this.props.timeOffRequests);
-    var requestSections = this.props.timeOffRequests.map(request => {
-      var status = request.status.toUpperCase()[0];
-      var endDate = '';
-      if (request.endDate) {
-        endDate += ' - ' + request.endDate;
-      }
-      return (
+    var reverseArray = this.props.timeOffRequests.reverse();
+    var requestSections = reverseArray.map(request => {
+      return(
         <RequestSection
           key={request.startDate}
-          status={status}
+          status={request.status}
           startDate={request.startDate}
-          endDate={endDate}
+          endDate={request.endDate}
           hours={request.hours}
           type={request.type}
         />
       );
-    });
-    return (
-      <View style={{flex: 1}}>
+    }
+);
+
+  this.props.timeOffRequests.reverse();
+    return(
+      <View style={{ flex: 1 }}>
         <HeaderBar
           navigation={this.props.navigation}
           company={this.props.screenProps.company.data.name}
@@ -39,10 +38,33 @@ class TimeOffRequests extends Component {
         />
         <SectionHeader title="Time Off" top="true" />
         <SubHeader title="Balances" />
-        <BalanceSection type="PTO" hours={this.props.PTO.available} />
-        <BalanceSection type="Floating Holidays" hours="17" />
-        <BalanceSection type="Sick Days" hours="8" />
-        <Button goTo={this.props.navigation.navigate} />
+        <View style={{height:220}}>
+          <ScrollView horizontal={true}>
+            <BalanceSection
+              type="Paid Time Off"
+              available={this.props.PTO.available}
+              pending={this.props.PTO.pending}
+              approved={this.props.PTO.approved}
+              used={this.props.PTO.used}
+            />
+            <BalanceSection
+              type="Floating Holidays"
+              available={this.props.floatingHoliday.available}
+              pending={this.props.floatingHoliday.pending}
+              approved={this.props.floatingHoliday.approved}
+              used={this.props.floatingHoliday.used}
+            />
+
+            <BalanceSection
+              type="Sick Days"
+              available={this.props.sickDay.available}
+              pending={this.props.sickDay.pending}
+              approved={this.props.sickDay.approved}
+              used={this.props.sickDay.used}
+            />
+          </ScrollView>
+        </View>
+        <Button goTo={this.props.navigation.navigate}/>
         <SubHeader title="Requests" />
         <ScrollView>{requestSections}</ScrollView>
       </View>

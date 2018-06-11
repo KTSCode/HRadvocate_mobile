@@ -10,6 +10,7 @@ import TimePicker from '../commonComponents/TimePicker';
 import moment from 'moment';
 
 class DayOffItem extends Component {
+
   //original times are meant to distinguish original scheduled times from
   //updated hours that the user has selected
   //these are used so that the user cannot go past this range when
@@ -18,6 +19,7 @@ class DayOffItem extends Component {
   //information when component is clicked
   //by default, the time range pickers are not displayed to the user
   //user must click on component to see these
+
   state = {
     dateObject: this.props.dateObject,
     date: this.props.date,

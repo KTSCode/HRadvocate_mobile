@@ -18,7 +18,12 @@ const CalendarPage = props => {
       />
 
       <SectionHeader title="Calendar" top="true" />
-      <Calendar schedule={schedule} shifts={shifts} events={events} />
+      <Calendar
+        schedule={schedule}
+        shifts={shifts}
+        events={events}
+        navigation={props.navigation}
+      />
     </View>
   );
 };

@@ -9,6 +9,7 @@ import Calendar from '../calendar/index';
 import TimeOffRequests from '../timeOffRequests/index';
 import RequestPage from '../RequestPage/index';
 import Profile from '../profile/index';
+import Docpage from '../docpage/index';
 
 const CustomDrawerContentComponent = props => (
   <ScrollView>
@@ -62,6 +63,9 @@ export default DrawerNavigator(
     },
     'Request Page': {
       screen: RequestPage,
+    },
+    Downloads: {
+      screen: Docpage,
     },
     Calendar: {
       screen: Calendar,

@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   textInput: {
-    //height: 35,
+    height: 70,
     width: width * 0.6,
     borderColor: 'black',
     borderWidth: 1,
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    //height: 50,
+    paddingTop: 10,
+    paddingBottom: 10,
     paddingRight: width * 0.05,
     paddingLeft: width * 0.05,
     zIndex:0,

@@ -85,7 +85,7 @@
           "password": "secret",
           "timeOffBalances": {
             "floatingHoliday": {
-              "available": 24,
+              "available": 36,
               "pending": 10,
               "approved":4,
               "used": 15
@@ -93,13 +93,13 @@
             "PTO": {
               "available": 80,
               "pending": 10,
-              "approved":0,
+              "approved":16,
               "used": 15
             },
             "sickDay": {
-              "available": 8,
-              "pending": 10,
-              "approved":5,
+              "available": 10,
+              "pending": 0,
+              "approved":0,
               "used": 15
             },
           },
@@ -107,19 +107,19 @@
             {
               "status": "approved",
               "note": "Planning a vaction with the family.",
-              "requestedOn": "05-29-2019",
-              "startDate": "06-20-2019",
-              "endDate": "06-21-2019",
-              "type": "PTO",
+              "requestedOn": "05-20-2018",
+              "startDate": "07-22-2018",
+              "endDate": "07-24-2018",
+              "type": "Paid Time Off",
               "hours": 16
             },
             {
-              "status": "pending",
+              "status": "denied",
               "note": "Planning a vaction with the family.",
-              "requestedOn": "05-29-2019",
-              "startDate": "06-16-2019",
-              "endDate": "06-18-2019",
-              "type": "PTO",
+              "requestedOn": "05-29-2018",
+              "startDate": "07-26-2018",
+              "endDate": "07-27-2018",
+              "type": "Paid Time Off",
               "hours": 8
             }
           ],

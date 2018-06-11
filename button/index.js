@@ -12,12 +12,12 @@ const Button = props => {
   const tStyle = props.textStyle ? props.textStyle : {};
   const button_color = props.disabled ? {backgroundColor: '#9B9B9B'} : {};
   return (
-    <View style={{alignSelf: 'stretch'}}>
+    <View style={styles.buttonContainer}>
       <TouchableOpacity
-        style={[styles.buttonStyle, bStyle, button_color]}
+        style={[styles.button, bStyle, button_color]}
         onPress={props.onPress}
         disabled={props.disabled ? true : false}>
-        <Text style={[styles.buttonTextStyle, tStyle]}>{props.text}</Text>
+        <Text style={[styles.buttonText, tStyle]}>{props.text}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -42,6 +42,27 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingRight: 20,
     paddingLeft: 20,
+  },
+
+  buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: height * 0.1,
+    padding: 20,
+  },
+  button: {
+    flex: 1,
+    backgroundColor: '#1E98C7',
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: width * 0.95,
+    height: 32,
+
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
   },
 });
 export default Button;

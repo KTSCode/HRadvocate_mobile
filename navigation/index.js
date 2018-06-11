@@ -6,9 +6,9 @@ import ClockInOut from '../clockInOut/index';
 import TimeCard from '../timeCard/index';
 import Notifications from '../notifications/index';
 import Calendar from '../calendar/index';
-import PersonalInfo from '../personalInformation/index';
 import TimeOffRequests from '../timeOffRequests/index';
 import RequestPage from '../RequestPage/index';
+import Profile from '../profile/index';
 import Docpage from '../docpage/index';
 
 const CustomDrawerContentComponent = props => (
@@ -43,6 +43,9 @@ export default DrawerNavigator(
     Dashboard: {
       screen: Home,
     },
+    Profile: {
+      screen: Profile,
+    },
     ClockInOut: {
       screen: ClockInOut,
       navigationOptions: () => ({
@@ -53,12 +56,6 @@ export default DrawerNavigator(
       screen: TimeCard,
       navigationOptions: () => ({
         title: 'Time Card',
-      }),
-    },
-    Personal: {
-      screen: PersonalInfo,
-      navigationOptions: () => ({
-        title: 'Personal Info',
       }),
     },
     'Time Off': {

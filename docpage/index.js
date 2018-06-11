@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet, ScrollView, Text, Linking} from 'react-native';
 import HeaderBar from '../headerBar/index';
 import SectionHeader from '../sectionHeader/index';
+import SubHeader from '../commonComponents/SubHeader'
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 const Documents = props => {
@@ -16,7 +17,7 @@ const Documents = props => {
       />
       <SectionHeader title="Documents" top="true" />
       <ScrollView style={styles.articleContainer}>
-        <Text style={[styles.sectiontitle]}>Company Files</Text>
+        <SubHeader title='Company Files'/>
         <View style={[styles.item]}>
           <View style={[styles.itemText]}>
             <Text style={[styles.itemTextStyle]}>Harassment Policy</Text>
@@ -47,7 +48,7 @@ const Documents = props => {
             }}
           />
         </View>
-        <Text style={[styles.sectiontitle]}>Personal Documents</Text>
+        <SubHeader title='Personal Documents'/>
         <View style={[styles.item]}>
           <View style={[styles.itemText]}>
             <Text style={[styles.itemTextStyle]}>2017 W2 Form</Text>
@@ -86,12 +87,12 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#DFDFDF',
     textAlign: 'left',
-    fontSize: 20,
+    fontSize: 16,
   },
   item: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomColor: 'black',
+    borderBottomColor: '#DFDFDF',
     borderBottomWidth: 1,
   },
   itemText: {
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   itemTextStyle: {
     padding: 15,
     marginLeft: 40,
-    fontSize: 18,
+    fontSize: 16,
   },
   itemIcon: {
     marginTop: 15,

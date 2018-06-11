@@ -110,6 +110,11 @@ const employee = (
         data: {...state.data,
           timeOffBalances: {...state.data.timeOffBalances, [action.payload.prop]: action.payload.value}},
       };
+    case 'EMPLOYEE_UPDATE':
+      return {
+        ...state,
+        data: {...state.data, [action.payload.prop]: action.payload.value},
+       };
     default:
       return state;
   }

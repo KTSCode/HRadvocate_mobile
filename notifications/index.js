@@ -5,34 +5,43 @@ import {Card, ListItem} from 'react-native-elements';
 import HeaderBar from '../headerBar/index';
 import SectionHeader from '../sectionHeader/index';
 
-const Notifications = props => {
-  const notifications = props.screenProps.employee.data.notifications;
-
-  return (
-    <View style={StyleSheet.absoluteFill}>
-      <HeaderBar
-        navigation={props.navigation}
-        company={props.screenProps.company.data.name}
-      />
-      <SectionHeader title="Notifications" top="true" />
-      <ScrollView style={styles.notificationsContainer}>
-        {notifications.map((n, i) => {
-          return (
-            <ListItem
-              key={i}
-              title={n.title}
-              subtitle={n.description}
-              onPress={() => {
-                //FIXME make this go to the page associated with the type of notification
-                props.navigation.navigate('Dashboard');
-              }}
-            />
-          );
-        })}
-      </ScrollView>
-    </View>
-  );
-};
+class Notifications extends React.Component {
+  constructor(props) {
+    super(props);
+    if (props.screenProps.employee.data.newNotifications != []) {
+      props.screenProps.dispatch({type: 'CLEAR_NEW_NOTIFICATIONS'});
+    }
+  }
+  render() {
+    const notifications = this.props.screenProps.employee.data.notifications;
+    return (
+      <View style={StyleSheet.absoluteFill}>
+        <HeaderBar
+          navigation={this.props.navigation}
+          company={this.props.screenProps.company.data.name}
+          newNotificationCount={
+            this.props.screenProps.employee.data.newNotifications.length
+          }
+        />
+        <SectionHeader title="Notifications" top="true" />
+        <ScrollView style={styles.notificationsContainer}>
+          {notifications.map((n, i) => {
+            return (
+              <ListItem
+                key={i}
+                title={n.title}
+                subtitle={n.description}
+                onPress={() => {
+                  this.props.navigation.navigate(n.link);
+                }}
+              />
+            );
+          })}
+        </ScrollView>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   notificationsContainer: {

@@ -61,17 +61,17 @@ export default DrawerNavigator(
         title: 'Personal Info',
       }),
     },
-    Calendar: {
-      screen: Calendar,
-    },
-    Notifications: {
-      screen: Notifications,
-    },
     'Time Off': {
       screen: TimeOffRequests,
     },
     'Request Page': {
       screen: RequestPage,
+    },
+    Calendar: {
+      screen: Calendar,
+    },
+    Notifications: {
+      screen: Notifications,
     },
     Profile: {
       screen: Profile,

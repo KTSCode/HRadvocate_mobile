@@ -101,19 +101,8 @@ const employee = (
         ...state,
         data: action.payload,
       };
-    case 'REQUEST_ADDITION':
-      return {
-        ...state,
-        data: {...state.data,
-          timeOffRequests: [...state.data.timeOffRequests, action.payload]},
-      };
-    case 'NEW_BALANCES':
-      return {
-        ...state,
-        data: {...state.data,
-          timeOffBalances: {...state.data.timeOffBalances, [action.payload.prop]: action.payload.value}},
-      };
-  case 'CLEAR_NEW_NOTIFICATIONS': {
+<<<<<<< HEAD
+    case 'CLEAR_NEW_NOTIFICATIONS': {
       const notifications = state.data.newNotifications.concat(
         state.data.notifications,
       );
@@ -127,12 +116,20 @@ const employee = (
       };
     }
 
-  case 'EMPLOYEE_UPDATE':
-    return {
-      ...state,
-      data: {...state.data, [action.payload.prop]: action.payload.value},
-     };
-
+=======
+    case 'REQUEST_ADDITION':
+      return {
+        ...state,
+        data: {...state.data,
+          timeOffRequests: [...state.data.timeOffRequests, action.payload]},
+      };
+    case 'NEW_BALANCES':
+      return {
+        ...state,
+        data: {...state.data,
+          timeOffBalances: {...state.data.timeOffBalances, [action.payload.prop]: action.payload.value}},
+      };
+>>>>>>> 44d52a04a404369d2a6a10e8ece7547b8ef95414
     default:
       return state;
   }

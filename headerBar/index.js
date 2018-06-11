@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header, Icon} from 'react-native-elements';
+import {Header, Icon, Badge} from 'react-native-elements';
 import {Text, View, StyleSheet} from 'react-native';
 
 const headerBar = props => {
@@ -18,20 +18,44 @@ const headerBar = props => {
         </View>
       }
       rightComponent={
-        <View style={styles.rightIcons}>
-          <Icon
-            name="date-range"
-            color="#FFF"
-            onPress={() => {
-              props.navigation.navigate('Calendar');
-            }}
-          />
-          <Icon
-            name="notifications"
-            color="#FFF"
-            onPress={() => props.navigation.navigate('Notifications')}
-          />
-        </View>
+        props.newNotificationCount > 0 ? (
+          <View style={styles.rightIcons}>
+            <Icon
+              name="date-range"
+              iconStyle={styles.iconStyle}
+              color="#FFF"
+              onPress={() => {
+                props.navigation.navigate('Calendar');
+              }}
+            />
+            <Badge
+              onPress={() => props.navigation.navigate('Notifications')}
+              containerStyle={{backgroundColor: '#EE3E4B'}}>
+              <View style={styles.notificationCounter}>
+                <Icon name="notifications" color="#FFF" />
+                <Text style={{color: '#FFF', fontSize: 20}}>
+                  {props.newNotificationCount}
+                </Text>
+              </View>
+            </Badge>
+          </View>
+        ) : (
+          <View style={styles.rightIcons}>
+            <Icon
+              name="date-range"
+              color="#FFF"
+              iconStyle={styles.iconStyle}
+              onPress={() => {
+                props.navigation.navigate('Calendar');
+              }}
+            />
+            <Icon
+              name="notifications"
+              color="#FFF"
+              onPress={() => props.navigation.navigate('Notifications')}
+            />
+          </View>
+        )
       }
       outerContainerStyles={styles.outerContainerStyles}
     />
@@ -40,16 +64,21 @@ const headerBar = props => {
 
 // TODO Make container width a percentage of screen width
 const styles = StyleSheet.create({
+  iconStyle: {
+    marginRight: 5,
+  },
   rightIcons: {
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     justifyContent: 'space-between',
-    width: 60,
   },
   leftIcons: {
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  notificationCounter: {
+    flexDirection: 'row',
   },
   companyText: {
     color: '#EEE',
@@ -60,6 +89,7 @@ const styles = StyleSheet.create({
   outerContainerStyles: {
     backgroundColor: '#1D1D20',
     borderBottomWidth: 0,
+    paddingBottom: 10,
   },
 });
 

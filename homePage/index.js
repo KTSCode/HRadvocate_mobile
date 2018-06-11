@@ -28,6 +28,9 @@ const Home = props => {
       <HeaderBar
         navigation={props.navigation}
         company={props.screenProps.company.data.name}
+        newNotificationCount={
+          props.screenProps.employee.data.newNotifications.length
+        }
       />
       <ScrollView style={styles.articleContainer}>
         <SectionHeader title="Company Calendar" top="true" />

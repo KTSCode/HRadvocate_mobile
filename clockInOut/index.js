@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {Card, ListItem} from 'react-native-elements';
 import TimerCountdown from 'react-native-timer-countdown';
-
+import DropdownAlert from 'react-native-dropdownalert';
 import HeaderBar from '../headerBar/index';
 import ToastBox from '../toastBox/index';
 import SectionHeader from '../sectionHeader/index';
@@ -97,6 +97,7 @@ const Notifications = props => {
                   type: 'CLOCK_IN',
                   time: Date.now(),
                 });
+                this.dropdown.alertWithType('success', 'Success','You have successfully clocked in!');
               }}
               disabled={!clock_in_button}
               text="Clock In"
@@ -112,6 +113,7 @@ const Notifications = props => {
                 type: 'CLOCK_OUT',
                 time: Date.now(),
               });
+              this.dropdown.alertWithType('success', 'Success','You have successfully clocked out!');
             }}
             text="Clock Out"
             buttonStyle={{height: 60, backgroundColor: 'red'}}
@@ -138,6 +140,7 @@ const Notifications = props => {
           );
         })}
       </ScrollView>
+      <DropdownAlert messageNumOfLines={12} ref={ref => this.dropdown = ref} />
     </View>
   );
 };

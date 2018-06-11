@@ -10,6 +10,14 @@ import TimePicker from '../commonComponents/TimePicker';
 import moment from 'moment';
 
 class DayOffItem extends Component {
+  //original times are meant to distinguish original scheduled times from
+  //updated hours that the user has selected
+  //these are used so that the user cannot go past this range when
+  //selecting the hours for that day
+  //the open and bordeColor keys are used to display additional
+  //information when component is clicked
+  //by default, the time range pickers are not displayed to the user
+  //user must click on component to see these
   state = {
     dateObject: this.props.dateObject,
     date: this.props.date,
@@ -22,6 +30,7 @@ class DayOffItem extends Component {
     borderColor: '#DFDFDF',
   };
 
+//get new hours from start and end times
   getHours() {
     var startAMPM = this.state.startTime.slice(-2, -1).toLowerCase();
     var endAMPM = this.state.endTime.slice(-2, -1).toLowerCase();
@@ -35,6 +44,8 @@ class DayOffItem extends Component {
     return hours;
   }
 
+  //is called when the hour range is updates in order to update the hours
+  //and start and end times for a particular day
   updateParentState() {
     var newDateObject = {
       date: moment(this.state.date, 'MM-DD-YYYY').format('MM-DD-YYYY'),

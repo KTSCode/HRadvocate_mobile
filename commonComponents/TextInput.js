@@ -7,7 +7,9 @@ const Input = ({
   onChangeText,
   secureTextEntry,
   required,
-  modifiable}) => {
+  modifiable,
+  onFocus
+}) => {
   const {textInput, labelStyle, section} = styles;
   return (
     <View style={section}>
@@ -22,6 +24,7 @@ const Input = ({
         value={value}
         editable={modifiable}
         onChangeText={onChangeText}
+        onFocus={onFocus}
       />
     </View>
   );

@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {View, Dimensions, StyleSheet, Text} from 'react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
+//component that used special library that connects to Google API
+//the original styling of this component is very different than it
+//was used in this application which is why there is so much styling
+//within the container
 class AddressInput extends Component {
   render() {
     var {width} = Dimensions.get('window');
@@ -17,6 +21,9 @@ class AddressInput extends Component {
           fetchDetails={true}
           renderDescription={row => row.description} // custom description render
           onPress={(data, details) => {
+            //the information received from the google API
+            //is parsed and used to update parent component State
+            //which in turn is used to populate address inputs
             this.props.updateParentState({street1: data.structured_formatting.main_text});
             const cityStateCountry = data.structured_formatting.secondary_text.split(',');
             this.props.updateParentState({city: cityStateCountry[0]});

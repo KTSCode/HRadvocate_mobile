@@ -19,6 +19,8 @@ const uiTheme = {
 class Main extends React.Component {
   constructor(props) {
     super(props);
+    //disables the yellow box
+    console.disableYellowBox = true;
   }
 
   render() {

@@ -70,57 +70,57 @@
           "suffix": "",
           "nickname": "Bob",
           "previousName":"",
-          "phone":"949-333-3333",
+          "phone":"949-345-7835",
           "street1": "213 Candy Ln",
           "street2":"",
           "city":"Irvine",
           "state":"CA",
           "postalCode":"92656",
-          "country":"",
-          "ssn":"555-55-5555",
-          "dateOfBirth":"",
+          "country":"US",
+          "ssn":"046-88-3934",
+          "dateOfBirth":"05-11-89",
           "maritalStatus":"",
           "email": "bob@abc.com",
           "username": "bob_smith",
           "password": "secret",
           "timeOffBalances": {
             "floatingHoliday": {
-              "available": 36,
-              "pending": 10,
-              "approved":4,
-              "used": 15
+              "available": 40,
+              "pending": 8,
+              "approved": 12,
+              "used": 16
             },
             "PTO": {
               "available": 80,
               "pending": 10,
-              "approved":16,
-              "used": 15
+              "approved": 24,
+              "used": 16
             },
             "sickDay": {
               "available": 10,
               "pending": 0,
               "approved":0,
-              "used": 15
+              "used": 4
             },
           },
           "timeOffRequests": [
             {
               "status": "approved",
-              "note": "Planning a vaction with the family.",
+              "note": "Planning a vacation with the family",
               "requestedOn": "05-20-2018",
-              "startDate": "07-22-2018",
-              "endDate": "07-24-2018",
+              "startDate": "07-25-2018",
+              "endDate": "07-27-2018",
               "type": "Paid Time Off",
-              "hours": 16
+              "hours": 24
             },
             {
               "status": "denied",
-              "note": "Planning a vaction with the family.",
+              "note": "Planning a vacation with friends at Las Vegas",
               "requestedOn": "05-29-2018",
-              "startDate": "07-26-2018",
-              "endDate": "07-27-2018",
+              "startDate": "08-02-2018",
+              "endDate": "08-03-2018",
               "type": "Paid Time Off",
-              "hours": 8
+              "hours": 16
             }
           ],
           "schedule": [
@@ -158,7 +158,7 @@
               {"work": false}
           ],
           "shifts": [
-              {"date": "2018-05-20",
+              {"date": "2018-06-08",
                 "start": "9:45AM",
                 "end": "2:00PM",
                 "location": "Offsite Location"
@@ -171,45 +171,45 @@
             ],
           "timecard": [
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-04-30"}},
+              {"time": "7:45AM", "date": "2018-05-21"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-04-30"}},
+              {"time": "4:00PM", "date": "2018-05-21"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-01"}},
+              {"time": "7:45AM", "date": "2018-05-22"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-01"}},
+              {"time": "4:00PM", "date": "2018-05-22"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-02"}},
+              {"time": "7:45AM", "date": "2018-05-23"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-02"}},
+              {"time": "4:00PM", "date": "2018-05-23"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-03"}},
+              {"time": "7:45AM", "date": "2018-05-24"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-03"}},
+              {"time": "4:00PM", "date": "2018-05-24"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-04"}},
+              {"time": "7:45AM", "date": "2018-05-25"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-04"}},
+              {"time": "4:00PM", "date": "2018-05-25"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-07"}},
+              {"time": "7:45AM", "date": "2018-05-28"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-07"}},
+              {"time": "4:00PM", "date": "2018-05-28"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-08"}},
+              {"time": "7:45AM", "date": "2018-05-29"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-08"}},
+              {"time": "4:00PM", "date": "2018-05-29"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-09"}},
+              {"time": "7:45AM", "date": "2018-05-30"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-09"}},
+              {"time": "4:00PM", "date": "2018-05-30"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-10"}},
+              {"time": "7:45AM", "date": "2018-05-31"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-10"}},
+              {"time": "4:00PM", "date": "2018-05-31"}},
             {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-11"}},
+              {"time": "7:45AM", "date": "2018-06-01"}},
             {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-11"}}
+              {"time": "4:00PM", "date": "2018-06-01"}}
           ],
           "newNotifications":[
             {
@@ -227,198 +227,16 @@
             {
               "title": "Task assigned by Scott Betts",
               "description": "Update personal information",
-              "link": "Dashboard"
-            },
-            {
-              "title": "Time off request reviewed",
-              "description": "Your time off request for BEACH DAY has been denied",
-              "link": "Time Off"
-            },
-            {
-              "title": "Time off request reviewed",
-              "description": "Your time off request for WEDDING has been approved",
-              "link": "Time Off"
-            },
-            {
-              "title": "Don't forget to clock-in!",
-              "description": "Your shift starts in 5 minutes. Clock-in now!",
-              "link": "ClockInOut"
-            },
-            {
-              "title": "Lunch time!",
-              "description": "You have one hour to take lunch",
-              "link": "ClockInOut"
-            },
-            {
-              "title": "Don't forget to clock-out!",
-              "description": "Your shift has ended. Clock-out now!",
-              "link": "ClockInOut"
-            },
-            {
-              "title": "PAYDAY",
-              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues",
-              "link": "Home"
-            }
-          ]
-        }
-      ],
-      "events":[
-        {
-          "title": "Bring your dog to work day!",
-          "description": "Bring your furry friend to work for special treats!",
-          "date": "2018-05-18",
-          "startTime": "9:00AM",
-          "endTime": "5:00PM"
-        },
-        {
-          "title": "Potluck",
-          "description": "Don't forget to bring food for our end-of-the-month potluck!",
-          "date": "2018-05-28",
-          "time": "9:00AM",
-          "endTime": "12:30PM"
-        },
-        {
-          "title": "Company Meeting",
-          "description": "Company meeting to discuss our plans and goals for the upcoming month",
-          "date": "2018-06-05",
-          "startTime": "12:30PM",
-          "endTime": "1:30PM"
-        },
-        {
-          "title": "Annual BBQ Day",
-          "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
-          "date": "2018-05-31",
-          "startTime": "1:00PM",
-          "endTime": "5:00PM"
-        },
-        {
-          "title": "Beach Day",
-          "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
-          "date": "2018-06-21",
-          "startTime": "11:00AM",
-          "endTime": "3:30PM"
-        }
-      ],
-      "articles": [
-        {
-          "title": "BIG NEWS",
-          "description": "This is super important news about this company",
-          "image": "https://www.ulehssustainability.com/blog/wp-content/uploads/2014/11/485117993-800x627.jpg"
-        },
-        {
-          "title": "Improved Benefits",
-          "description": "Don't forget to check your improved benefits in the app today! ",
-          "image": "http://philipbarron.net/wp-content/uploads/2016/06/benefits.jpg"
-        },
-        {
-          "title": "Fundraiser Reservation",
-          "description": "Please RSVP for the company fundraiser no later than Friday",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Money_Cash.jpg/800px-Money_Cash.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Riptide",
-      "code": "riptide",
-      "clockRangeMins": 5,
-      "employees": [
-        {
-          "name": "Mary Jane",
-          "email": "maryjane@riptide.com",
-          "username": "mary_jane",
-          "password": "maryj",
-          "schedule": [
-              {"work": false},
-              {"work": false},
-              {
-                "work": true,
-                "start": "7:45AM",
-                "end": "4:00PM",
-                "location": "Office"
-              },
-              {"work": false},
-              {
-                "work": true,
-                "start": "7:45AM",
-                "end": "4:00PM",
-                "location": "Office"
-              },
-              {
-                "work": true,
-                "start": "7:45AM",
-                "end": "4:00PM",
-                "location": "Office"
-              },
-              {"work": false}
-          ],
-          "shifts": [
-              {"date": "2018-06-11",
-                "start": "4:00PM",
-                "end": "7:00PM",
-                "location": "CalIT2 Building"
-              }
-            ],
-          "timecard": [
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-04-30"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-04-30"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-01"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-01"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-02"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-02"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-03"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-03"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-04"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-04"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-07"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-07"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-08"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-08"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-09"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-09"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-10"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-10"}},
-            {"clockIn":
-              {"time": "10:00AM", "date": "2018-05-11"}},
-            {"clockOut":
-              {"time": "6:00PM", "date": "2018-05-11"}},
-          ],
-          "notifications": [
-            {
-              "title": "Event reminder!",
-              "description": "Don't forget to bring your dog to work today!",
-              "link": "Calendar"
-            },
-            {
-              "title": "Task assigned by Scott Betts",
-              "description": "Update personal information",
               "link": "Tasks and Requests"
             },
             {
               "title": "Time off request reviewed",
-              "description": "Your time off request for BEACH DAY has been denied",
+              "description": "Your time off request for FRIENDS VACATION has been denied",
               "link": "Time Off Request"
             },
             {
               "title": "Time off request reviewed",
-              "description": "Your time off request for WEDDING has been approved",
+              "description": "Your time off request for FAMILY VACATION has been approved",
               "link": "Time Off Request"
             },
             {
@@ -442,54 +260,371 @@
               "link": "Pay"
             }
           ]
-        }
-      ],
-      "events":[
-        {
+          }
+          ],
+          "events":[
+          {
           "title": "Bring your dog to work day!",
-          "description": "Bring your furry friend to work for special treats!",
-          "date": "2018-05-18",
-          "startTime": "9:00AM",
-          "endTime": "5:00PM"
-        },
-        {
+          "description": "Bring your furry friend to work for special treats and toys!",
+          "date": "2018-05-25",
+          "startTime": "7:45AM",
+          "endTime": "4:00PM"
+          },
+          {
           "title": "Potluck",
           "description": "Don't forget to bring food for our end-of-the-month potluck!",
-          "date": "2018-05-28",
+          "date": "2018-06-04",
           "startTime": "11:00AM",
           "endTime": "12:30PM"
-        },
-        {
+          },
+          {
           "title": "Company Meeting",
           "description": "Company meeting to discuss our plans and goals for the upcoming month",
-          "date": "2018-06-05",
+          "date": "2018-06-11",
           "startTime": "12:30PM",
           "endTime": "1:30PM"
-        },
-        {
+          },
+          {
           "title": "Annual BBQ Day",
           "description": "Come bring your family and friends for our annual BBQ Day! We will be having food, games, and entertainment all day!",
-          "date": "2018-06-31",
+          "date": "2018-06-23",
           "startTime": "1:00PM",
           "endTime": "5:00PM"
-        },
-        {
+          },
+          {
           "title": "Beach Day",
           "description": "Come join the team as we cool off in the sun and enjoy the warm weather!",
           "date": "2018-07-21",
           "startTime": "11:00AM",
           "endTime": "3:30PM"
-        }
-      ],
+          }
+       ],
       "articles": [
         {
           "title": "BIG NEWS",
-          "description": "This is super important news about this company",
+          "description": "Starting Monday 6/11, all time off requests must be submitted at least 2 weeks in advance. Management will be strictly enforcing this rule. Failure to do so will result in the request being denied. Please contact your supervisor if you have any questions or concerns.",
+          "image": "https://www.ulehssustainability.com/blog/wp-content/uploads/2014/11/485117993-800x627.jpg"
+        },
+        {
+          "title": "Improved Benefits",
+          "description": "Don't forget to check your improved benefits in the app today!",
+          "image": "http://philipbarron.net/wp-content/uploads/2016/06/benefits.jpg"
+        },
+        {
+          "title": "Fundraiser Reservation",
+          "description": "Please RSVP for the company fundraiser no later than Friday",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Money_Cash.jpg/800px-Money_Cash.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Riptide",
+      "code": "riptide",
+      "viewableFields":{
+          "salutation": true,
+          "firstName": true,
+          "middleName": true,
+          "lastName": true,
+          "suffix": true,
+          "nickname": true,
+          "previousName": true,
+          "phone": true,
+          "street1": true,
+          "street2": true,
+          "city": true,
+          "state": true,
+          "postalCode": true,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": true
+      },
+      "modifiableFields":{
+          "salutation": true,
+          "firstName": true,
+          "middleName": true,
+          "lastName": true,
+          "suffix": true,
+          "nickname": true,
+          "previousName": true,
+          "phone": true,
+          "street1": true,
+          "street2": true,
+          "city": true,
+          "state": true,
+          "postalCode": true,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": true
+      },
+      "requiredFields":{
+          "salutation": false,
+          "firstName": true,
+          "middleName": false,
+          "lastName": true,
+          "suffix": false,
+          "nickname": false,
+          "previousName": false,
+          "phone": true,
+          "street1": false,
+          "street2": false,
+          "city": false,
+          "state": false,
+          "postalCode": false,
+          "country": true,
+          "ssn": true,
+          "dateOfBirth": true,
+          "maritalStatus": false
+      },
+      "clockRangeMins": 5,
+      "employees": [
+        {
+          "salutation": "Ms.",
+          "firstName": "Zoey",
+          "middleName": "Olana",
+          "lastName": "Tamura",
+          "suffix": "",
+          "nickname": "Zot",
+          "previousName":"",
+          "phone":"714-315-5410",
+          "street1": "3901 Parkview Ln",
+          "street2":"Apt 1D",
+          "city":"Irvine",
+          "state":"CA",
+          "postalCode":"92612",
+          "country":"US",
+          "ssn":"071-30-5494",
+          "dateOfBirth":"08-15-93",
+          "maritalStatus":"",
+          "email": "zoeytee@riptide.com",
+          "username": "zoey_tamura",
+          "password": "secret",
+          "timeOffBalances": {
+            "floatingHoliday": {
+              "available": 40,
+              "pending": 0,
+              "approved":8,
+              "used": 24
+            },
+            "PTO": {
+              "available": 50,
+              "pending": 8,
+              "approved":16,
+              "used": 4
+            },
+            "sickDay": {
+              "available": 10,
+              "pending": 0,
+              "approved":0,
+              "used": 6
+            },
+          },
+          "timeOffRequests": [
+            {
+              "status": "approved",
+              "note": "Family member's graduation in the East Coast",
+              "requestedOn": "05-12-2018",
+              "startDate": "06-14-2018",
+              "endDate": "06-15-2018",
+              "type": "Paid Time Off",
+              "hours": 16
+            },
+            {
+              "status": "denied",
+              "note": "Planning to attend a music festival",
+              "requestedOn": "06-01-2018",
+              "startDate": "07-19-2018",
+              "endDate": "07-20-2018",
+              "type": "Paid Time Off",
+              "hours": 8
+            }
+          ],
+          "schedule": [
+              {"work": false},
+              {
+                "work": true,
+                "start": "9:00AM",
+                "end": "5:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "9:00AM",
+                "end": "5:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "9:00AM",
+                "end": "5:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "9:00AM",
+                "end": "5:00PM",
+                "location": "Office"
+              },
+              {
+                "work": true,
+                "start": "9:00AM",
+                "end": "5:00PM",
+                "location": "Office"
+              },
+              {"work": false}
+          ],
+          "shifts": [
+              {"date": "2018-06-08",
+                "start": "10:00AM",
+                "end": "6:00PM",
+                "location": "Offsite Location"
+              },
+              {"date": "2018-06-12",
+                "start": "4:00PM",
+                "end": "8:00PM",
+                "location": "Mirage Building"
+              }
+            ],
+          "timecard": [
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-21"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-21"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-22"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-22"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-23"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-23"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-24"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-24"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-25"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-25"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-28"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-28"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-29"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-29"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-30"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-30"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-05-31"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-05-31"}},
+            {"clockIn":
+              {"time": "9:00AM", "date": "2018-06-01"}},
+            {"clockOut":
+              {"time": "5:00PM", "date": "2018-06-01"}}
+          ],
+          "newNotifications":[
+            {
+              "title": "New Company Announcement",
+              "description": "BIG NEWS",
+              "link": "Dashboard"
+            }
+          ],
+          "notifications": [
+            {
+              "title": "Event reminder!",
+              "description": "Don't forget to bring food for the potluck today!",
+              "link": "Calendar"
+            },
+            {
+              "title": "Task assigned by Scott Betts",
+              "description": "Update work availability",
+              "link": "Tasks and Requests"
+            },
+            {
+              "title": "Time off request reviewed",
+              "description": "Your time off request for MUSIC FESTIVAL has been denied",
+              "link": "Time Off Request"
+            },
+            {
+              "title": "Time off request reviewed",
+              "description": "Your time off request for GRADUATION has been approved",
+              "link": "Time Off Request"
+            },
+            {
+              "title": "Don't forget to clock-in!",
+              "description": "Your shift starts in 5 minutes. Clock-in now!",
+              "link": "Clock In/Clock Out"
+            },
+            {
+              "title": "Lunch time!",
+              "description": "You have one hour to take lunch",
+              "link": "Clock In/Clock Out"
+            },
+            {
+              "title": "Don't forget to clock-out!",
+              "description": "Your shift has ended. Clock-out now!",
+              "link": "Clock In/Clock Out"
+            },
+            {
+              "title": "PAYDAY",
+              "description": "You should have received your paycheck through direct deposit. Contact HR for any issues",
+              "link": "Pay"
+            }
+          ]
+          }
+          ],
+          "events":[
+          {
+          "title": "Team Building Day",
+          "description": "Come meet the new hires and participate in a fun-filled day of delicious food and events!",
+          "date": "2018-06-01",
+          "startTime": "9:00AM",
+          "endTime": "5:00PM"
+          },
+          {
+          "title": "Potluck",
+          "description": "Don't forget to bring food for our end-of-the-month potluck!",
+          "date": "2018-06-06",
+          "startTime": "11:00AM",
+          "endTime": "12:30PM"
+          },
+          {
+          "title": "Company Meeting",
+          "description": "Company meeting to discuss our plans and goals for the upcoming month",
+          "date": "2018-06-12",
+          "startTime": "12:30PM",
+          "endTime": "1:30PM"
+          },
+          {
+          "title": "Annual Beach Day",
+          "description": "Come bring your family and friends for our annual Beach Day! We will be having food, games, and entertainment all day!",
+          "date": "2018-06-30",
+          "startTime": "11:00AM",
+          "endTime": "5:00PM"
+          },
+          {
+          "title": "Product Launch",
+          "description": "Come join the team as we launch our newest product! Stay tuned for more information",
+          "date": "2018-07-28",
+          "startTime": "11:00AM",
+          "endTime": "3:30PM"
+          }
+       ],
+      "articles": [
+        {
+          "title": "BIG NEWS",
+          "description": "Based on our quarterly report, we have exceeded our sales goal for our new product. We would like to thank the entire team for working hard to ensure the success of our product. As an appreciation to our staff, we will be including bonuses to everyone's upcoming paychecks! #TreatYoSelf",
           "image": "https://openspaceyoga.com/wp-content/uploads/2017/06/announcement-banner.jpg"
         },
         {
           "title": "Improved Benefits",
-          "description": "Don't forget to check your improved benefits in the app today! ",
+          "description": "Don't forget to check your improved benefits in the app today!",
           "image": "http://philipbarron.net/wp-content/uploads/2016/06/health-benefits1.jpg"
         },
         {
@@ -508,8 +643,8 @@
       "code": "pfa"
     },
     {
-      "name": "Brainstem",
-      "code": "brainstem"
+      "name": "Brainstorm",
+      "code": "brainstorm"
     }
   ]
 }

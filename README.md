@@ -69,41 +69,62 @@ Where the store is wrapped around main
 
 ### Screens
 #### Company Selector
+  * `./companySelector/index.js`
   * Handles reading all the data in from `./companySelector/companies.json`
   * Allows the user to set the company
 
 #### Login
   * `./login/index.js`
+  * BUG: There is a bug with the remember me check box, it doesn't remember that it is checked
 
 #### Navigation
   * `./navigation/index.js`
+  * This isn't actually a page, but it does define what each screen is called
+  * We ended up using [React Navigation](https://reactnavigation.org/) for all of the navigation after the login page
 
 #### Dashboard
   * `./homePage/index.js`
+  * This is the main screen that you land on when you open the app
+  * a lot of the code for the calendar is copy pasted from the calendar page, and should probably be pulled out into it's own component
 
 #### Calendar
   * `./calendar/index.js`
+  * most of the code and functions on this pages, is just for parsing the schedule, shifts and events lists.
+  * a lot of work went into converting standard time into JS datetime objects
 
 #### Notifications
   * `./notifications/index.js`
+  * simply lists the notifications and calls the navigator to change to the page the notification links to
+  * make sure that "link" element in notifications matches the actual names of the pages linked to
 
 #### Profile
   * `./profile/index.js`
+  * One giant form used for updating employee info 
+  * BUG: Address auto complete doesn't work on android
 
 #### Clock In/Out
   * `./clockInOut/index.js`
+  * Allows the user to clock in and out
+  * lots of logic for controlling when the user can log in and out
+  * added some demo features when the countdown timer is touched
+    * short press puts 10s on the clock
+    * long press takes the company's time window and adds 5 seconds this allows you to demo the clockin button being enabled
 
 #### Time Card
   * `./timeCard/index.js`
+  * keeps a record of clock ins and outs
 
 #### Time Off
   * `./timeOffRequests/index.js`
+  * allows user to see the time off requests and hours available 
 
 #### Request Page
   * `./RequestPage/index.js`
+  * form for creating new time off requests
 
 #### Downloads
   * `./docpage/index.js`
+  * Just a bunch of links to fake PDFs there should probably be a system to dynamically grab links and display them
 
 #### Common Components
   * Button: `./button/index.js`

@@ -41,4 +41,18 @@ This code base will server as a prototype for the HRadvocate mobile apps
   * Username/Email: `bob@abc.com`
   * Password: `secret`
 
-## App Structure
+## Documentation
+![Documentation](https://s.dou.ua/storage-files/image2-700.jpg)
+First I would like to reiterate that this was a project done be a group of college students with no experience over two quarters while taking other classes, so the architecture was not very well thought out beforehand. 
+
+### Main Components
+#### App.js
+Where the store is wrapped around main
+
+#### Main.js
+  * This was my first attempt at navigation without actually using a navigation library
+  * This component can go to one of three places
+    * Company Selector Page `./companySelector/index.js`
+    * Login Page `./login/index.js`
+    * Navigation(Homepage) `./navigation/index.js`
+

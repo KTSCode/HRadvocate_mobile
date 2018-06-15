@@ -47,14 +47,14 @@ This code base will server as a prototype for the HRadvocate mobile apps
   * I would like to reiterate that this was a project done be a group of college students with no experience over two quarters while taking other classes, so I'm sorry that:
     * the architecture was not very well thought out
     * there are a ton of inline styles
-    * the programming styles vary widely 
-    * most of the functions and components are heavily coupled to the test data
+    * the programming styles vary widely
+    * most of the functions and components are heavily coupled to the demo data
     * there are no tests, I couldn't even get snapshots working
     * much of the code is soaking W.E.T
 
 ### Schema
   * The scheme for the data in the app, can be found in `./companySelector/companies.json`
-  * All the test data in the app is loaded in there
+  * All the test data in the app is loaded in from there
 
 ### Main Components
 #### App.js
@@ -73,5 +73,51 @@ Where the store is wrapped around main
   * Allows the user to set the company
 
 #### Login
-  * Login Page `./login/index.js`
+  * `./login/index.js`
 
+#### Navigation
+  * `./navigation/index.js`
+
+#### Dashboard
+  * `./homePage/index.js`
+
+#### Calendar
+  * `./calendar/index.js`
+
+#### Notifications
+  * `./notifications/index.js`
+
+#### Profile
+  * `./profile/index.js`
+
+#### Clock In/Out
+  * `./clockInOut/index.js`
+
+#### Time Card
+  * `./timeCard/index.js`
+
+#### Time Off
+  * `./timeOffRequests/index.js`
+
+#### Request Page
+  * `./RequestPage/index.js`
+
+#### Downloads
+  * `./docpage/index.js`
+
+#### Common Components
+  * Button: `./button/index.js`
+    * Generic button that looks the same on all devices
+  * Header Bar: `./headerBar/index.js`
+    * Header bar that contains the company name, nav menu, calendar link and notifications icon
+    * Must be placed on every new page
+  * Section Header: `./sectionHeader/index.js`
+    * The black bar above each section on all the main pages
+    * take only one parameter *top*
+      * boolean
+      * if true, it removes the top padding from the section, which makes it not look weird when it's the first thing on the page
+  * Toast Box: `./toastBox/index.js`
+    * Not actually a toast, more of a information/error notification box that is used to give information to the user
+    * Used heavily on the Company Selector and the Login Page
+  * Common Components: `./commonComponents`
+    * After with is where all the above components should go, I just didn't have time to move them all there and fix the imports in every file, and I was too afraid I would break something

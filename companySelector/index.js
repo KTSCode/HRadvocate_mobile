@@ -1,17 +1,17 @@
 import React from 'react';
-var {StyleSheet, View, Button, Image} = require('react-native');
+var {StyleSheet, View, Image} = require('react-native');
+import Button from '../button/index';
 import CompanyCodeForm from './companyCodeForm';
 import ToastBox from '../toastBox/index';
 import {Card} from 'react-native-material-ui';
 
 const CompanyCodePage = props => {
-  //XXX DELETE THIS
+  //XXX Uncomment to bypass company code page for testing
   //props.dispatch({
   //  type: 'SUBMIT_CODE',
   //  code: 'abc',
   //});
   const HRlogo = require('../images/hradvocate.png');
-  // TODO make button uniform across iOS and Android
   return (
     <View style={styles.Container}>
       <View style={{alignSelf: 'center', marginTop: 40}}>
@@ -60,9 +60,10 @@ const CompanyCodePage = props => {
           </View>
         </Card>
         {__DEV__ && (
-          <View style={{width: 80, marginTop: 100}}>
+          <View style={{marginTop: 100}}>
             <Button
-              title="SKIP"
+              text="SKIP"
+              buttonStyle={{width: 80}}
               onPress={() => {
                 props.dispatch({
                   type: 'SUBMIT_CODE',

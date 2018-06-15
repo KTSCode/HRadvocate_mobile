@@ -1,19 +1,18 @@
 import React from 'react';
 var {
   StyleSheet,
-  Button,
   View,
   Image,
   Dimensions,
-  Linking,
   TouchableOpacity,
   Text,
 } = require('react-native');
 import ToastBox from '../toastBox/index';
+import Button from '../button/index';
 import LoginForm from './loginForm';
 
 const LoginPage = props => {
-  //XXX DELETE THIS
+  //XXX Uncomment to bypass login page for testing
   //props.dispatch({
   //  type: 'LOGIN',
   //  username: 'bob@abc.com',
@@ -92,7 +91,8 @@ const LoginPage = props => {
         </TouchableOpacity>
         {__DEV__ && (
           <Button
-            title="SKIP"
+            text="SKIP"
+            buttonStyle={{width: 80}}
             onPress={() => {
               props.dispatch({
                 type: 'LOGIN',

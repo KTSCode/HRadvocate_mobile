@@ -101,7 +101,7 @@
               "pending": 0,
               "approved":0,
               "used": 4
-            },
+            }
           },
           "timeOffRequests": [
             {
@@ -418,7 +418,7 @@
               "pending": 0,
               "approved":0,
               "used": 6
-            },
+            }
           },
           "timeOffRequests": [
             {

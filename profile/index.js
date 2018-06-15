@@ -61,7 +61,7 @@ class Profile extends Component {
       maritalStatus: this.props.data.maritalStatus,
     });
     //notification that pops up
-    this.dropdown.alertWithType('info', 'Info','Changes were canceled.');
+    this.dropdown.alertWithType('info', '\nInfo','Changes were canceled.\n');
   }
 
 //used to assist in displaying notifications to the user
@@ -105,7 +105,7 @@ class Profile extends Component {
     if (error !== '') {
       error = 'Please fill out all required fields. \n' + error;
       //notification that pops up
-      this.dropdown.alertWithType('error', 'Error', error);
+      this.dropdown.alertWithType('error', '\nError', error);
       return false;
     }
     return true;
@@ -119,8 +119,8 @@ class Profile extends Component {
       //notification that pops up
       this.dropdown.alertWithType(
         'error',
-        'Error',
-        'Invalid SSN input. \nFormat should be: XXX-XX-XXXX');
+        '\nError',
+        'Invalid SSN input. \nFormat should be: XXX-XX-XXXX\n');
       return false;
     }
     return true;
@@ -134,8 +134,8 @@ class Profile extends Component {
       //notification that pops up
       this.dropdown.alertWithType(
         'error',
-        'Error',
-        'Invalid Phone input. \nFormat should be: XXX-XXX-XXXX');
+        '\nError',
+        'Invalid Phone input. \nFormat should be: XXX-XXX-XXXX\n');
       return false;
     }
     return true;
@@ -149,8 +149,8 @@ class Profile extends Component {
       //notification that pops up
       this.dropdown.alertWithType(
         'error',
-        'Error',
-        'Invalid Postal Code input. \nFormat should be: XXXXX or XXXXX-XXXX');
+        '\nError',
+        'Invalid Postal Code input. \nFormat should be: XXXXX or XXXXX-XXXX\n');
       return false;
     }
     return true;
@@ -170,7 +170,7 @@ class Profile extends Component {
       }
     }
     //notification that pops up
-    this.dropdown.alertWithType('success', 'Success','Changes were saved.');
+    this.dropdown.alertWithType('success', '\nSuccess','Changes were saved.\n');
   }
 
   //passed to child component so that when its state Changes
@@ -306,8 +306,8 @@ class Profile extends Component {
               onFocus={() => this.dropdown.
                 alertWithType(
                   'info',
-                  'Info',
-                  'Please use the Address Input to autofill this field.')}
+                  '\nInfo',
+                  'Please use the Address Input to autofill this field.\n')}
             />
             <Input
               label="Street 2"
@@ -326,8 +326,8 @@ class Profile extends Component {
               onFocus={() => this.dropdown.
                 alertWithType(
                   'info',
-                  'Info',
-                  'Please use the Address Input to autofill this field.')
+                  '\nInfo',
+                  'Please use the Address Input to autofill this field.\n')
               }
             />
             <Input
@@ -339,8 +339,8 @@ class Profile extends Component {
               onFocus={() => this.dropdown.
                 alertWithType(
                   'info',
-                  'Info',
-                  'Please use the Address Input to autofill this field.')
+                  '\nInfo',
+                  'Please use the Address Input to autofill this field.\n')
               }
             />
             <Input
@@ -352,8 +352,8 @@ class Profile extends Component {
               onFocus={() => this.dropdown.
                 alertWithType(
                   'info',
-                  'Info',
-                  'Please use the Address Input to autofill this field.')
+                  '\nInfo',
+                  'Please use the Address Input to autofill this field.\n')
               }
             />
             <Input
@@ -365,8 +365,8 @@ class Profile extends Component {
               onFocus={() => this.dropdown.
                 alertWithType(
                   'info',
-                  'Info',
-                  'Please use the Address Input to autofill this field.')
+                  '\nInfo',
+                  'Please use the Address Input to autofill this field.\n')
               }
             />
             <Input
@@ -440,6 +440,7 @@ class Profile extends Component {
           </View>
         </View>
         <DropdownAlert
+          titleNumOfLines={4}
           messageNumOfLines={12}
           ref={ref => this.dropdown = ref}
         />

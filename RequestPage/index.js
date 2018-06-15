@@ -61,15 +61,15 @@ class RequestPage extends Component {
       if (!this.state.type){
         error += 'Missing Field: Type\n';
       }
-      this.dropdown.alertWithType('error', 'Error', error);
+      this.dropdown.alertWithType('error', '\nError', error);
       return;
     }
     //if 0 hours have been requested, notifies user and returns without submitting
     if(this.state.hours === 0) {
       this.dropdown.alertWithType(
         'error',
-        'Error',
-        'No hours have been requested.');
+        '\nError',
+        'No hours have been requested.\n');
       return;
     }
 
@@ -111,10 +111,10 @@ class RequestPage extends Component {
       //calls hours action creator to update balances object with new hours
       this.props.hoursUpdate({prop: objectName, value: newBalances});
       //notifies the user of a successful request
-      this.dropdown.alertWithType('success', 'Success', 'Your request has been sent!');
+      this.dropdown.alertWithType('success', '\nSuccess', 'Your request has been sent!\n');
     } else{
       //notifies the user if they did not have enough hours to complete the request
-      this.dropdown.alertWithType('error', 'Error', 'You do not have enough ' + typeName + ' hours for this request!');
+      this.dropdown.alertWithType('error', '\nError', 'You do not have enough ' + typeName + ' hours for this request!\n');
     }
   }
 
@@ -380,7 +380,7 @@ class RequestPage extends Component {
         <View style={styles.buttonsView}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => this.dropdown.alertWithType('info', 'Info','Request was canceled.')}>
+            onPress={() => this.dropdown.alertWithType('info', '\nInfo','Request was canceled.\n')}>
             <Text style={styles.buttonText}> Cancel </Text>
           </TouchableOpacity>
           {
@@ -397,6 +397,7 @@ class RequestPage extends Component {
 
         <DropdownAlert
           messageNumOfLines={12}
+          titleNumOfLines={4}
           onClose={data => {
             if (data.type !== 'error'){
               this.props.navigation.navigate('Time Off')

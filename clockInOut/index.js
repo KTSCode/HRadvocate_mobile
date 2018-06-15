@@ -102,7 +102,7 @@ const Notifications = props => {
                   type: 'CLOCK_IN',
                   time: Date.now(),
                 });
-                this.dropdown.alertWithType('success', 'Success','You have successfully clocked in!');
+                this.dropdown.alertWithType('success', '\nSuccess','You have successfully clocked in!\n');
               }}
               disabled={!clock_in_button}
               text="Clock In"
@@ -118,7 +118,7 @@ const Notifications = props => {
                 type: 'CLOCK_OUT',
                 time: Date.now(),
               });
-              this.dropdown.alertWithType('success', 'Success','You have successfully clocked out!');
+              this.dropdown.alertWithType('success', '\nSuccess','You have successfully clocked out!\n');
             }}
             text="Clock Out"
             buttonStyle={{height: 60, backgroundColor: 'red'}}
@@ -145,7 +145,7 @@ const Notifications = props => {
           );
         })}
       </ScrollView>
-      <DropdownAlert messageNumOfLines={12} ref={ref => this.dropdown = ref} />
+      <DropdownAlert titleNumOfLines={4} messageNumOfLines={12} ref={ref => this.dropdown = ref} />
     </View>
   );
 };

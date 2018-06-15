@@ -43,7 +43,18 @@ This code base will server as a prototype for the HRadvocate mobile apps
 
 ## Documentation
 ![Documentation](https://s.dou.ua/storage-files/image2-700.jpg)
-First I would like to reiterate that this was a project done be a group of college students with no experience over two quarters while taking other classes, so the architecture was not very well thought out beforehand. 
+
+  * I would like to reiterate that this was a project done be a group of college students with no experience over two quarters while taking other classes, so I'm sorry that:
+    * the architecture was not very well thought out
+    * there are a ton of inline styles
+    * the programming styles vary widely 
+    * most of the functions and components are heavily coupled to the test data
+    * there are no tests, I couldn't even get snapshots working
+    * much of the code is soaking W.E.T
+
+### Schema
+  * The scheme for the data in the app, can be found in `./companySelector/companies.json`
+  * All the test data in the app is loaded in there
 
 ### Main Components
 #### App.js
@@ -55,4 +66,12 @@ Where the store is wrapped around main
     * Company Selector Page `./companySelector/index.js`
     * Login Page `./login/index.js`
     * Navigation(Homepage) `./navigation/index.js`
+
+### Screens
+#### Company Selector
+  * Handles reading all the data in from `./companySelector/companies.json`
+  * Allows the user to set the company
+
+#### Login
+  * Login Page `./login/index.js`
 
